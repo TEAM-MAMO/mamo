@@ -1,20 +1,23 @@
 "use client";
 
 import { ReactNode } from "react";
+import stylex from "@stylexjs/stylex";
 
 interface ButtonProps {
   children: ReactNode;
-  className?: string;
-  appName: string;
 }
 
-export const Button = ({ children, className, appName }: ButtonProps) => {
-  return (
-    <button
-      className={className}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
-    >
-      {children}
-    </button>
-  );
+const s = stylex.create({
+  base: {
+    fontSize: 20,
+    lineHeight: 2,
+    color: "orange",
+  },
+  highlighted: {
+    color: "rebeccapurple",
+  },
+});
+
+export const Button = ({ children }: ButtonProps) => {
+  return <button className={stylex(s.base)}>{children}</button>;
 };

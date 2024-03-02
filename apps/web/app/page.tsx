@@ -1,8 +1,5 @@
-import { Card } from "@repo/ui/card";
-import { Code } from "@repo/ui/code";
 import { Button } from "@repo/ui/button";
 import stylex from "@stylexjs/stylex";
-import styles from "./page.module.css";
 
 const s = stylex.create({
   main: {
@@ -30,6 +27,9 @@ export default function Page() {
         <h1 className={stylex(s.myHeading)}>Stylex Demo</h1>
         <p className={stylex(s.myPara)}>Hey Pushpaje, How are you</p>
       </div>
+      <Button>
+        <h1>hihi</h1>
+      </Button>
     </main>
   );
 }
