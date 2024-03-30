@@ -9,22 +9,22 @@ export const Typography = ({ children }: React.PropsWithChildren) => {
 };
 
 export interface HeadingProps {
-  level: 1 | 2 | 3 | 4;
+  level?: 1 | 2 | 3 | 4;
   strong?: boolean;
 }
 
 export interface TextProps {
-  level: 1 | 2 | 3;
+  level?: 1 | 2 | 3;
   inline?: boolean;
 }
 
 export interface CaptionProps {
-  level: 1 | 2 | 3 | 4;
+  level?: 1 | 2 | 3 | 4;
   inline?: boolean;
 }
 
 export interface FootProps {
-  level: 1 | 2 | 3;
+  level?: 1 | 2 | 3;
 }
 
 /**

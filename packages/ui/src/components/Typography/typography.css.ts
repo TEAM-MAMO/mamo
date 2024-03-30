@@ -2,14 +2,10 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import { sprinkles } from '../../styles';
 
-const common = style([
-  sprinkles({
-    color: 'default',
-  }),
-  {
-    margin: 0,
-  },
-]);
+const common = style({
+  margin: 0,
+  color: 'inherit',
+});
 
 /**
  * Typography Heading
@@ -19,6 +15,7 @@ export const headingStyles = recipe({
     common,
     sprinkles({
       letterSpacing: '-2%',
+      color: 'default',
     }),
   ],
   variants: {
