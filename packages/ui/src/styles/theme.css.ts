@@ -4,14 +4,16 @@ import {
   divider,
   fontSize,
   fontWeight,
+  lineHeight,
+  letterSpacing,
   pallette,
   radius,
   sizes,
   space,
   text,
-} from "../tokens";
+} from '../tokens';
 
-import { createGlobalTheme } from "@vanilla-extract/css";
+import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const color = {
   text,
@@ -26,8 +28,10 @@ const tokens = {
   sizes,
   fontSize,
   fontWeight,
+  lineHeight,
+  letterSpacing,
   radius,
   breakPoints,
 };
 
-export const vars = createGlobalTheme(":root", tokens);
+export const vars = createGlobalTheme(':root', tokens);
