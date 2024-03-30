@@ -1,6 +1,6 @@
-import React from "react";
 import "./button.css";
-import { Button } from "@repo/ui/button";
+
+import { Button } from "@repo/ui";
 
 // interface ButtonProps {
 //   /**
@@ -29,9 +29,5 @@ import { Button } from "@repo/ui/button";
  * Primary UI component for user interaction
  */
 export const ButtonStory = () => {
-  return (
-    <Button>
-      <h1>hihi</h1>
-    </Button>
-  );
+  return <Button />;
 };
