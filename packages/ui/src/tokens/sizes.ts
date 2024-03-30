@@ -1,4 +1,7 @@
 export const sizes = {
+  '18px': '18px', // icon
+  '24px': '24px', // icon
+  '30px': '30px',
   '44px': '44px',
   '50px': '50px',
   '1/2': '50%',

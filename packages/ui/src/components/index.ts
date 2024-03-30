@@ -7,3 +7,4 @@ export {
   type CaptionProps,
   type FootProps,
 } from './Typography/Typography';
+export { Chip, type ChipProps } from './Chip/Chip';
