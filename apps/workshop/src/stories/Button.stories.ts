@@ -1,50 +1,58 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ButtonStory } from "./Button";
+import { ButtonStory } from './Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/Button",
+  title: 'Example/Button',
   component: ButtonStory,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
+    layout: 'padded',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: "color" },
+    // backgroundColor: { control: "color" },
   },
 } satisfies Meta<typeof ButtonStory>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Basic: Story = {
   args: {
+    label: 'Button',
+    size: 'default',
+    block: false,
+    primary: false,
+    disabled: false,
+  },
+};
+
+export const Normal: Story = {
+  args: {
+    label: 'Button',
+    size: 'default',
+    block: false,
     primary: true,
-    label: "Button",
+    disabled: false,
   },
 };
 
-export const Secondary: Story = {
+export const Disabled: Story = {
   args: {
-    label: "Button",
+    label: 'Button',
+    size: 'default',
+    block: false,
+    primary: false,
+    disabled: true,
   },
 };
 
-export const Large: Story = {
+export const Block: Story = {
   args: {
-    size: "large",
-    label: "Button",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    label: "Button",
+    label: 'Button',
+    size: 'default',
+    block: true,
+    primary: false,
+    disabled: false,
   },
 };
