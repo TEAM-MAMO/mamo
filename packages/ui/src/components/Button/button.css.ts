@@ -22,10 +22,6 @@ const base = style([
 export const buttonStyle = recipe({
   base,
   variants: {
-    type: {
-      normal: sprinkles({}),
-      action: sprinkles({}),
-    },
     primary: {
       true: {
         color,

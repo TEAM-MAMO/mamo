@@ -1,5 +1,4 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { style } from '@vanilla-extract/css';
 import { sprinkles, vars } from '../../styles';
 
 export const chipStyles = recipe({

@@ -8,3 +8,6 @@ export {
   type FootProps,
 } from './Typography/Typography';
 export { Chip, type ChipProps } from './Chip/Chip';
+
+/* styles */
+export * as globalCSS from '../styles/global.css';
