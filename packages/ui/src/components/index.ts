@@ -12,6 +12,10 @@ export {
   IndicatorFunding,
   type IndicatorFundingProps,
 } from './IndicatorFunding/IndicatorFunding';
+export {
+  IndicatorProgress,
+  type IndicatorProgressProps,
+} from './IndicatorProgress/IndicatorProgress';
 
 /* styles */
 export * as globalCSS from '../styles/global.css';
