@@ -10,7 +10,10 @@ const colorProperties = defineProperties({
       ...pallette,
     },
     borderColor: vars.color.divider,
-    background: vars.color.background,
+    background: {
+      ...pallette,
+      ...vars.color.background,
+    },
   },
 });
 
