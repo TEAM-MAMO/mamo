@@ -1,4 +1,5 @@
-import { buttonStyle } from './button.css';
+import { Typography } from '../Typography/Typography';
+import { buttonStyle, prefixStyle, suffixStyle, textStyle } from './button.css';
 
 export interface ButtonProps {
   label: React.ReactNode;
@@ -6,6 +7,8 @@ export interface ButtonProps {
   block?: boolean;
   primary?: boolean;
   disabled?: boolean;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
   onClick: () => void;
 }
 
@@ -15,6 +18,8 @@ export const Button = ({
   block = false,
   primary = false,
   disabled = false,
+  prefix,
+  suffix,
   onClick,
 }: ButtonProps) => {
   return (
@@ -23,7 +28,9 @@ export const Button = ({
       className={buttonStyle({ size, block, primary, disabled })}
       onClick={onClick}
     >
-      {label}
+      <span className={prefixStyle({ size })}>{prefix}</span>
+      <div className={textStyle({ size })}>{label}</div>
+      <span className={suffixStyle({ size })}>{suffix}</span>
     </button>
   );
 };

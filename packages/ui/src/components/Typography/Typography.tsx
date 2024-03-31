@@ -60,7 +60,7 @@ const Text = ({
   inline = false,
   children,
 }: React.PropsWithChildren<TextProps>) => {
-  return <p className={TextStyles({ level, inline })}>{children}</p>;
+  return <div className={TextStyles({ level, inline })}>{children}</div>;
 };
 
 /**

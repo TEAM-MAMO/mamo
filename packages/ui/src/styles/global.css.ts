@@ -71,8 +71,5 @@ globalStyle('table', {
 globalStyle('svg', {
   width: '1em',
   height: '1em',
-});
-
-globalStyle('svg path', {
   fill: 'currentcolor',
 });
