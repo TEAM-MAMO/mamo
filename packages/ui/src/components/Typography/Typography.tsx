@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { headingStyles, CaptionStyles, TextStyles, FootStyles } from './typography.css';
 
 /**
@@ -11,20 +12,24 @@ export const Typography = ({ children }: React.PropsWithChildren) => {
 export interface HeadingProps {
   level?: 1 | 2 | 3 | 4;
   strong?: boolean;
+  className?: string;
 }
 
 export interface TextProps {
   level?: 1 | 2 | 3;
   inline?: boolean;
+  className?: string;
 }
 
 export interface CaptionProps {
   level?: 1 | 2 | 3 | 4;
   inline?: boolean;
+  className?: string;
 }
 
 export interface FootProps {
   level?: 1 | 2 | 3;
+  className?: string;
 }
 
 /**
@@ -38,12 +43,15 @@ export interface FootProps {
 const Heading = ({
   level = 1,
   strong = true,
+  className,
   children,
 }: React.PropsWithChildren<HeadingProps>) => {
   const HeadingLevel = `h${level}` as React.ElementType;
 
   return (
-    <HeadingLevel className={headingStyles({ level, strong })}>{children}</HeadingLevel>
+    <HeadingLevel className={clsx(headingStyles({ level, strong }), className)}>
+      {children}
+    </HeadingLevel>
   );
 };
 
@@ -58,9 +66,10 @@ const Heading = ({
 const Text = ({
   level = 1,
   inline = false,
+  className,
   children,
 }: React.PropsWithChildren<TextProps>) => {
-  return <div className={TextStyles({ level, inline })}>{children}</div>;
+  return <div className={clsx(TextStyles({ level, inline }), className)}>{children}</div>;
 };
 
 /**
@@ -74,9 +83,10 @@ const Text = ({
 const Caption = ({
   level = 1,
   inline = false,
+  className,
   children,
 }: React.PropsWithChildren<CaptionProps>) => {
-  return <p className={CaptionStyles({ level, inline })}>{children}</p>;
+  return <p className={clsx(CaptionStyles({ level, inline }), className)}>{children}</p>;
 };
 
 /**
@@ -86,8 +96,8 @@ const Caption = ({
  * - level `2`: Foot 2
  * - level `3`: Foot 3
  */
-const Foot = ({ level = 1, children }: React.PropsWithChildren<FootProps>) => {
-  return <p className={FootStyles({ level })}>{children}</p>;
+const Foot = ({ className, level = 1, children }: React.PropsWithChildren<FootProps>) => {
+  return <p className={(FootStyles({ level }), className)}>{children}</p>;
 };
 
 Typography.Heading = Heading;
