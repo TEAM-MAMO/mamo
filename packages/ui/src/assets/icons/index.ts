@@ -1,3 +1,9 @@
 export { ReactComponent as CloseOutlined } from './ic-close-outlined.svg';
 export { ReactComponent as PlusOutlined } from './ic-plus-outlined.svg';
 export { ReactComponent as HeartSolidPrimary } from './ic-heart-solid-primary.svg';
+export { ReactComponent as SmileOutlined } from './ic-smile-outlined.svg';
+export { ReactComponent as SmileSolid } from './ic-smile-solid.svg';
+export { ReactComponent as HappyOutlined } from './ic-happy-outlined.svg';
+export { ReactComponent as HappySolid } from './ic-happy-solid.svg';
+export { ReactComponent as SadOutlined } from './ic-sad-outlined.svg';
+export { ReactComponent as SadSolid } from './ic-sad-solid.svg';
