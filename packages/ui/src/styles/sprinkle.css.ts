@@ -76,6 +76,7 @@ const unconditionalProperties = defineProperties({
     width: vars.sizes,
     height: vars.sizes,
     borderRadius: vars.radius,
+    boxShadow: vars.shadow,
     cursor: ['pointer'],
     pointerEvents: ['auto', 'none', 'visible'],
     textDecoration: ['none', 'underline', 'line-through'],

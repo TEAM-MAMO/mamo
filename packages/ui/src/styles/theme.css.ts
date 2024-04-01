@@ -11,6 +11,7 @@ import {
   sizes,
   space,
   text,
+  shadow,
 } from '../tokens';
 
 import { createGlobalTheme } from '@vanilla-extract/css';
@@ -32,6 +33,7 @@ const tokens = {
   letterSpacing,
   radius,
   breakPoints,
+  shadow,
 };
 
 export const vars = createGlobalTheme(':root', tokens);

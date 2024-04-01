@@ -7,3 +7,4 @@ export { pallette } from './pallette';
 export { sizes } from './sizes';
 export { space } from './space';
 export { text } from './text';
+export { shadow } from './shadow';
