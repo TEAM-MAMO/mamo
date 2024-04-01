@@ -9,6 +9,7 @@ export const fontSize = {
   small: '14px',
   medium: '16px',
   large: '20px',
+  '40px': '40px', // icon
   '36px': '36px', // icon
   '24px': '24px',
   '20px': '20px',

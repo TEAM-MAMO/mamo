@@ -1,5 +1,6 @@
 export { Button, type ButtonProps } from './Button/Button';
 export { ButtonReview, type ButtonReviewProps } from './ButtonReview/ButtonReview';
+export { ButtonSocial, type ButtonSocialProps } from './ButtonSocial/ButtonSocial';
 export { Divider, type DividerProps } from './Divider/Divider';
 export {
   Typography,
