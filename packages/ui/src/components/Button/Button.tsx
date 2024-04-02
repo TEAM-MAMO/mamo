@@ -10,7 +10,7 @@ export interface ButtonProps {
   className?: string;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const Button = ({

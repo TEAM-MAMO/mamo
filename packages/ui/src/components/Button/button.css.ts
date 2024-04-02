@@ -64,12 +64,12 @@ export const buttonStyle = recipe({
 export const textStyle = recipe({
   variants: {
     size: {
-      default: sprinkles({
+      small: sprinkles({
         fontSize: 'small',
         fontWeight: '600',
-        lineHeight: '24px',
+        lineHeight: '20px',
       }),
-      small: sprinkles({
+      default: sprinkles({
         fontSize: 'medium',
         fontWeight: '700',
         lineHeight: '24px',
