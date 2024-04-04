@@ -1,125 +1,147 @@
-import { PropsWithChildren, useEffect, useRef, useState } from 'react';
+import React, { PropsWithChildren, useContext, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import * as s from './bottomSheet.css';
-import { CloseOutlined } from '../../assets/icons';
-import { Typography } from '../Typography/Typography';
 import { Button } from '../Button/Button';
+import { Typography } from '../Typography/Typography';
+import { CloseOutlined } from '../../assets/icons';
 
-const { Heading, Caption } = Typography;
+const { Text, Heading, Caption } = Typography;
 
-export type BottomSheetType = 'default' | 'confirm' | 'list';
+export interface BottomSheetProps {}
 
-export interface BottomSheetBase {
-  className?: string;
-  isOpen?: boolean;
-  onClose: () => void;
-}
-export interface BottomSheetProps extends BottomSheetBase {
-  type: BottomSheetType;
-}
+/**
+ * BottomSheet Provider
+ */
+const BottomSheetContext = React.createContext<{
+  open: boolean;
+  toggle: () => void;
+} | null>(null);
 
-export const BottomSheet = ({
-  type = 'default',
-  isOpen = false,
-  className,
-  children,
-  onClose,
-}: PropsWithChildren<BottomSheetProps>) => {
+export const useBottomSheetContext = () => {
+  const context = useContext(BottomSheetContext);
+  if (!context) {
+    throw new Error(`cannot be rendererd outside the BottomSheet component`);
+  }
+  return context;
+};
+
+export const BottomSheet = ({ children }: React.PropsWithChildren<BottomSheetProps>) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const toggle = () => setOpen((state) => !state);
+
+  const value = useMemo(() => ({ open, toggle }), [open]);
+
   return (
-    isOpen && (
-      <div className={clsx(s.bottomSheet, className)}>
-        <div className={s.layerDim} onClick={onClose} aria-hidden="true" />
-        <div className={s.layerContent}>
-          {type !== 'confirm' && (
-            <div className={s.header({ type: 'default' })}>
-              <button className={s.closeBtn} aria-label="close" onClick={onClose}>
-                <CloseOutlined />
-              </button>
-            </div>
-          )}
-          {children}
-        </div>
+    <BottomSheetContext.Provider value={value}>{children}</BottomSheetContext.Provider>
+  );
+};
+
+/**
+ * Trigger
+ */
+export const Trigger = () => {
+  const { open, toggle } = useBottomSheetContext();
+
+  return <Button onClick={toggle} label="Open" />;
+};
+
+/**
+ * Content
+ */
+export const Content = ({ children }: PropsWithChildren) => {
+  const { open, toggle } = useBottomSheetContext();
+  return (
+    open && (
+      <div className={s.contentStyle}>
+        <div className={s.overlayStyle} onClick={toggle} aria-hidden="true" />
+        <div className={s.sheetStyle}>{children}</div>
       </div>
     )
   );
 };
 
-export interface BottomSheetConfirmProps extends BottomSheetBase {
+/**
+ * Confirm
+ */
+interface ConfirmProps {
   title: string;
-  description: string;
-  okText?: string;
-  cancelText?: string;
-  onOk?: () => void;
-  onCancel?: () => void;
-  className?: string;
+  description?: string;
 }
-
-const Confirm = ({
-  title,
-  description,
-  isOpen,
-  okText,
-  cancelText,
-  onOk,
-  onCancel,
-  onClose,
-  className,
-}: BottomSheetConfirmProps) => {
+const Confirm = ({ title, description }: React.PropsWithChildren<ConfirmProps>) => {
   return (
-    <BottomSheet type="confirm" isOpen={isOpen} onClose={onClose} className={className}>
-      <div className={s.header({ type: 'confirm' })}>
-        <Heading className={s.title} level={3}>
-          {title}
-        </Heading>
-        <Caption className={s.description} level={2}>
+    <div className={s.confirmStyle}>
+      <Heading level={3} strong>
+        {title}
+      </Heading>
+      {description && (
+        <Caption level={2} className={s.descriptionStyle}>
           {description}
         </Caption>
-      </div>
-      <div className={s.buttons}>
-        <Button label={okText} block primary onClick={onOk} />
-        <button className={s.cancelBtn} onClick={onCancel}>
-          {cancelText}
-        </button>
-      </div>
-    </BottomSheet>
+      )}
+    </div>
   );
 };
 
-export interface BottomSheetMenu {
-  id: string;
-  title: string;
+/**
+ * Header
+ */
+interface HeaderProps {
+  title?: string;
 }
-export interface BottomSheetListProps extends BottomSheetBase {
-  menu: BottomSheetMenu[];
-  className?: string;
-  onClickMenu?: (menu: BottomSheetMenu) => void;
-}
+const Header = ({ title }: React.PropsWithChildren<HeaderProps>) => {
+  const { toggle } = useBottomSheetContext();
 
-const List = ({
-  menu,
-  className,
-  isOpen,
-  onClose,
-  onClickMenu,
-}: BottomSheetListProps) => {
   return (
-    <BottomSheet type="list" isOpen={isOpen} onClose={onClose} className={className}>
-      <div className={s.content}>
-        <div className={s.menuList}>
-          {menu.map((item) => (
-            <button
-              key={item.id}
-              className={s.menuItem}
-              onClick={() => onClickMenu?.(item)}
-            >
-              <Caption>{item.title}</Caption>
-            </button>
-          ))}
-        </div>
-      </div>
-    </BottomSheet>
+    <div className={s.headerStyle({ thin: !!title })}>
+      <Heading level={3}>{title}</Heading>
+      <button className={s.closeStyle} type="button" aria-label="close" onClick={toggle}>
+        <CloseOutlined />
+      </button>
+    </div>
   );
 };
 
+/**
+ * Body
+ */
+const Body = ({ children }: React.PropsWithChildren) => {
+  return <div className={s.bodyStyle}>{children}</div>;
+};
+
+/**
+ * Footer
+ */
+const Footer = ({ children }: React.PropsWithChildren) => {
+  return <div className={s.footerStyle}>{children}</div>;
+};
+
+/**
+ * Menu
+ */
+const Menu = ({ children }: React.PropsWithChildren) => {
+  return <ul className={s.menuStyle}>{children}</ul>;
+};
+
+/**
+ * Menu Item
+ */
+const Item = ({ children }: React.PropsWithChildren) => {
+  return (
+    <li>
+      <button className={s.itemStyle}>
+        <Text>{children}</Text>
+      </button>
+    </li>
+  );
+};
+
+BottomSheet.Trigger = Trigger;
+BottomSheet.Content = Content;
 BottomSheet.Confirm = Confirm;
-BottomSheet.List = List;
+BottomSheet.Header = Header;
+BottomSheet.Body = Body;
+BottomSheet.Footer = Footer;
+BottomSheet.Menu = Menu;
+BottomSheet.Item = Item;
+
+export default BottomSheet;
