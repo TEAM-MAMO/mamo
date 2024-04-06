@@ -59,22 +59,22 @@ export const Block: Story = {
   },
 };
 
-export const Prefix: Story = {
+export const PrefixIcon: Story = {
   args: {
     label: 'Button',
     size: 'default',
     primary: false,
     disabled: false,
-    prefix: <PlusOutlined />,
+    prefixIcon: <PlusOutlined />,
   },
 };
 
-export const Suffix: Story = {
+export const SuffixIcon: Story = {
   args: {
     label: 'Button',
     size: 'default',
     primary: false,
     disabled: false,
-    suffix: <HeartSolidPrimary />,
+    suffixIcon: <HeartSolidPrimary />,
   },
 };

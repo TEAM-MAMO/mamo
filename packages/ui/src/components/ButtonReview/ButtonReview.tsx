@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import * as s from './buttonReview.css';
 import {
@@ -14,11 +15,9 @@ const { Caption } = Typography;
 
 export type ReviewStateType = 'sad' | 'smile' | 'happy';
 
-export interface ButtonReviewProps {
+export interface ButtonReviewProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   state: ReviewStateType;
   selected?: boolean;
-  className?: string;
-  onClick?: (state: ReviewStateType, selected: boolean) => void;
 }
 
 const stateIcon = (state: ReviewStateType, selected: boolean) => {
@@ -41,21 +40,20 @@ const stateIcon = (state: ReviewStateType, selected: boolean) => {
   }
 };
 
-export const ButtonReview = ({
-  state,
-  selected = false,
-  className,
-  onClick,
-}: ButtonReviewProps) => {
-  const review = stateIcon(state, selected);
+export const ButtonReview = React.forwardRef<HTMLButtonElement, ButtonReviewProps>(
+  ({ state, selected = false, onClick, className, ...props }: ButtonReviewProps, ref) => {
+    const review = stateIcon(state, selected);
 
-  return (
-    <button
-      onClick={() => onClick?.(state, selected)}
-      className={clsx(s.reviewButton({ selected }), className)}
-    >
-      <div className={s.reviewIcon({ selected })}>{review.icon}</div>
-      <Caption level={2}>{review.text}</Caption>
-    </button>
-  );
-};
+    return (
+      <button
+        onClick={onClick}
+        className={clsx(s.reviewButton({ selected }), className)}
+        ref={ref}
+        {...props}
+      >
+        <div className={s.reviewIcon({ selected })}>{review.icon}</div>
+        <Caption level={2}>{review.text}</Caption>
+      </button>
+    );
+  }
+);

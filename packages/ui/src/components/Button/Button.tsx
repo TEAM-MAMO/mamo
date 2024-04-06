@@ -1,38 +1,42 @@
+import React from 'react';
 import clsx from 'clsx';
 import { buttonStyle, prefixStyle, suffixStyle, textStyle } from './button.css';
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: React.ReactNode;
   size?: 'small' | 'default';
   block?: boolean;
   primary?: boolean;
-  disabled?: boolean;
-  className?: string;
-  prefix?: React.ReactNode;
-  suffix?: React.ReactNode;
-  onClick?: () => void;
+  prefixIcon?: React.ReactNode;
+  suffixIcon?: React.ReactNode;
 }
 
-export const Button = ({
-  label,
-  size = 'default',
-  block = false,
-  primary = false,
-  disabled = false,
-  className,
-  prefix,
-  suffix,
-  onClick,
-}: ButtonProps) => {
-  return (
-    <button
-      type="button"
-      className={clsx(buttonStyle({ size, block, primary, disabled }), className)}
-      onClick={onClick}
-    >
-      <span className={prefixStyle({ size })}>{prefix}</span>
-      <div className={textStyle({ size })}>{label}</div>
-      <span className={suffixStyle({ size })}>{suffix}</span>
-    </button>
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      label,
+      size = 'default',
+      block = false,
+      primary = false,
+      disabled = false,
+      className,
+      prefixIcon,
+      suffixIcon,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type="button"
+        className={clsx(buttonStyle({ size, block, primary, disabled }), className)}
+        {...props}
+      >
+        <span className={prefixStyle({ size })}>{prefixIcon}</span>
+        <div className={textStyle({ size })}>{label}</div>
+        <span className={suffixStyle({ size })}>{suffixIcon}</span>
+      </button>
+    );
+  }
+);

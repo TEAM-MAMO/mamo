@@ -1,13 +1,12 @@
+import React, { useRef } from 'react';
 import clsx from 'clsx';
 import * as s from './buttonSocial.css';
 import { SocialApple, SocialGoogle, SocialKakao, SocialNaver } from '../../assets/icons';
 
 export type SocialType = 'kakao' | 'naver' | 'google' | 'apple';
 
-export interface ButtonSocialProps {
+export interface ButtonSocialProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   social: SocialType;
-  className?: string;
-  onClick?: (social: SocialType) => void;
 }
 
 const socialIcon = {
@@ -17,13 +16,17 @@ const socialIcon = {
   apple: <SocialApple />,
 };
 
-export const ButtonSocial = ({ social, className, onClick }: ButtonSocialProps) => {
-  return (
-    <button
-      className={clsx(s.socialButton({ social }), className)}
-      onClick={() => onClick?.(social)}
-    >
-      <span className={clsx(s.socialIcon)}>{socialIcon[social]}</span>
-    </button>
-  );
-};
+export const ButtonSocial = React.forwardRef<HTMLButtonElement, ButtonSocialProps>(
+  ({ social, className, ...props }: ButtonSocialProps) => {
+    const ref = useRef(null);
+    return (
+      <button
+        ref={ref}
+        className={clsx(s.socialButton({ social }), className)}
+        {...props}
+      >
+        <span className={clsx(s.socialIcon)}>{socialIcon[social]}</span>
+      </button>
+    );
+  }
+);

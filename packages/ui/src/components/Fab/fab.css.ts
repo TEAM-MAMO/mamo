@@ -18,7 +18,7 @@ export const fabButton = recipe({
     },
   ],
   variants: {
-    type: {
+    shape: {
       circle: [
         sprinkles({
           flexDirection: 'column',
@@ -55,7 +55,7 @@ export const fabIcon = recipe({
     }),
   ],
   variants: {
-    type: {
+    shape: {
       circle: [
         sprinkles({
           fontSize: '24px',
@@ -79,7 +79,7 @@ export const fabText = recipe({
     }),
   ],
   variants: {
-    type: {
+    shape: {
       circle: [
         sprinkles({
           fontSize: '10px',
