@@ -12,3 +12,7 @@ export { ReactComponent as SocialNaver } from './ic-social-naver.svg';
 export { ReactComponent as SocialGoogle } from './ic-social-google.svg';
 export { ReactComponent as SocialApple } from './ic-social-apple.svg';
 export { ReactComponent as DeleteSolid } from './ic-delete-solid.svg';
+export { ReactComponent as ArrowDownOutlined } from './ic-arrow-down-outlined.svg';
+export { ReactComponent as ArrowUpOutlined } from './ic-arrow-up-outlined.svg';
+export { ReactComponent as ArrowRightOutlined } from './ic-arrow-right-outlined.svg';
+export { ReactComponent as ArrowLeftOutlined } from './ic-arrow-left-outlined.svg';

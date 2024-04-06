@@ -17,14 +17,18 @@ export const inputBoxStyle = style([
 export const inputStyle = recipe({
   base: [
     sprinkles({
-      color: 'gray700',
       width: 'full',
-      height: '48px',
-      paddingLeft: '3x',
+      color: 'gray800',
       fontSize: '20px',
+      lineHeight: '28px',
+      letterSpacing: '-2%',
+      fontWeight: '500',
+      height: '48px',
+      padding: '3x',
+      paddingRight: '4x',
+      cursor: 'pointer',
     }),
     {
-      paddingRight: 37,
       outline: 0,
       borderTop: 0,
       borderLeft: 0,
@@ -32,25 +36,9 @@ export const inputStyle = recipe({
       borderBottomWidth: '1px',
       borderBottomStyle: 'solid',
       caretColor: vars.pallette.primary500,
-      MozAppearance: 'none',
-      textAlign: 'left',
 
-      '::-webkit-inner-spin-button': {
-        WebkitAppearance: 'none',
-      },
-      '::-webkit-outer-spin-button': {
-        WebkitAppearance: 'none',
-      },
       '::placeholder': {
         color: vars.pallette.gray400,
-      },
-      ':focus': {
-        borderColor: vars.pallette.gray900,
-      },
-      selectors: {
-        '&:not([value=""])': {
-          textAlign: 'right',
-        },
       },
     },
   ],
@@ -63,25 +51,22 @@ export const inputStyle = recipe({
         sprinkles({
           borderColor: 'primary500',
         }),
-        {
-          ':focus': {
-            borderColor: vars.pallette.primary500,
-          },
-        },
       ],
     },
   },
 });
 
-export const unitStyle = style([
+export const iconStyle = style([
   sprinkles({
-    color: 'gray500',
     position: 'absolute',
+    color: 'gray400',
+    fontSize: '18px',
   }),
   {
     top: '50%',
     right: vars.space['6x'],
     transform: 'translateY(-50%)',
+    pointerEvents: 'none',
   },
 ]);
 
