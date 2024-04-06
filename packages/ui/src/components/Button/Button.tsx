@@ -7,6 +7,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: 'small' | 'default';
   block?: boolean;
   primary?: boolean;
+  borderless?: boolean;
   prefixIcon?: React.ReactNode;
   suffixIcon?: React.ReactNode;
 }
@@ -19,6 +20,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       block = false,
       primary = false,
       disabled = false,
+      borderless = false,
       className,
       prefixIcon,
       suffixIcon,
@@ -30,7 +32,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         type="button"
-        className={clsx(buttonStyle({ size, block, primary, disabled }), className)}
+        className={clsx(
+          buttonStyle({ size, block, primary, disabled, borderless }),
+          className
+        )}
         {...props}
       >
         <span className={prefixStyle({ size })}>{prefixIcon}</span>

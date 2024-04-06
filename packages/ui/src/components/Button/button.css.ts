@@ -1,9 +1,6 @@
-import { createVar, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles, vars } from '../../styles';
-
-const color = createVar();
-const background = createVar();
+import { sprinkles } from '../../styles';
 
 const base = style([
   sprinkles({
@@ -11,14 +8,11 @@ const base = style([
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 'round',
-    borderColor: 'default',
-    background: 'default',
   }),
   {
     minWidth: '253px',
     borderWidth: '1px',
     borderStyle: 'solid',
-    color: vars.color.text.default,
   },
 ]);
 
@@ -26,15 +20,20 @@ export const buttonStyle = recipe({
   base,
   variants: {
     primary: {
-      true: {
-        color,
-        background,
-        borderColor: background,
-        vars: {
-          [background]: vars.color.background.primary,
-          [color]: vars.color.text.inverse,
-        },
-      },
+      true: [
+        sprinkles({
+          color: 'white',
+          background: 'black',
+          borderColor: 'black',
+        }),
+      ],
+      false: [
+        sprinkles({
+          color: 'gray600',
+          background: 'white',
+          borderColor: 'gray300',
+        }),
+      ],
     },
     size: {
       small: sprinkles({
@@ -48,15 +47,14 @@ export const buttonStyle = recipe({
       true: sprinkles({ width: 'full' }),
     },
     disabled: {
-      true: {
-        color,
-        background,
-        borderColor: background,
-        vars: {
-          [background]: vars.color.background.disabled,
-          [color]: vars.color.text.disabled,
-        },
-      },
+      true: sprinkles({
+        color: 'gray400',
+        background: 'gray100',
+        borderColor: 'gray100',
+      }),
+    },
+    borderless: {
+      true: { border: 'transparent' },
     },
   },
 });

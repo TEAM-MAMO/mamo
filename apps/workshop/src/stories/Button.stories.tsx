@@ -13,6 +13,7 @@ const meta = {
     layout: 'padded',
   },
   tags: ['autodocs'],
+  args: {},
   argTypes: {},
 } satisfies Meta<typeof Button>;
 
@@ -26,6 +27,7 @@ export const Basic: Story = {
     block: false,
     primary: false,
     disabled: false,
+    borderless: false,
   },
 };
 

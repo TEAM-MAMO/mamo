@@ -9,7 +9,7 @@ const colorProperties = defineProperties({
       ...vars.color.text,
       ...pallette,
     },
-    borderColor: vars.color.divider,
+    borderColor: { ...vars.color.divider, ...pallette },
     background: {
       ...pallette,
       ...vars.color.background,
