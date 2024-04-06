@@ -1,4 +1,9 @@
 export { Button, type ButtonProps } from './Button/Button';
+export { ButtonIcon, type ButtonIconProps } from './ButtonIcon/ButtonIcon';
+export {
+  ButtonVariable,
+  type ButtonVariableProps,
+} from './ButtonVariable/ButtonVariable';
 export { ButtonReview, type ButtonReviewProps } from './ButtonReview/ButtonReview';
 export { ButtonSocial, type ButtonSocialProps } from './ButtonSocial/ButtonSocial';
 export { BottomSheet, type BottomSheetProps } from './BottomSheet/BottomSheet';

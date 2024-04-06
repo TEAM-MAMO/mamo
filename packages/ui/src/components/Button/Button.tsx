@@ -31,7 +31,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        type="button"
         className={clsx(
           buttonStyle({ size, block, primary, disabled, borderless }),
           className
