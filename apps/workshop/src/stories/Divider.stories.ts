@@ -1,15 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { DividerStory } from './Divider';
+import { Divider } from '@repo/ui';
 
 const meta = {
   title: 'Example/Divider',
-  component: DividerStory,
+  component: Divider,
   parameters: {
     layout: 'padded',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof DividerStory>;
+} satisfies Meta<typeof Divider>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,6 +1,6 @@
+import { Typography } from '@repo/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TypographyStory as Typography } from './Typography';
 const { Heading, Text, Caption, Foot } = Typography;
 
 const meta = {

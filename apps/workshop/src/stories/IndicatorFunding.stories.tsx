@@ -1,6 +1,5 @@
+import { IndicatorFunding } from '@repo/ui';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { IndicatorFundingStory as IndicatorFunding } from './IndicatorFunding';
 
 const meta = {
   title: 'Example/IndicatorFunding',
