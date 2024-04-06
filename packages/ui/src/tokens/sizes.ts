@@ -3,6 +3,7 @@ export const sizes = {
   '24px': '24px',
   '30px': '30px',
   '44px': '44px',
+  '48px': '48px',
   '50px': '50px',
   '56px': '56px',
   '60px': '60px',

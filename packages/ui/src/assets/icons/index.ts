@@ -11,3 +11,4 @@ export { ReactComponent as SocialKakao } from './ic-social-kakao.svg';
 export { ReactComponent as SocialNaver } from './ic-social-naver.svg';
 export { ReactComponent as SocialGoogle } from './ic-social-google.svg';
 export { ReactComponent as SocialApple } from './ic-social-apple.svg';
+export { ReactComponent as DeleteSolid } from './ic-delete-solid.svg';

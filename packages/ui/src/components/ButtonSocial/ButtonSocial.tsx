@@ -17,8 +17,7 @@ const socialIcon = {
 };
 
 export const ButtonSocial = React.forwardRef<HTMLButtonElement, ButtonSocialProps>(
-  ({ social, className, ...props }: ButtonSocialProps) => {
-    const ref = useRef(null);
+  ({ social, className, ...props }: ButtonSocialProps, ref) => {
     return (
       <button
         ref={ref}
