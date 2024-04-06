@@ -49,7 +49,7 @@ export const countStyle = style([
   },
 ]);
 
-export const heplerStyle = recipe({
+export const helperStyle = recipe({
   base: sprinkles({
     paddingTop: '5x',
   }),

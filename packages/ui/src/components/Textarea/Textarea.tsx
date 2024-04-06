@@ -5,7 +5,7 @@ import {
   textBoxStyle,
   textareaStyle,
   countStyle,
-  heplerStyle,
+  helperStyle,
 } from './textarea.css';
 
 const { Caption } = Typography;
@@ -62,7 +62,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           </div>
         </div>
         {helperText && (
-          <Caption className={heplerStyle({ state })} level={3}>
+          <Caption className={helperStyle({ state })} level={3}>
             {helperText}
           </Caption>
         )}

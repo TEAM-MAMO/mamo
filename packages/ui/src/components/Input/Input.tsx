@@ -7,7 +7,7 @@ import {
   toolsStyle,
   clearStyle,
   countStyle,
-  heplerStyle,
+  helperStyle,
   labelStyle,
 } from './input.css';
 import { Typography } from '../Typography/Typography';
@@ -15,7 +15,7 @@ import { DeleteSolid } from '../../assets/icons';
 
 const { Caption } = Typography;
 
-type InputStateType = 'valid' | 'error';
+export type InputStateType = 'valid' | 'error';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -52,7 +52,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         setInputValue(ev.target.value);
         onChange?.(ev);
       }
-      onChange?.(ev);
     };
 
     const onClear = () => setInputValue('');
@@ -84,7 +83,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {helperText && (
-          <Caption className={heplerStyle({ state })} level={3}>
+          <Caption className={helperStyle({ state })} level={3}>
             {helperText}
           </Caption>
         )}
