@@ -61,7 +61,6 @@ export const TextStyles = recipe({
   base: style([
     sprinkles({
       fontSize: '16px',
-      lineHeight: '26px',
       letterSpacing: '-1%',
     }),
   ]),
@@ -69,8 +68,10 @@ export const TextStyles = recipe({
     level: {
       1: sprinkles({
         fontWeight: '600',
+        lineHeight: '26px',
       }),
       2: sprinkles({
+        lineHeight: '26px',
         fontWeight: '500',
       }),
       3: sprinkles({

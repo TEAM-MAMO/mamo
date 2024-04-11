@@ -45,6 +45,7 @@ export {
   MyFundingCardJoined,
   type MyFundingCardJoinedProps,
 } from './MyFundingCard/MyFundingCardJoined';
+export { LetterCard, type LetterCardProps } from './LetterCard/LetterCard';
 
 /* styles */
 export * as globalCSS from '../styles/global.css';
