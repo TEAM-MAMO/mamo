@@ -37,6 +37,14 @@ export {
   FundingCardVertical,
   type FundingCardVerticalProps,
 } from './FundingCard/FundingCardVertical';
+export {
+  MyFundingCardOpened,
+  type MyFundingCardOpenedProps,
+} from './MyFundingCard/MyFundingCardOpened';
+export {
+  MyFundingCardJoined,
+  type MyFundingCardJoinedProps,
+} from './MyFundingCard/MyFundingCardJoined';
 
 /* styles */
 export * as globalCSS from '../styles/global.css';

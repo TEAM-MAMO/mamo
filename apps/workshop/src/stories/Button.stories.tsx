@@ -1,10 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@repo/ui';
 
-import {
-  HeartSolidPrimary,
-  PlusOutlined,
-} from '../../../../packages/ui/src/assets/icons';
+import { HeartSolid, PlusOutlined } from '../../../../packages/ui/src/assets/icons';
 
 const meta = {
   title: 'Example/Button',
@@ -77,6 +74,6 @@ export const SuffixIcon: Story = {
     size: 'default',
     primary: false,
     disabled: false,
-    suffixIcon: <HeartSolidPrimary />,
+    suffixIcon: <HeartSolid />,
   },
 };

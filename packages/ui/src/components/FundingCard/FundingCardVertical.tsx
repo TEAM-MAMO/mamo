@@ -3,11 +3,10 @@ import React from 'react';
 import clsx from 'clsx';
 import * as s from './fundingCardVertical.css';
 import { Typography } from '../Typography/Typography';
+import { FundingProgressType } from '../ProgressChip/ProgressChip';
 import FundingRate from '../FundingRate/FundingRate';
 
 const { Caption, Foot } = Typography;
-
-export type FundingProgressType = 'pause' | 'end' | 'doing';
 
 export interface FundingCardVerticalProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -37,7 +36,7 @@ export const FundingCardVertical = React.forwardRef<
     },
     ref
   ) => {
-    const progressBadge = () => {
+    const progressText = () => {
       if (progress === 'doing') return `${deadline}일 남음`;
       if (progress === 'end') return '마감';
       return '중단';
@@ -48,7 +47,7 @@ export const FundingCardVertical = React.forwardRef<
           <img className={s.productImgStyle} src={productImg} alt={title} />
           <div className={s.overlayStyle({ progress })}>
             <div className={s.progressStyle({ progress })}>
-              <Foot>{progressBadge()}</Foot>
+              <Foot>{progressText()}</Foot>
             </div>
           </div>
         </div>

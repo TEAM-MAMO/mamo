@@ -6,8 +6,6 @@ import { Typography } from '../Typography/Typography';
 
 const { Text, Foot } = Typography;
 
-export type FundingProgressType = 'pause' | 'end' | 'doing';
-
 export interface FundingCardHorizontalProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   nickname: string;
@@ -32,7 +30,7 @@ export const FundingCardHorizontal = React.forwardRef<
             {profileImg && <img src={profileImg} alt={nickname} />}
           </div>
 
-          <Foot level={2}>{`to.${nickname}`}</Foot>
+          <Foot level={2}>{`to. ${nickname}`}</Foot>
         </div>
       </div>
       <div className={s.arrowStyle}>

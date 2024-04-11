@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import * as s from './fundingRate.css';
-import { HeartSolidPrimary } from '../../assets/icons';
+import { HeartSolid } from '../../assets/icons';
 import { Typography } from '../Typography/Typography';
 
 const { Caption } = Typography;
@@ -18,7 +18,7 @@ const FundingRate = React.forwardRef<HTMLDivElement, FundingRateProps>(
         className={clsx(s.fundingRateStyle({ disabled: rate === 0 }), className)}
         {...props}
       >
-        <HeartSolidPrimary className={s.statsIconStyle} />
+        <HeartSolid className={s.statsIconStyle} />
         <Caption className={s.rateTextStyle}>{`${rate}% 달성`}</Caption>
         <div />
       </div>
