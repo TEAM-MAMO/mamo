@@ -29,6 +29,14 @@ export {
   IndicatorProgress,
   type IndicatorProgressProps,
 } from './IndicatorProgress/IndicatorProgress';
+export {
+  FundingCardHorizontal,
+  type FundingCardHorizontalProps,
+} from './FundingCard/FundingCardHorizontal';
+export {
+  FundingCardVertical,
+  type FundingCardVerticalProps,
+} from './FundingCard/FundingCardVertical';
 
 /* styles */
 export * as globalCSS from '../styles/global.css';

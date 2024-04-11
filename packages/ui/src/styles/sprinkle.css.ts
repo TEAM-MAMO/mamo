@@ -14,6 +14,10 @@ const colorProperties = defineProperties({
       ...pallette,
       ...vars.color.background,
     },
+    backgroundColor: {
+      ...pallette,
+      ...vars.color.background,
+    },
   },
 });
 

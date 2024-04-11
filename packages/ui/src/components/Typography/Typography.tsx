@@ -97,7 +97,7 @@ const Caption = ({
  * - level `3`: Foot 3
  */
 const Foot = ({ className, level = 1, children }: React.PropsWithChildren<FootProps>) => {
-  return <p className={(FootStyles({ level }), className)}>{children}</p>;
+  return <p className={clsx(FootStyles({ level }), className)}>{children}</p>;
 };
 
 Typography.Heading = Heading;
