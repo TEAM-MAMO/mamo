@@ -1,4 +1,10 @@
-import React, { PropsWithChildren, useContext, useMemo, useState } from 'react';
+import React, {
+  PropsWithChildren,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 import clsx from 'clsx';
 import * as s from './bottomSheet.css';
 import { Button } from '../Button/Button';
@@ -14,6 +20,7 @@ export interface BottomSheetProps {}
  */
 const BottomSheetContext = React.createContext<{
   open: boolean;
+  isTransition: boolean;
   toggle: () => void;
 } | null>(null);
 
@@ -27,9 +34,24 @@ export const useBottomSheetContext = () => {
 
 export const BottomSheet = ({ children }: React.PropsWithChildren<BottomSheetProps>) => {
   const [open, setOpen] = useState<boolean>(false);
-  const toggle = () => setOpen((state) => !state);
+  const [isTransition, setIsTransition] = useState<boolean>(false);
 
-  const value = useMemo(() => ({ open, toggle }), [open]);
+  const toggle = useCallback(() => {
+    if (open) {
+      setIsTransition(true);
+      setTimeout(() => {
+        setIsTransition(false);
+        setOpen(false);
+      }, 500);
+    } else {
+      setOpen(true);
+    }
+  }, [open]);
+
+  const value = useMemo(
+    () => ({ open, toggle, isTransition }),
+    [isTransition, open, toggle]
+  );
 
   return (
     <BottomSheetContext.Provider value={value}>{children}</BottomSheetContext.Provider>
@@ -40,7 +62,7 @@ export const BottomSheet = ({ children }: React.PropsWithChildren<BottomSheetPro
  * Trigger
  */
 export const Trigger = () => {
-  const { open, toggle } = useBottomSheetContext();
+  const { toggle } = useBottomSheetContext();
 
   return <Button onClick={toggle} label="Open" />;
 };
@@ -49,12 +71,16 @@ export const Trigger = () => {
  * Content
  */
 export const Content = ({ children }: PropsWithChildren) => {
-  const { open, toggle } = useBottomSheetContext();
+  const { open, isTransition, toggle } = useBottomSheetContext();
   return (
     open && (
       <div className={s.contentStyle}>
-        <div className={s.overlayStyle} onClick={toggle} aria-hidden="true" />
-        <div className={s.sheetStyle}>{children}</div>
+        <div
+          className={s.overlayStyle({ open, close: isTransition })}
+          onClick={toggle}
+          aria-hidden="true"
+        />
+        <div className={s.sheetStyle({ open, close: isTransition })}>{children}</div>
       </div>
     )
   );

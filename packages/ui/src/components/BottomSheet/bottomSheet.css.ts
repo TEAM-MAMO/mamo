@@ -1,6 +1,26 @@
-import { style } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import { sprinkles } from '../../styles';
+
+const fadeIn = keyframes({
+  '0%': { opacity: 0 },
+  '100%': { opacity: 0.6 },
+});
+
+const fadeOut = keyframes({
+  '0%': { opacity: 0.6 },
+  '100%': { opacity: 0 },
+});
+
+const slideIn = keyframes({
+  '0%': { transform: 'translateY(100%)' },
+  '100%': { transform: 'translateY(0)' },
+});
+
+const slideOut = keyframes({
+  '0%': { transform: 'translateY(0)' },
+  '100%': { transform: 'translateY(100%)' },
+});
 
 /**
  * BottomSheet Content
@@ -16,34 +36,79 @@ export const contentStyle = style([
   {},
 ]);
 
-export const overlayStyle = style([
-  sprinkles({
-    width: 'full',
-    height: 'full',
-    background: 'black',
-  }),
-  {
-    opacity: 0.6,
+export const overlayStyle = recipe({
+  base: [
+    sprinkles({
+      width: 'full',
+      height: 'full',
+      background: 'black',
+    }),
+  ],
+  variants: {
+    open: {
+      true: {
+        opacity: 0,
+        animationName: fadeIn,
+        animationDelay: '100ms',
+        animationDuration: '200ms',
+        animationTimingFunction: 'cubic-bezier(0.37, 0, 0.63, 1)',
+        animationFillMode: 'forwards',
+      },
+    },
+    close: {
+      true: {
+        opacity: 0.6,
+        animationName: fadeOut,
+        animationDelay: '100ms',
+        animationDuration: '200ms',
+        animationTimingFunction: 'cubic-bezier(0.37, 0, 0.63, 1)',
+        animationFillMode: 'forwards',
+      },
+    },
   },
-]);
+});
 
-export const sheetStyle = style([
-  sprinkles({
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'white',
-    borderRadius: 'large',
-    overflow: 'hidden',
-  }),
-  {
-    maxHeight: 650,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-    paddingBottom: '34px',
+export const sheetStyle = recipe({
+  base: [
+    sprinkles({
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'white',
+      borderRadius: 'large',
+      overflow: 'hidden',
+    }),
+    {
+      maxHeight: 650,
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
+      paddingBottom: '34px',
+    },
+  ],
+  variants: {
+    open: {
+      true: {
+        transform: 'translateY(100%)',
+        animationName: slideIn,
+        animationDelay: '100ms',
+        animationDuration: '400ms',
+        animationTimingFunction: 'cubic-bezier(0.24, 0.9, 0.5, 1)',
+        animationFillMode: 'forwards',
+      },
+    },
+    close: {
+      true: {
+        transform: 'translateY(0%)',
+        animationName: slideOut,
+        animationDelay: '100ms',
+        animationDuration: '400ms',
+        animationTimingFunction: 'cubic-bezier(0.24, 0.9, 0.5, 1)',
+        animationFillMode: 'forwards',
+      },
+    },
   },
-]);
+});
 
 /**
  * BottomSheet Confirm
@@ -65,7 +130,7 @@ export const confirmStyle = style([
 export const descriptionStyle = style([
   sprinkles({
     display: 'block',
-    marginTop: '3x',
+    marginTop: '7x',
     color: 'gray600',
   }),
 ]);
