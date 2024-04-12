@@ -9,7 +9,6 @@ export const headingStyles = recipe({
   base: [
     sprinkles({
       letterSpacing: '-2%',
-      color: 'default',
     }),
   ],
   variants: {
