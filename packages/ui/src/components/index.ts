@@ -50,6 +50,7 @@ export {
   MainVisualCard,
   type MainVisualCardProps,
 } from './MainVisualCard/MainVisualCard';
+export { DatePicker, type DatePickerProps } from './DatePicker/DatePicker';
 
 /* styles */
 export * as globalCSS from '../styles/global.css';

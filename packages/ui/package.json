@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "react-calendar": "^4.8.0",
     "swiper": "6.8.4"
   }
 }
