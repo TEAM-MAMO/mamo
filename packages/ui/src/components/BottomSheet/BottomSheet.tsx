@@ -32,6 +32,9 @@ export const useBottomSheetContext = () => {
   return context;
 };
 
+/**
+ * BottomSheet
+ */
 export const BottomSheet = ({ children }: React.PropsWithChildren<BottomSheetProps>) => {
   const [open, setOpen] = useState<boolean>(false);
   const [isTransition, setIsTransition] = useState<boolean>(false);
@@ -61,105 +64,151 @@ export const BottomSheet = ({ children }: React.PropsWithChildren<BottomSheetPro
 /**
  * Trigger
  */
-export const Trigger = () => {
-  const { toggle } = useBottomSheetContext();
+export interface TriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  label?: string;
+}
+export const Trigger = React.forwardRef<HTMLButtonElement, TriggerProps>(
+  ({ label = 'Open', className }, ref) => {
+    const { toggle } = useBottomSheetContext();
 
-  return <Button onClick={toggle} label="Open" />;
-};
+    return <Button ref={ref} className={className} onClick={toggle} label={label} />;
+  }
+);
 
 /**
  * Content
  */
-export const Content = ({ children }: PropsWithChildren) => {
-  const { open, isTransition, toggle } = useBottomSheetContext();
-  return (
-    open && (
-      <div className={s.contentStyle}>
-        <div
-          className={s.overlayStyle({ open, close: isTransition })}
-          onClick={toggle}
-          aria-hidden="true"
-        />
-        <div className={s.sheetStyle({ open, close: isTransition })}>{children}</div>
-      </div>
-    )
-  );
-};
+interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+export const Content = React.forwardRef<HTMLDivElement, PropsWithChildren<ContentProps>>(
+  ({ className, children, ...props }, ref) => {
+    const { open, isTransition, toggle } = useBottomSheetContext();
+    return (
+      open && (
+        <div ref={ref} className={clsx(s.contentStyle, className)} {...props}>
+          <div
+            className={s.overlayStyle({ open, close: isTransition })}
+            onClick={toggle}
+            aria-hidden="true"
+          />
+          <div className={s.sheetStyle({ open, close: isTransition })}>{children}</div>
+        </div>
+      )
+    );
+  }
+);
 
 /**
  * Confirm
  */
-interface ConfirmProps {
+interface ConfirmProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description?: string;
 }
-const Confirm = ({ title, description }: React.PropsWithChildren<ConfirmProps>) => {
-  return (
-    <div className={s.confirmStyle}>
-      <Heading level={3} strong>
-        {title}
-      </Heading>
-      {description && (
-        <Caption level={2} className={s.descriptionStyle}>
-          {description}
-        </Caption>
-      )}
-    </div>
-  );
-};
+const Confirm = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ConfirmProps>>(
+  ({ title, description, className, ...props }, ref) => {
+    return (
+      <div ref={ref} className={clsx(s.confirmStyle, className)} {...props}>
+        <Heading level={3} strong>
+          {title}
+        </Heading>
+        {description && (
+          <Caption level={2} className={s.descriptionStyle}>
+            {description}
+          </Caption>
+        )}
+      </div>
+    );
+  }
+);
 
 /**
  * Header
  */
-interface HeaderProps {
+interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
 }
-const Header = ({ title }: React.PropsWithChildren<HeaderProps>) => {
-  const { toggle } = useBottomSheetContext();
+const Header = React.forwardRef<HTMLDivElement, React.PropsWithChildren<HeaderProps>>(
+  ({ title, className, ...props }, ref) => {
+    const { toggle } = useBottomSheetContext();
 
-  return (
-    <div className={s.headerStyle({ thin: !!title })}>
-      <Heading level={3}>{title}</Heading>
-      <button className={s.closeStyle} type="button" aria-label="close" onClick={toggle}>
-        <CloseOutlined />
-      </button>
-    </div>
-  );
-};
+    return (
+      <div
+        ref={ref}
+        className={clsx(s.headerStyle({ thin: !!title }), className)}
+        {...props}
+      >
+        <Heading level={3}>{title}</Heading>
+        <button
+          className={s.closeStyle}
+          type="button"
+          aria-label="close"
+          onClick={toggle}
+        >
+          <CloseOutlined />
+        </button>
+      </div>
+    );
+  }
+);
 
 /**
  * Body
  */
-const Body = ({ children }: React.PropsWithChildren) => {
-  return <div className={s.bodyStyle}>{children}</div>;
-};
+interface BodyProps extends React.HTMLAttributes<HTMLDivElement> {}
+const Body = React.forwardRef<HTMLDivElement, React.PropsWithChildren<BodyProps>>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div ref={ref} className={s.bodyStyle} {...props}>
+        {children}
+      </div>
+    );
+  }
+);
 
 /**
  * Footer
  */
-const Footer = ({ children }: React.PropsWithChildren) => {
-  return <div className={s.footerStyle}>{children}</div>;
-};
+interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
+const Footer = React.forwardRef<HTMLDivElement, React.PropsWithChildren<FooterProps>>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div ref={ref} className={clsx(s.footerStyle, className)} {...props}>
+        {children}
+      </div>
+    );
+  }
+);
 
 /**
  * Menu
  */
-const Menu = ({ children }: React.PropsWithChildren) => {
-  return <ul className={s.menuStyle}>{children}</ul>;
-};
+
+interface MenuProps extends React.HTMLAttributes<HTMLUListElement> {}
+const Menu = React.forwardRef<HTMLUListElement, React.PropsWithChildren<MenuProps>>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <ul ref={ref} className={clsx(s.menuStyle, className)} {...props}>
+        {children}
+      </ul>
+    );
+  }
+);
 
 /**
  * Menu Item
  */
-const Item = ({ children }: React.PropsWithChildren) => {
-  return (
-    <li>
-      <button className={s.itemStyle}>
-        <Text>{children}</Text>
-      </button>
-    </li>
-  );
-};
+interface ItemProps extends React.LiHTMLAttributes<HTMLLIElement> {}
+const Item = React.forwardRef<HTMLLIElement, React.PropsWithChildren<ItemProps>>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <li ref={ref} className={className} {...props}>
+        <button className={s.itemStyle}>
+          <Text>{children}</Text>
+        </button>
+      </li>
+    );
+  }
+);
 
 BottomSheet.Trigger = Trigger;
 BottomSheet.Content = Content;
