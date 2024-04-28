@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  transpilePackages: ["@repo/ui"],
-};
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+
+module.exports = createVanillaExtractPlugin({
+  transpilePackages: ['@repo/ui'],
+});
