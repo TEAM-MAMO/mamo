@@ -1,6 +1,6 @@
+export { NavigationBar } from "./NavigationBar/NavigationBar";
 export { List } from "./List/List";
 export { ListItem } from "./List/ListItem";
-
 export { Button, type ButtonProps } from "./Button/Button";
 export { ButtonIcon, type ButtonIconProps } from "./ButtonIcon/ButtonIcon";
 export {

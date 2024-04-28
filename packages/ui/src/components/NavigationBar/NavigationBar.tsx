@@ -1,21 +1,23 @@
 import { HTMLAttributes, PropsWithChildren, ReactNode } from "react";
 
+import clsx from "clsx";
 import { navbarStyle } from "./NavigationBar.css";
 
 interface Props extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
   left?: ReactNode;
   right?: ReactNode;
-  variant?: "main" | "white";
+  variant?: "primary" | "secondary";
 }
 
 export const NavigationBar = ({
+  className,
   left,
   right,
-  variant = "white",
+  variant = "primary",
   children,
 }: Props) => {
   return (
-    <nav className={navbarStyle({ variant })}>
+    <nav className={clsx(navbarStyle({ variant }), className)}>
       {left && left}
       {children}
       {right && right}

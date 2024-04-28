@@ -11,16 +11,21 @@ export const navbarStyle = recipe({
       paddingX: "4x",
       paddingY: "2x",
     }),
+    {
+      minWidth: "375px",
+    },
   ],
   variants: {
     variant: {
-      main: sprinkles({
+      primary: sprinkles({
         background: "black",
         color: "white",
       }),
-      white: sprinkles({
+      secondary: sprinkles({
         background: "white",
       }),
     },
   },
 });
+
+// TODO: scrolled 추가
