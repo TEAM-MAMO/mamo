@@ -45,6 +45,8 @@ const responsiveProperties = defineProperties({
     marginBottom: vars.space,
     marginLeft: { ...vars.space, auto: "auto" },
     marginRight: { ...vars.space, auto: "auto" },
+    columnGap: { ...vars.space, none: "none" },
+    rowGap: { ...vars.space, none: "none" },
     gap: { ...vars.space, none: "none" },
     opacity: [0, 1],
     pointerEvents: ["none", "auto"],
@@ -58,6 +60,8 @@ const responsiveProperties = defineProperties({
     },
   },
   shorthands: {
+    gapX: ["columnGap"],
+    gapY: ["rowGap"],
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
     paddingX: ["paddingLeft", "paddingRight"],
     paddingY: ["paddingTop", "paddingBottom"],
