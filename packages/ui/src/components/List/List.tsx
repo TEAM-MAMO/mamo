@@ -1,4 +1,4 @@
-import { ForwardedRef, HTMLAttributes, ReactNode, forwardRef } from "react";
+import { HTMLAttributes, ReactNode, forwardRef } from "react";
 
 interface ListProps<T> extends HTMLAttributes<HTMLUListElement> {
   items: T[];
