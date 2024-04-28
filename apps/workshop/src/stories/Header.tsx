@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ButtonStory } from "./Button";
 import "./header.css";
+import { Button } from "@repo/ui";
 
 type User = {
   name: string;
@@ -52,12 +52,12 @@ export const Header = ({
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <ButtonStory size="small" onClick={onLogout} label="Log out" />
+            <Button size="small" onClick={onLogout} label="Log out" />
           </>
         ) : (
           <>
-            <ButtonStory size="small" onClick={onLogin} label="Log in" />
-            <ButtonStory
+            <Button size="small" onClick={onLogin} label="Log in" />
+            <Button
               primary
               size="small"
               onClick={onCreateAccount}

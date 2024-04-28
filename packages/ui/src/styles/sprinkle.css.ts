@@ -9,8 +9,15 @@ const colorProperties = defineProperties({
       ...vars.color.text,
       ...pallette,
     },
-    borderColor: vars.color.divider,
-    background: vars.color.background,
+    borderColor: { ...vars.color.divider, ...pallette },
+    background: {
+      ...pallette,
+      ...vars.color.background,
+    },
+    backgroundColor: {
+      ...pallette,
+      ...vars.color.background,
+    },
   },
 });
 
@@ -18,6 +25,8 @@ const fontProperties = defineProperties({
   properties: {
     fontSize: vars.fontSize,
     fontWeight: vars.fontWeight,
+    lineHeight: vars.lineHeight,
+    letterSpacing: vars.letterSpacing,
   },
 });
 
@@ -71,6 +80,7 @@ const unconditionalProperties = defineProperties({
     width: vars.sizes,
     height: vars.sizes,
     borderRadius: vars.radius,
+    boxShadow: vars.shadow,
     cursor: ["pointer"],
     pointerEvents: ["auto", "none", "visible"],
     textDecoration: ["none", "underline", "line-through"],

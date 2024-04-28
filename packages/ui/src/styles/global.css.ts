@@ -6,7 +6,7 @@ const pretendard = "Pretendard";
 
 /* Pretendard variables */
 globalFontFace(pretendard, {
-  src: 'local("./fonts/Pretendard.ttf")',
+  src: 'local("../assets/fonts/Pretendard.woff2")',
 });
 
 globalStyle("body", {
@@ -29,6 +29,7 @@ globalStyle("html", {
 });
 
 globalStyle("body, h1, h2, h3, h4, p, figure, blockquote, dl, dd", {
+  margin: 0,
   marginBlockEnd: 0,
 });
 
@@ -66,4 +67,9 @@ globalStyle("a", {
 globalStyle("table", {
   borderCollapse: "collapse",
   borderSpacing: 0,
+});
+
+globalStyle("svg", {
+  width: "1em",
+  height: "1em",
 });

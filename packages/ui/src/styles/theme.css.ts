@@ -4,8 +4,11 @@ import {
   divider,
   fontSize,
   fontWeight,
+  letterSpacing,
+  lineHeight,
   pallette,
   radius,
+  shadow,
   sizes,
   space,
   text,
@@ -26,8 +29,11 @@ const tokens = {
   sizes,
   fontSize,
   fontWeight,
+  lineHeight,
+  letterSpacing,
   radius,
   breakPoints,
+  shadow,
 };
 
 export const vars = createGlobalTheme(":root", tokens);
