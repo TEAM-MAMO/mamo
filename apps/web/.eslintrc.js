@@ -1,8 +1,10 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   root: true,
-  plugins: [, '@tanstack/query'],
-
+  plugins: ['@stylexjs', '@tanstack/query'],
+  rules: {
+    '@stylexjs/valid-styles': 'error',
+  },
   extends: [
     '@repo/eslint-config/eslint-next',
     'plugin:@tanstack/eslint-plugin-query/recommended',

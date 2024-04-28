@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const path = require('path');
-const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+const stylexPlugin = require('@stylexjs/nextjs-plugin');
 
-module.exports = createVanillaExtractPlugin({
+module.exports = stylexPlugin({
   aliases: {
     '@/*': [path.join(__dirname, '*')],
   },
