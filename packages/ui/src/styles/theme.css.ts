@@ -22,7 +22,13 @@ export const color = {
   divider,
 };
 
+export const contentWidth = {
+  ...sizes,
+  ...breakPoints,
+};
+
 const tokens = {
+  contentWidth,
   pallette,
   space,
   color,
