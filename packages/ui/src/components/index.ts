@@ -1,4 +1,5 @@
 export { Button, type ButtonProps } from './Button/Button';
+export { ButtonGroup, type ButtonGroupProps } from './ButtonGroup/ButtonGroup';
 export { BottomSheet, type BottomSheetProps } from './BottomSheet/BottomSheet';
 export { Fab, type FabProps } from './Fab/Fab';
 export { Divider, type DividerProps } from './Divider/Divider';
