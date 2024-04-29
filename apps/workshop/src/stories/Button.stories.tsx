@@ -1,82 +1,59 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@repo/ui";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@repo/ui';
 
-import {
-  HeartSolid,
-  PlusOutlined,
-} from "../../../../packages/ui/src/assets/icons";
+import { HeartSolid, PlusOutlined } from '../../../../packages/ui/src/assets/icons';
 
 const meta = {
-  title: "Example/Button",
+  title: 'Example/Button',
   component: Button,
   parameters: {
-    layout: "padded",
+    layout: 'center',
   },
-  tags: ["autodocs"],
-  args: {},
-  argTypes: {},
-} satisfies Meta<typeof Button>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Basic: Story = {
+  tags: ['autodocs'],
   args: {
-    label: "Button",
-    size: "default",
+    size: 'default',
     block: false,
     primary: false,
     disabled: false,
     borderless: false,
+    children: 'Button',
   },
+  argTypes: {},
+} satisfies Meta<typeof Button>;
+
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+export const Basic: Story = {
+  args: {},
 };
 
-export const Normal: Story = {
+export const Primary: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    block: false,
     primary: true,
-    disabled: false,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    block: false,
-    primary: false,
     disabled: true,
   },
 };
 
 export const Block: Story = {
   args: {
-    label: "Button",
-    size: "default",
     block: true,
-    primary: false,
-    disabled: false,
   },
 };
 
-export const PrefixIcon: Story = {
+export const Prefix: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    primary: false,
-    disabled: false,
-    prefixIcon: <PlusOutlined />,
+    prefix: <PlusOutlined />,
   },
 };
 
-export const SuffixIcon: Story = {
+export const Suffix: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    primary: false,
-    disabled: false,
-    suffixIcon: <HeartSolid />,
+    suffix: <HeartSolid />,
   },
 };
