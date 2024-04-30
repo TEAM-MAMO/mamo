@@ -18,17 +18,27 @@ const meta = {
       </>
     ),
   },
-  argTypes: {},
+  argTypes: {
+    layout: {
+      control: 'select',
+      options: ['horizontal', 'vertical'],
+    },
+    gap: {
+      control: 'select',
+      options: ['xlarge', 'small', 'default', 'large'],
+      description: '간격의 사이즈를 설정합니다.',
+    },
+  },
 } satisfies Meta<typeof ButtonGroup>;
 
 export default meta;
 type Story = StoryObj<typeof ButtonGroup>;
 
-export const Basic: Story = {
+export const Horizontal: Story = {
   args: {},
 };
 
-export const Primary: Story = {
+export const Vertical: Story = {
   args: {
     layout: 'vertical',
   },

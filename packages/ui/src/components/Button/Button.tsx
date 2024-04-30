@@ -7,6 +7,7 @@ export interface ButtonProps
   size?: 'xsmall' | 'small' | 'default';
   block?: boolean;
   primary?: boolean;
+  disabled?: boolean;
   borderless?: boolean;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -31,6 +32,7 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Butt
     return (
       <button
         ref={ref}
+        disabled={disabled}
         className={clsx(
           S.button({ size, block, primary, disabled, borderless }),
           className

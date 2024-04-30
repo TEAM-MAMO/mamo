@@ -56,6 +56,7 @@ export const button = recipe({
         color: 'gray400',
         background: 'gray100',
         borderColor: 'gray100',
+        cursor: 'not-allowed',
       }),
     },
     borderless: {

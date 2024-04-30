@@ -7,7 +7,7 @@ const meta = {
   title: 'Example/Button',
   component: Button,
   parameters: {
-    layout: 'center',
+    layout: 'centered',
   },
   tags: ['autodocs'],
   args: {
@@ -18,7 +18,13 @@ const meta = {
     borderless: false,
     children: 'Button',
   },
-  argTypes: {},
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['xsmall', 'small', 'default'],
+      description: '버튼의 크기를 설정합니다.',
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
