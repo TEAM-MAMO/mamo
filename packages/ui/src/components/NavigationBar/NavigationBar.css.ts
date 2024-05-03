@@ -5,9 +5,9 @@ export const navbarStyle = sprinkles({
   alignItems: "center",
   justifyContent: "space-between",
   height: "60px",
-  paddingX: "4x",
+  paddingX: "6x",
   paddingY: "2x",
   background: "white",
   color: "black",
-  minWidth: "sm", // mobile
+  width: "full",
 });

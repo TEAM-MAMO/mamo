@@ -19,10 +19,14 @@ const meta: Meta<typeof NavigationBar> = {
 export default meta;
 type Story = StoryObj<typeof NavigationBar>;
 
-export const Primary: Story = {
+export const Basic: Story = {
   render: () => (
-    <NavigationBar left={<ArrowLeftOutlined />} right={<ArrowRightOutlined />}>
-      <Typography.Heading>텍스트</Typography.Heading>
+    <NavigationBar
+      style={{ width: "375px" }}
+      left={<ArrowLeftOutlined />}
+      right={<ArrowRightOutlined />}
+    >
+      <Typography.Heading level={4}>텍스트</Typography.Heading>
     </NavigationBar>
   ),
 };
