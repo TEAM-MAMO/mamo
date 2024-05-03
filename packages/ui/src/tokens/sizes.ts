@@ -21,5 +21,13 @@ export const sizes = {
   "2/5": "40%",
   "3/5": "60%",
   "4/5": "80%",
+  auto: "auto",
   full: "100%",
+  fit: "fit-content",
+  max: "max-content",
+  min: "min-content",
+  screenDvh: "100dvh",
+  screenDvw: "100dvw",
+  screenVh: "100vh",
+  screenVw: "100vw",
 };

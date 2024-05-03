@@ -259,6 +259,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@vanilla-extract/dynamic':
+        specifier: ^2.1.0
+        version: 2.1.0
       clsx:
         specifier: ^2.1.0
         version: 2.1.1
@@ -5374,6 +5377,12 @@ packages:
       outdent: 0.8.0
     dev: true
 
+  /@vanilla-extract/dynamic@2.1.0:
+    resolution: {integrity: sha512-8zl0IgBYRtgD1h+56Zu13wHTiMTJSVEa4F7RWX9vTB/5Xe2KtjoiqApy/szHPVFA56c+ex6A4GpCQjT1bKXbYw==}
+    dependencies:
+      '@vanilla-extract/private': 1.0.4
+    dev: false
+
   /@vanilla-extract/integration@7.1.2(@types/node@20.10.6):
     resolution: {integrity: sha512-jpjw0L3P1E+U9L8OAFVMGpPFbNPD+/Vpfew7oOKBYipCrRZEqShu3WLXuUxjXz/mcIH7KCS5nasIdy2VclbEaQ==}
     dependencies:
@@ -5441,7 +5450,6 @@ packages:
 
   /@vanilla-extract/private@1.0.4:
     resolution: {integrity: sha512-8FGD6AejeC/nXcblgNCM5rnZb9KXa4WNkR03HCWtdJBpANjTgjHEglNLFnhuvdQ78tC6afaxBPI+g7F2NX3tgg==}
-    dev: true
 
   /@vanilla-extract/recipes@0.5.2(@vanilla-extract/css@1.14.2):
     resolution: {integrity: sha512-IcDw3tFOcSJ+DUxL8MIGbg03eyccYb6NBO/rcgp439PDuHxo5GIQefVeGc1L5mIr/lUVPwDc1N5OXTHiGpiz1A==}
