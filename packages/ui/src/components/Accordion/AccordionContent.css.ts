@@ -9,7 +9,7 @@ export const content = style([
     display: "flex",
     flexDirection: "column",
     gapY: "6x",
-
+    paddingTop: "7x",
     overflow: "hidden",
   }),
   {

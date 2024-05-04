@@ -1,7 +1,6 @@
 import {
   Children,
   Fragment,
-  HtmlHTMLAttributes,
   PropsWithChildren,
   forwardRef,
   useCallback,
@@ -66,7 +65,7 @@ export const AccordionContent = forwardRef<
     <div
       ref={contentRef || ref}
       style={assignInlineVars({
-        [S.contentHeightVar]: `${contentHeight}px`,
+        [S.contentHeightVar]: `${contentHeight + 24}px`,
       })}
       className={clsx(S.content, className)}
       // eslint-disable-next-line react/no-unknown-property

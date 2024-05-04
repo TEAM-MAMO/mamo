@@ -20,7 +20,7 @@ export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
     const value = useMemo(() => ({ open, setOpen }), [open]);
     return (
       <AccoridonContext.Provider value={value}>
-        <div ref={ref} className={S.item({ open })} {...props}>
+        <div ref={ref} className={S.item} {...props}>
           {children}
         </div>
         <Divider />
