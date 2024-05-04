@@ -13,6 +13,7 @@ const base = style([
 ]);
 
 export const dividerStyles = recipe({
+export const divider = recipe({
   base,
   variants: {
     bolder: {
