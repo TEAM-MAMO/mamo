@@ -4,7 +4,7 @@ import * as S from './button.css';
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
-  size?: 'xsmall' | 'small' | 'default';
+  size?: 'xxsmall' | 'xsmall' | 'small' | 'default';
   block?: boolean;
   primary?: boolean;
   disabled?: boolean;
@@ -40,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Butt
         {...props}
       >
         {prefix && <span>{prefix}</span>}
-        <div className={S.text({ size })}>{children}</div>
+        {children}
         {suffix && <span>{suffix}</span>}
       </button>
     );

@@ -1,28 +1,31 @@
-import clsx from "clsx";
-import React from "react";
-import { chipIconStyles, chipStyles } from "./chip.css";
-import { Typography } from "../Typography/Typography";
-import { PlusOutlined } from "../../assets/icons";
+import clsx from 'clsx';
+import React from 'react';
+import { chipIcon, chip } from './chip.css';
+import { Typography } from '../Typography/Typography';
+import { Button } from '../Button/Button';
 
 const { Caption } = Typography;
 
-export interface ChipProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ChipProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   primary?: boolean;
+  icon?: React.ReactNode;
 }
 
 export const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
-  ({ label, primary, className, ...props }: ChipProps, ref) => {
+  ({ label, primary, icon, className, ...props }: ChipProps, ref) => {
     return (
-      <button
+      <Button
         ref={ref}
-        className={clsx(chipStyles({ primary }), className)}
+        borderless
+        size="xxsmall"
+        primary={primary}
+        className={clsx(chip({ primary }), className)}
         {...props}
       >
-        <PlusOutlined className={chipIconStyles({ primary })} />
+        {icon && <span className={chipIcon({ primary })}>{icon}</span>}
         <Caption level={1}>{label}</Caption>
-      </button>
+      </Button>
     );
-  },
+  }
 );

@@ -1,6 +1,12 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { sprinkles } from '../../styles';
 
+const textSM = sprinkles({
+  fontSize: 'small',
+  fontWeight: '600',
+  lineHeight: '20px',
+});
+
 export const button = recipe({
   base: [
     sprinkles({
@@ -36,17 +42,35 @@ export const button = recipe({
         gap: '3x',
         height: '50px',
         paddingX: '7x',
+
+        fontSize: 'medium',
+        fontWeight: '700',
+        lineHeight: '24px',
       }),
-      small: sprinkles({
-        gap: '1x',
-        height: '44px',
-        paddingX: '5x',
-      }),
-      xsmall: sprinkles({
-        gap: '1x',
-        height: '32px',
-        paddingX: '5x',
-      }),
+      small: [
+        textSM,
+        sprinkles({
+          gap: '1x',
+          height: '44px',
+          paddingX: '5x',
+        }),
+      ],
+      xsmall: [
+        textSM,
+        sprinkles({
+          gap: '1x',
+          height: '32px',
+          paddingX: '5x',
+        }),
+      ],
+      xxsmall: [
+        textSM,
+        sprinkles({
+          gap: '1x',
+          height: '30px',
+          paddingX: '5x',
+        }),
+      ],
     },
     block: {
       true: sprinkles({ width: 'full' }),
@@ -63,28 +87,6 @@ export const button = recipe({
       true: {
         border: 'transparent',
       },
-    },
-  },
-});
-
-export const text = recipe({
-  variants: {
-    size: {
-      default: sprinkles({
-        fontSize: 'medium',
-        fontWeight: '700',
-        lineHeight: '24px',
-      }),
-      small: sprinkles({
-        fontSize: 'small',
-        fontWeight: '600',
-        lineHeight: '20px',
-      }),
-      xsmall: sprinkles({
-        fontSize: 'small',
-        fontWeight: '600',
-        lineHeight: '20px',
-      }),
     },
   },
 });
