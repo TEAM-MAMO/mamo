@@ -1,4 +1,5 @@
 export { Accordion } from "./Accordion";
+export { Tabs } from "./Tabs";
 export { NavigationBar } from "./NavigationBar/NavigationBar";
 export { List } from "./List/List";
 export { ListItem } from "./List/ListItem";
