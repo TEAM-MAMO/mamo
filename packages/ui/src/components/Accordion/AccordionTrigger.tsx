@@ -22,10 +22,7 @@ export const AccordionTrigger = forwardRef<
   HTMLDivElement,
   AccordionTriggerProps
 >(({ children, className, top, ...props }: AccordionTriggerProps, ref?) => {
-  const { open, setOpen } = useAccordionContext();
-  const handleToggle = () => {
-    setOpen((prev) => !prev);
-  };
+  const { toggle, handleToggle } = useAccordionContext();
 
   return (
     <div
@@ -46,7 +43,7 @@ export const AccordionTrigger = forwardRef<
         <Typography.Text level={2}>{children}</Typography.Text>
       </div>
       <div className={S.arrow}>
-        {open ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
+        {toggle ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
       </div>
     </div>
   );

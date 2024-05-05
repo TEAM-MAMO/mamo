@@ -1,12 +1,22 @@
 import { HtmlHTMLAttributes, PropsWithChildren, forwardRef } from "react";
 
+import clsx from "clsx";
+import { sprinkles } from "../../styles";
+
 export interface AccordionProps
   extends PropsWithChildren<HtmlHTMLAttributes<HTMLDivElement>> {}
 
 export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
-  ({ children, ...props }: AccordionProps, ref?) => {
+  ({ children, className, ...props }: AccordionProps, ref?) => {
     return (
-      <div ref={ref} {...props}>
+      <div
+        ref={ref}
+        {...props}
+        className={clsx(
+          sprinkles({ display: "flex", flexDirection: "column", gapY: "7x" }),
+          className,
+        )}
+      >
         {children}
       </div>
     );

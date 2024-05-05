@@ -3,15 +3,15 @@ import { Dispatch, SetStateAction, createContext, useContext } from "react";
 // TODO: 나중에 context 폴더로 옮기기
 
 type AccordionContextState = {
-  setOpen: Dispatch<SetStateAction<boolean>>;
-
-  open?: boolean;
+  setToggle: Dispatch<SetStateAction<boolean>>;
+  toggle: boolean;
+  handleToggle: () => void;
 };
 
 const initialState = {
-  open: false,
-  setOpen: () => {},
-  contentHeight: 0,
+  toggle: false,
+  setToggle: () => {},
+  handleToggle: () => {},
 };
 
 export const AccoridonContext =

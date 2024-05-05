@@ -1,4 +1,5 @@
 export const space = {
+  "0": "0px",
   "1x": "4px",
   "2x": "6px",
   "3x": "8px",
