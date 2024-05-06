@@ -14,9 +14,9 @@ export const fabButton = recipe({
       circle: [
         sprinkles({
           flexDirection: 'column',
+          fontSize: '24px',
           width: '64px',
           height: '64px',
-          fontSize: '10px',
           letterSpacing: '-2%',
         }),
         {
@@ -28,6 +28,7 @@ export const fabButton = recipe({
       ],
       capsule: [
         sprinkles({
+          fontSize: '18px',
           paddingX: '7x',
         }),
         {
@@ -40,7 +41,7 @@ export const fabButton = recipe({
   },
 });
 
-export const fabIcon = recipe({
+export const fabText = recipe({
   base: [
     sprinkles({
       display: 'inline-block',
@@ -50,31 +51,16 @@ export const fabIcon = recipe({
     shape: {
       circle: [
         sprinkles({
-          fontSize: '24px',
-        }),
-      ],
-      capsule: sprinkles({
-        fontSize: '18px',
-      }),
-    },
-  },
-});
-
-export const fabText = recipe({
-  base: [
-    sprinkles({
-      display: 'inline-block',
-    }),
-  ],
-  variants: {
-    circle: {
-      true: [
-        sprinkles({
           fontSize: '10px',
         }),
         {
           lineHeight: '15px',
         },
+      ],
+      capsule: [
+        sprinkles({
+          fontSize: '14px',
+        }),
       ],
     },
   },

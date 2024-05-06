@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Fab } from '@repo/ui';
+import { PlusOutlined } from '../../../../packages/ui/src/assets/icons';
 
 const meta = {
   title: 'Example/Fab',
@@ -11,6 +12,7 @@ const meta = {
   args: {
     shape: 'circle',
     label: '펀딩 개설',
+    icon: <PlusOutlined />,
   },
   argTypes: {
     shape: {

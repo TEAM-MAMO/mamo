@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import { chipIcon, chip } from './chip.css';
+import { chip } from './chip.css';
 import { Typography } from '../Typography/Typography';
 import { Button } from '../Button/Button';
 
@@ -18,12 +18,12 @@ export const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
       <Button
         ref={ref}
         borderless
-        size="xxsmall"
+        size="xsmall"
         primary={primary}
         className={clsx(chip({ primary }), className)}
+        prefix={icon}
         {...props}
       >
-        {icon && <span className={chipIcon({ primary })}>{icon}</span>}
         <Caption level={1}>{label}</Caption>
       </Button>
     );

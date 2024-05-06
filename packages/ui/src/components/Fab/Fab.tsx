@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import * as s from './fab.css';
-import { PlusOutlined } from '../../assets/icons';
 import { Button } from '../Button/Button';
 
 export type FabType = 'circle' | 'capsule';
@@ -17,13 +16,14 @@ export const Fab = React.forwardRef<HTMLButtonElement, FabProps>(
     return (
       <Button
         primary
-        size="small"
+        size="default"
         ref={ref}
+        align={shape === 'circle' ? 'vertical' : 'horizontal'}
         className={clsx(s.fabButton({ shape }), className)}
+        prefix={icon}
         {...props}
       >
-        <span className={s.fabIcon({ shape })}>{icon || <PlusOutlined />}</span>
-        <span className={s.fabText({ circle: shape === 'circle' })}>{label}</span>
+        <span className={s.fabText({ shape })}>{label}</span>
       </Button>
     );
   }

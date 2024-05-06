@@ -38,7 +38,7 @@ export const button = recipe({
       ],
     },
     size: {
-      default: sprinkles({
+      large: sprinkles({
         gap: '3x',
         height: '50px',
         paddingX: '7x',
@@ -47,7 +47,7 @@ export const button = recipe({
         fontWeight: '700',
         lineHeight: '24px',
       }),
-      small: [
+      default: [
         textSM,
         sprinkles({
           gap: '1x',
@@ -55,7 +55,7 @@ export const button = recipe({
           paddingX: '5x',
         }),
       ],
-      xsmall: [
+      small: [
         textSM,
         sprinkles({
           gap: '1x',
@@ -63,7 +63,7 @@ export const button = recipe({
           paddingX: '5x',
         }),
       ],
-      xxsmall: [
+      xsmall: [
         textSM,
         sprinkles({
           gap: '1x',
@@ -71,6 +71,14 @@ export const button = recipe({
           paddingX: '5x',
         }),
       ],
+    },
+    align: {
+      horizontal: sprinkles({
+        flexDirection: 'row',
+      }),
+      vertical: sprinkles({
+        flexDirection: 'column',
+      }),
     },
     block: {
       true: sprinkles({ width: 'full' }),

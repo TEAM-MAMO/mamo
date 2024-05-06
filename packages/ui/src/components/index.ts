@@ -36,7 +36,6 @@ export {
   MainVisualCard,
   type MainVisualCardProps,
 } from './MainVisualCard/MainVisualCard';
-export { DatePicker, type DatePickerProps } from './DatePicker/DatePicker';
 export { Typography } from './Typography/Typography';
 export { Chip } from './Chip/Chip';
 export { DatePicker } from './DatePicker/DatePicker';
