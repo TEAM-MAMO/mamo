@@ -14,9 +14,9 @@ import * as S from './typography.css';
 export type TypographyProps = PropsWithChildren<HTMLAttributes<HTMLElement>>;
 
 export const TypographyRoot = forwardRef<HTMLElement, TypographyProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ children, ...props }, ref) => {
     return (
-      <article ref={ref} className={className} {...props}>
+      <article ref={ref} {...props}>
         {children}
       </article>
     );
