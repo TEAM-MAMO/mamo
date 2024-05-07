@@ -8,16 +8,9 @@ export { Fab } from './Fab/Fab';
 export { Card } from './Card/Card';
 export { Divider } from './Divider/Divider';
 export { Textarea, type TextareaProps } from './Textarea/Textarea';
-export {
-  IndicatorFunding,
-  type IndicatorFundingProps,
-} from './IndicatorFunding/IndicatorFunding';
-export {
-  IndicatorProgress,
-  type IndicatorProgressProps,
-} from './IndicatorProgress/IndicatorProgress';
 export { Typography } from './Typography/Typography';
 export { Chip } from './Chip/Chip';
+export { Progress } from './Progress/Progress';
 export { DatePicker } from './DatePicker/DatePicker';
 
 /* styles */
