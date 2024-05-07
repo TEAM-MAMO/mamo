@@ -4,7 +4,8 @@ import * as S from './button.css';
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
-  size?: 'xsmall' | 'small' | 'default';
+  size?: 'xsmall' | 'small' | 'default' | 'large';
+  align?: 'horizontal' | 'vertical';
   block?: boolean;
   primary?: boolean;
   disabled?: boolean;
@@ -22,6 +23,7 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Butt
       primary = false,
       disabled = false,
       borderless = false,
+      align = 'horizontal',
       className,
       prefix,
       suffix,
@@ -34,13 +36,13 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Butt
         ref={ref}
         disabled={disabled}
         className={clsx(
-          S.button({ size, block, primary, disabled, borderless }),
+          S.button({ size, align, block, primary, disabled, borderless }),
           className
         )}
         {...props}
       >
         {prefix && <span>{prefix}</span>}
-        <div className={S.text({ size })}>{children}</div>
+        {children}
         {suffix && <span>{suffix}</span>}
       </button>
     );

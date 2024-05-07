@@ -1,29 +1,35 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Chip } from "@repo/ui";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Chip } from '@repo/ui';
+import { PlusOutlined } from '../../../../packages/ui/src/assets/icons';
 
 const meta = {
-  title: "Example/Chip",
+  title: 'Example/Chip',
   component: Chip,
   parameters: {
-    layout: "padded",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
-  argTypes: {},
+  tags: ['autodocs'],
+  args: {
+    primary: false,
+    label: '라벨',
+  },
 } satisfies Meta<typeof Chip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
-  args: {
-    label: "라벨",
-    primary: false,
-  },
+  args: {},
 };
 
 export const Primary: Story = {
   args: {
-    label: "라벨",
     primary: true,
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    icon: <PlusOutlined />,
   },
 };

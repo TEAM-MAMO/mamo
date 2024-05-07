@@ -21,7 +21,7 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['xsmall', 'small', 'default'],
+      options: ['xxsmall', 'xsmall', 'small', 'default'],
       description: '버튼의 크기를 설정합니다.',
     },
   },
