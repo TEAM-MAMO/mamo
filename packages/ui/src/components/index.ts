@@ -1,9 +1,9 @@
-export { BottomSheet, type BottomSheetProps } from './BottomSheet/BottomSheet';
 export { Input, type InputProps } from './Input/Input';
 export { InputNumber, type InputNumberProps } from './InputNumber/InputNumber';
 export { InputSelect, type InputSelectProps } from './InputSelect/InputSelect';
 export { Button } from './Button/Button';
 export { ButtonGroup } from './ButtonGroup/ButtonGroup';
+export { BottomSheet } from './BottomSheet/BottomSheet';
 export { Fab } from './Fab/Fab';
 export { Card } from './Card/Card';
 export { Divider } from './Divider/Divider';
