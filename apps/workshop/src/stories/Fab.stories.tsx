@@ -1,19 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Fab } from "@repo/ui";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Fab } from '@repo/ui';
+import { PlusOutlined } from '../../../../packages/ui/src/assets/icons';
 
 const meta = {
-  title: "Example/Fab",
+  title: 'Example/Fab',
   component: Fab,
   parameters: {
-    layout: "padded",
+    layout: 'padded',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    type: "circle",
+    shape: 'circle',
+    label: '펀딩 개설',
+    icon: <PlusOutlined />,
   },
   argTypes: {
-    icon: {
-      description: 'Default icon: "PlusOutlined"',
+    shape: {
+      control: 'select',
+      options: ['circle', 'capsule'],
+      description: '버튼의 모양을 설정합니다.',
     },
   },
 } satisfies Meta<typeof Fab>;
@@ -24,7 +29,7 @@ type Story = StoryObj<typeof Fab>;
 const FabTemplate: Story = {
   render: ({ label, ...arg }) => {
     return (
-      <div style={{ transform: "translate(0)", height: "100px" }}>
+      <div style={{ transform: 'translate(0)', height: '100px' }}>
         <Fab label={label} {...arg} />
       </div>
     );
@@ -33,15 +38,11 @@ const FabTemplate: Story = {
 
 export const Basic: Story = {
   ...FabTemplate,
-  args: {
-    label: "펀딩 개설",
-  },
 };
 
 export const Capsule: Story = {
   ...FabTemplate,
   args: {
-    type: "capsule",
-    label: "펀딩 개설",
+    shape: 'capsule',
   },
 };

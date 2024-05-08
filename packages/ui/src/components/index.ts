@@ -35,33 +35,35 @@ export { Chip, type ChipProps } from "./Chip/Chip";
 export {
   IndicatorFunding,
   type IndicatorFundingProps,
-} from "./IndicatorFunding/IndicatorFunding";
+} from './IndicatorFunding/IndicatorFunding';
 export {
   IndicatorProgress,
   type IndicatorProgressProps,
-} from "./IndicatorProgress/IndicatorProgress";
+} from './IndicatorProgress/IndicatorProgress';
 export {
   FundingCardHorizontal,
   type FundingCardHorizontalProps,
-} from "./FundingCard/FundingCardHorizontal";
+} from './FundingCard/FundingCardHorizontal';
 export {
   FundingCardVertical,
   type FundingCardVerticalProps,
-} from "./FundingCard/FundingCardVertical";
+} from './FundingCard/FundingCardVertical';
 export {
   MyFundingCardOpened,
   type MyFundingCardOpenedProps,
-} from "./MyFundingCard/MyFundingCardOpened";
+} from './MyFundingCard/MyFundingCardOpened';
 export {
   MyFundingCardJoined,
   type MyFundingCardJoinedProps,
-} from "./MyFundingCard/MyFundingCardJoined";
-export { LetterCard, type LetterCardProps } from "./LetterCard/LetterCard";
+} from './MyFundingCard/MyFundingCardJoined';
+export { LetterCard, type LetterCardProps } from './LetterCard/LetterCard';
 export {
   MainVisualCard,
   type MainVisualCardProps,
-} from "./MainVisualCard/MainVisualCard";
-export { DatePicker, type DatePickerProps } from "./DatePicker/DatePicker";
+} from './MainVisualCard/MainVisualCard';
+export { Typography } from './Typography/Typography';
+export { Chip } from './Chip/Chip';
+export { DatePicker } from './DatePicker/DatePicker';
 
 /* styles */
-export * as globalCSS from "../styles/global.css";
+export * as globalCSS from '../styles/global.css';

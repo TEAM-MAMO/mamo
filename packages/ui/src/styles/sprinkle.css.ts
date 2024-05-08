@@ -1,7 +1,7 @@
-import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
+import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
-import { pallette } from "../tokens";
-import { vars } from "./theme.css";
+import { pallette } from '../tokens';
+import { vars } from './theme.css';
 
 const colorProperties = defineProperties({
   properties: {
@@ -32,11 +32,11 @@ const fontProperties = defineProperties({
 
 const responsiveProperties = defineProperties({
   properties: {
-    position: ["absolute", "relative", "fixed"],
-    display: ["none", "block", "inline", "inline-block", "flex", "inline-flex"],
-    alignItems: ["stretch", "flex-start", "center", "flex-end", "baseline"],
-    justifyContent: ["flex-start", "center", "flex-end", "space-between"],
-    flexDirection: ["row", "row-reverse", "column", "column-reverse"],
+    position: ['absolute', 'relative', 'fixed'],
+    display: ['none', 'block', 'inline', 'inline-block', 'flex', 'inline-flex'],
+    alignItems: ['stretch', 'flex-start', 'center', 'flex-end', 'baseline'],
+    justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
+    flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
     paddingTop: vars.space,
     paddingBottom: vars.space,
     paddingLeft: vars.space,
@@ -55,8 +55,8 @@ const responsiveProperties = defineProperties({
     minWidth: vars.contentWidth,
     maxWidth: vars.contentWidth,
     transition: {
-      slow: "transform .3s ease, opacity .3s ease",
-      fast: "transform .15s ease, opacity .15s ease",
+      slow: 'transform .3s ease, opacity .3s ease',
+      fast: 'transform .15s ease, opacity .15s ease',
     },
   },
   shorthands: {
@@ -73,7 +73,7 @@ const responsiveProperties = defineProperties({
 
 const unconditionalProperties = defineProperties({
   properties: {
-    flexWrap: ["wrap", "nowrap"],
+    flexWrap: ['wrap', 'nowrap'],
     flexGrow: [0, 1],
     flexShrink: [0],
     top: [0],
@@ -85,17 +85,17 @@ const unconditionalProperties = defineProperties({
     height: vars.contentWidth,
     borderRadius: vars.radius,
     boxShadow: vars.shadow,
-    cursor: ["pointer"],
-    pointerEvents: ["auto", "none", "visible"],
-    textDecoration: ["none", "underline", "line-through"],
-    textTransform: ["uppercase", "lowercase", "capitalize"],
-    textAlign: ["left", "center", "right"],
-    textOverflow: ["ellipsis"],
-    overflow: ["hidden"],
-    whiteSpace: ["nowrap"],
+    cursor: ['pointer', 'not-allowed'],
+    pointerEvents: ['auto', 'none', 'visible'],
+    textDecoration: ['none', 'underline', 'line-through'],
+    textTransform: ['uppercase', 'lowercase', 'capitalize'],
+    textAlign: ['left', 'center', 'right'],
+    textOverflow: ['ellipsis'],
+    overflow: ['hidden'],
+    whiteSpace: ['nowrap'],
   },
   shorthands: {
-    inset: ["top", "bottom", "left", "right"],
+    inset: ['top', 'bottom', 'left', 'right'],
   },
 });
 
@@ -103,7 +103,7 @@ export const sprinkles = createSprinkles(
   colorProperties,
   fontProperties,
   responsiveProperties,
-  unconditionalProperties,
+  unconditionalProperties
 );
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];
