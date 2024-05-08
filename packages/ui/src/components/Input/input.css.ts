@@ -1,140 +1,112 @@
-import { style } from "@vanilla-extract/css";
-import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles, vars } from "../../styles";
+import { globalStyle, style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
+import { sprinkles, vars } from '../../styles';
 
-export const inputContainerStyle = style({
-  position: "relative",
+export const inputContainer = style({
+  position: 'relative',
 });
 
-export const inputBoxStyle = style([
+/**
+ * Label
+ */
+export const label = style([
   sprinkles({
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
+    color: 'gray700',
+    marginBottom: '2x',
   }),
 ]);
 
-export const inputStyle = recipe({
-  base: [
-    sprinkles({
-      width: "full",
-      color: "gray800",
-      fontSize: "20px",
-      lineHeight: "28px",
-      letterSpacing: "-2%",
-      fontWeight: "500",
-      height: "48px",
-      padding: "3x",
-      paddingRight: "4x",
-    }),
-    {
-      outline: 0,
-      borderTop: 0,
-      borderLeft: 0,
-      borderRight: 0,
-      borderBottomWidth: "1px",
-      borderBottomStyle: "solid",
-      caretColor: vars.pallette.primary500,
-
-      "::placeholder": {
-        color: vars.pallette.gray400,
-      },
-
-      ":focus": {
-        borderColor: vars.pallette.gray900,
-      },
-    },
-  ],
-  variants: {
-    state: {
-      valid: sprinkles({
-        borderColor: "gray300",
-      }),
-      error: [
-        sprinkles({
-          borderColor: "primary500",
-        }),
-        {
-          ":focus": {
-            borderColor: vars.pallette.primary500,
-          },
-        },
-      ],
-    },
-    hasCount: {
-      true: {
-        paddingRight: 48,
-      },
-    },
-    hasClear: {
-      true: {
-        paddingRight: 42,
-      },
-    },
-  },
-  compoundVariants: [
-    {
-      variants: {
-        hasCount: true,
-        hasClear: true,
-      },
-      style: {
-        paddingRight: 79,
-      },
-    },
-  ],
-});
-
-export const labelStyle = style([
+export const inputBox = style([
   sprinkles({
-    color: "gray700",
-    marginBottom: "2x",
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
   }),
 ]);
 
-export const toolsStyle = style([
+export const input = style([
   sprinkles({
-    position: "absolute",
-    display: "flex",
-    alignItems: "center",
-  }),
-  {
-    top: "50%",
-    right: "10px",
-    transform: "translateY(-50%)",
-  },
-]);
-
-export const clearStyle = style([
-  sprinkles({
-    color: "gray400",
-    fontSize: "24px",
-    marginLeft: "3x",
+    width: 'full',
+    color: 'gray800',
+    fontSize: '20px',
+    lineHeight: '28px',
+    letterSpacing: '-2%',
+    fontWeight: '500',
+    height: '48px',
+    padding: '3x',
   }),
   {
     border: 0,
-    background: "transparent",
+    outline: 0,
+    caretColor: vars.pallette.primary500,
+
+    '::placeholder': {
+      color: vars.pallette.gray400,
+    },
   },
 ]);
 
-export const countStyle = style([
+/**
+ * Divider
+ */
+export const divider = style([
   sprinkles({
-    color: "gray500",
-    fontSize: "small",
+    position: 'absolute',
+    borderColor: 'gray300',
+  }),
+  {
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderBottomWidth: '1px',
+    borderBottomStyle: 'solid',
+  },
+]);
+globalStyle(`${input}:focus + ${divider}`, {
+  borderColor: vars.pallette.gray900,
+});
+globalStyle(`${input}[data-state="error"] + ${divider}`, {
+  borderColor: vars.pallette.primary500,
+});
+
+/**
+ * Extra
+ */
+export const extra = style([
+  sprinkles({
+    display: 'flex',
+    alignItems: 'center',
+    paddingRight: '4x',
   }),
 ]);
 
-export const helperStyle = recipe({
+export const count = style([
+  sprinkles({
+    color: 'gray500',
+    fontSize: 'small',
+  }),
+]);
+export const suffix = style([
+  sprinkles({
+    color: 'gray400',
+    fontSize: '24px',
+  }),
+]);
+
+/**
+ * Helper
+ */
+export const helper = recipe({
   base: sprinkles({
-    paddingTop: "5x",
+    paddingTop: '5x',
   }),
   variants: {
     state: {
       valid: sprinkles({
-        color: "gray500",
+        color: 'gray500',
       }),
       error: sprinkles({
-        color: "primary600",
+        color: 'primary600',
       }),
     },
   },

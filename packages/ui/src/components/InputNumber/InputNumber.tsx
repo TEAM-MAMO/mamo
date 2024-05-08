@@ -1,73 +1,61 @@
-import React, { useState } from "react";
-import { Typography } from "../Typography/Typography";
-import {
-  inputBoxStyle,
-  inputStyle,
-  labelStyle,
-  unitStyle,
-} from "./inputNumber.css";
-import { helperStyle } from "../Input/input.css";
-import { InputStateType, InputChangeEvent } from "../Input/Input";
-import { numberFormat } from "../../utils";
+import { InputHTMLAttributes, ReactNode, forwardRef } from 'react';
+import { Typography } from '../Typography/Typography';
+import * as S from './inputNumber.css';
+import { InputStateType } from '../Input/Input';
+import { Divider } from '../Divider/Divider';
+import { helper } from '../Input/input.css';
 
 const { Caption } = Typography;
 
-export interface InputNumberProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value"> {
+export interface InputNumberProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  value?: string;
   state?: InputStateType;
   helperText?: string;
+  suffix?: ReactNode;
 }
 
-export const InputNumber = React.forwardRef<HTMLInputElement, InputNumberProps>(
+export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
   (
     {
       label,
-      value = "",
-      state = "valid",
+      type,
+      value,
+      state = 'valid',
+      suffix,
       helperText,
       className,
       onChange,
+      onFocus,
       ...props
     },
-    ref,
+    ref
   ) => {
-    const [inputValue, setInputValue] = useState<string>(value);
-
-    const changeHandler = (ev: InputChangeEvent) => {
-      const regex = /^$|^[0-9]+$/;
-      const val = ev.target.value.replaceAll(",", "");
-
-      if (regex.test(val) || "") {
-        setInputValue(numberFormat(val));
-        onChange?.(ev);
-      }
-    };
-
     return (
       <div className={className}>
-        <Caption className={labelStyle}>{label}</Caption>
-        <div className={inputBoxStyle}>
+        {label && <Caption className={S.label}>{label}</Caption>}
+        <div className={S.inputBox}>
           <input
-            className={inputStyle({ state })}
             ref={ref}
-            value={inputValue}
-            onChange={changeHandler}
+            type={type || 'number'}
+            data-state={state}
+            className={S.input({ hasValue: !!value })}
+            value={value}
+            onChange={onChange}
             {...props}
           />
-          {inputValue !== "" && (
-            <Caption level={3} className={unitStyle}>
-              원
+          <Divider className={S.divider} />
+          {value && suffix && (
+            <Caption level={3} className={S.suffix}>
+              {suffix}
             </Caption>
           )}
         </div>
         {helperText && (
-          <Caption className={helperStyle({ state })} level={3}>
+          <Caption className={helper({ state })} level={3}>
             {helperText}
           </Caption>
         )}
       </div>
     );
-  },
+  }
 );
