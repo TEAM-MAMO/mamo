@@ -49,9 +49,10 @@ const responsiveProperties = defineProperties({
     rowGap: { ...vars.space, none: "none" },
     gap: { ...vars.space, none: "none" },
     opacity: [0, 1],
-    pointerEvents: ["none", "auto"],
-    overflow: ["hidden"],
-    textAlign: ["left", "center", "right"],
+    pointerEvents: ['none', 'auto'],
+    overflow: ['hidden'],
+    textAlign: ['left', 'center', 'right'],
+    wordBreak: ['break-word', 'break-all', 'keep-all'],
     minWidth: vars.contentWidth,
     maxWidth: vars.contentWidth,
     transition: {
