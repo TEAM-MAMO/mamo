@@ -1,3 +1,5 @@
+export { Tooltip, type TooltipProps } from "./Tooltip/Tooltip";
+
 export { Accordion } from "./Accordion";
 export { Tabs } from "./Tabs";
 export { NavigationBar } from "./NavigationBar/NavigationBar";

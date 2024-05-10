@@ -18,3 +18,5 @@ export { ReactComponent as ArrowUpOutlined } from "./ic-arrow-up-outlined.svg";
 export { ReactComponent as ArrowRightOutlined } from "./ic-arrow-right-outlined.svg";
 export { ReactComponent as ArrowLeftOutlined } from "./ic-arrow-left-outlined.svg";
 export { ReactComponent as ArrowRightMoreOutlined } from "./ic-arrow-right-more-outlined.svg";
+export { ReactComponent as PollygonUp } from "./ic-pollygon-up.svg";
+export { ReactComponent as PollygonDown } from "./ic-pollygon-down.svg";
