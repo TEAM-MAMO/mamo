@@ -1,3 +1,4 @@
+export { Tag, type TagProps } from "./Tag/Tag";
 export { Tooltip, type TooltipProps } from "./Tooltip/Tooltip";
 
 export { Accordion } from "./Accordion";
