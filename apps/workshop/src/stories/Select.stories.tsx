@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Select } from '@repo/ui';
+import { Button, Select } from '@repo/ui';
+import { CloseOutlined } from '../../../../packages/ui/src/assets/icons';
+import { useState } from 'react';
 
 const meta = {
   title: 'Example/Select',
@@ -8,45 +10,53 @@ const meta = {
     layout: 'padded',
   },
   tags: ['autodocs'],
-  args: {
-    label: '라벨',
-    state: 'valid',
-    placeholder: '년도/월/일',
-    helperText: '에러 메시지',
-    arrowType: 'right',
-  },
-  argTypes: {
-    label: {
-      description: 'label 텍스트를 설정합니다.',
-    },
-    helperText: {
-      description: '가이드 문구를 제공합니다.',
-    },
-    state: {
-      control: 'select',
-      options: ['valid', 'error'],
-      description: '상태를 설정합니다.',
-    },
-    arrowType: {
-      control: 'select',
-      options: ['down', 'right'],
-      description: '화살표 아이콘 타입을 설정합니다.',
-    },
-  },
+  args: {},
+  argTypes: {},
 } satisfies Meta<typeof Select>;
 
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-const Template: Story = {
-  render: ({ label, ...arg }) => {
-    return <Select label={label} {...arg} />;
-  },
-};
-
 export const Basic: Story = {
-  ...Template,
-  args: {
-    value: '2023년 8월 31일',
+  render: () => {
+    const [selected, setSelected] = useState('');
+
+    return (
+      <div
+        style={{
+          transform: 'translate(0)',
+          height: '600px',
+          width: '375px',
+          background: '#F6F9FC',
+        }}
+      >
+        <Select>
+          <Select.Trigger>
+            <Button block>Select Open</Button>
+          </Select.Trigger>
+          <Select.OptionList
+            title="은행을 선택해주세요"
+            closeIcon={<CloseOutlined />}
+            onChangeSelected={setSelected}
+          >
+            <Select.Option value="Option 1">Option 1</Select.Option>
+            <Select.Option value="Option 2">Option 2</Select.Option>
+            <Select.Option value="Option 3">Option 3</Select.Option>
+            <Select.Option value="Option 4">Option 4</Select.Option>
+            <Select.Option value="Option 5">Option 5</Select.Option>
+            <Select.Option value="Option 6">Option 6</Select.Option>
+            <Select.Option value="Option 7">Option 7</Select.Option>
+            <Select.Option value="Option 8">Option 8</Select.Option>
+            <Select.Option value="Option 9">Option 9</Select.Option>
+            <Select.Option value="Option 10">Option 10</Select.Option>
+            <Select.Option value="Option 11">Option 11</Select.Option>
+            <Select.Option value="Option 12">Option 12</Select.Option>
+            <Select.Option value="Option 13">Option 13</Select.Option>
+            <Select.Option value="Option 14">Option 14</Select.Option>
+          </Select.OptionList>
+        </Select>
+        {selected && `Select Item: ${selected}`}
+      </div>
+    );
   },
 };

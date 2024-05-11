@@ -36,31 +36,38 @@ export const useBottomSheetContext = () => {
 /**
  * BottomSheet
  */
-export const BottomSheet = ({ children }: PropsWithChildren) => {
-  const [open, setOpen] = useState<boolean>(false);
-  const [isTransition, setIsTransition] = useState<boolean>(false);
+interface BottomSheetProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+export const BottomSheetRoot = forwardRef<HTMLDivElement, BottomSheetProps>(
+  ({ children, ...props }, ref) => {
+    const [open, setOpen] = useState<boolean>(false);
+    const [isTransition, setIsTransition] = useState<boolean>(false);
 
-  const toggle = useCallback(() => {
-    if (open) {
-      setIsTransition(true);
-      setTimeout(() => {
-        setIsTransition(false);
-        setOpen(false);
-      }, 500);
-    } else {
-      setOpen(true);
-    }
-  }, [open]);
+    const toggle = useCallback(() => {
+      if (open) {
+        setIsTransition(true);
+        setTimeout(() => {
+          setIsTransition(false);
+          setOpen(false);
+        }, 500);
+      } else {
+        setOpen(true);
+      }
+    }, [open]);
 
-  const value = useMemo(
-    () => ({ open, toggle, isTransition }),
-    [isTransition, open, toggle]
-  );
+    const value = useMemo(
+      () => ({ open, toggle, isTransition }),
+      [isTransition, open, toggle]
+    );
 
-  return (
-    <BottomSheetContext.Provider value={value}>{children}</BottomSheetContext.Provider>
-  );
-};
+    return (
+      <BottomSheetContext.Provider value={value}>
+        <div ref={ref} {...props}>
+          {children}
+        </div>
+      </BottomSheetContext.Provider>
+    );
+  }
+);
 
 /**
  * Trigger
@@ -159,7 +166,7 @@ interface BodyProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 const Body = forwardRef<HTMLDivElement, BodyProps>(
   ({ children, className, ...props }, ref) => {
     return (
-      <div ref={ref} className={s.body} {...props}>
+      <div ref={ref} className={clsx(s.body, className)} {...props}>
         {children}
       </div>
     );
@@ -211,13 +218,15 @@ const Item = forwardRef<HTMLLIElement, ItemProps>(({ children, ...props }, ref) 
   );
 });
 
-BottomSheet.Trigger = Trigger;
-BottomSheet.Content = Content;
-BottomSheet.Confirm = Confirm;
-BottomSheet.Header = Header;
-BottomSheet.Body = Body;
-BottomSheet.Footer = Footer;
-BottomSheet.Menu = Menu;
-BottomSheet.Item = Item;
+const CompoundBottomSheet = Object.assign(BottomSheetRoot, {
+  Trigger,
+  Content,
+  Confirm,
+  Header,
+  Body,
+  Footer,
+  Menu,
+  Item,
+});
 
-export default BottomSheet;
+export { CompoundBottomSheet as BottomSheet };
