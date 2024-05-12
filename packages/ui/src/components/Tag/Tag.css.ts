@@ -3,7 +3,8 @@ import { sprinkles } from "../../styles";
 
 export const tag = recipe({
   base: sprinkles({
-    paddingY: "2x",
+    paddingX: "2x",
+    borderRadius: "small",
   }),
   variants: {
     variant: {
