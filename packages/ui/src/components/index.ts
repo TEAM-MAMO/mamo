@@ -1,3 +1,5 @@
+export { Badge, type BadgeProps } from "./Badge/Badge";
+
 export { ToastProvider } from "./Toast/ToastContext";
 export { Toast } from "./Toast/Toast";
 export { useToast } from "./Toast/hooks/useToast";
