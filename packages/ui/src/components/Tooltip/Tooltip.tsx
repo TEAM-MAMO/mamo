@@ -2,6 +2,7 @@ import {
   HTMLAttributes,
   ReactNode,
   forwardRef,
+  useEffect,
   useId,
   useRef,
   useState,
@@ -12,6 +13,7 @@ import * as S from "./Tooltip.css";
 import { CloseOutlined, PollygonDown, PollygonUp } from "../../assets/icons";
 
 import { Typography } from "../Typography/Typography";
+import { useTooltip } from "./hooks/useTooltip";
 import { useTooltipPosition } from "./hooks/useTooltipPostion";
 import { useViewportSize } from "./hooks/useViewportSize";
 
@@ -23,11 +25,13 @@ export interface TooltipProps
   close?: boolean;
   left?: ReactNode;
   content: ReactNode;
+  tooltipId: string;
 }
 
 export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
   (
     {
+      tooltipId,
       children,
       className,
       variant = "primary",
@@ -41,10 +45,11 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
     ref?,
   ) => {
     const { viewportHeight } = useViewportSize();
-    const [isVisible, setIsVisible] = useState<boolean>(false);
+
     const wrapperRef = useRef<HTMLDivElement>(null);
     const tooltipRef = useRef<HTMLDivElement>(null);
     const arrowRef = useRef<HTMLDivElement>(null);
+    const { isVisible, handleClose } = useTooltip(tooltipId);
 
     const { isInViewport } = useTooltipPosition(
       isVisible,
@@ -54,26 +59,23 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
       tooltipRef,
       arrowRef,
     );
-    const tooltipId = useId();
+    const tooltipAreaId = useId();
 
     return (
       <div
         {...props}
         ref={wrapperRef || ref}
-        onMouseEnter={() => setIsVisible(true)}
-        onMouseLeave={() => setIsVisible(false)}
-        aria-describedby={tooltipId}
+        aria-describedby={tooltipAreaId}
         className={clsx(S.wrapper, className)}
       >
         {children}
-
         <div ref={arrowRef} className={S.tooltipArrow({ variant, isVisible })}>
           {isInViewport ? <PollygonDown /> : <PollygonUp />}
         </div>
         <div
           ref={tooltipRef}
           className={S.tooltip({ variant, size, isVisible })}
-          id={tooltipId}
+          id={tooltipAreaId}
           role="tooltip"
           aria-hidden={isVisible}
           onClick={(e) => e.stopPropagation()}
@@ -84,7 +86,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
             <button
               aria-label="close"
               className={S.closeButton({ variant })}
-              onClick={() => setIsVisible(false)}
+              onClick={handleClose}
             >
               <CloseOutlined />
             </button>
