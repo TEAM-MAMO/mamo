@@ -3,7 +3,7 @@ import { Chip } from "@repo/ui";
 import { PlusOutlined } from "../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: "Example/Chip",
+  title: "COMPONENTS/Chip",
   component: Chip,
   parameters: {
     layout: "centered",
@@ -18,7 +18,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {},
 };
 

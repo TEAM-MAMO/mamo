@@ -6,7 +6,7 @@ type Variant = "primary" | "secondary" | "default";
 const variantOptions: Variant[] = ["primary", "secondary", "default"];
 
 const meta = {
-  title: "Example/Badge",
+  title: "COMPONENTS/Badge",
   component: Badge,
   parameters: {
     layout: "centered",

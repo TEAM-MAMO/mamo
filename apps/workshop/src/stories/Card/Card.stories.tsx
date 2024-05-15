@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button, Card, Typography } from "@repo/ui";
-import { ArrowRightOutlined } from "../../../../packages/ui/src/assets/icons";
+import { ArrowRightOutlined } from "../../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: "Example/Card",
+  title: "Default/Card",
   component: Card,
   parameters: {
     layout: "centered",
@@ -28,7 +28,7 @@ const CardTemplate: Story = {
   ),
 };
 
-export const Basic: Story = {
+export const Default: Story = {
   ...CardTemplate,
   args: {
     divider: true,

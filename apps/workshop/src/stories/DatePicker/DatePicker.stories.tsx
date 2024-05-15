@@ -3,10 +3,10 @@ import { Button, DatePicker } from "@repo/ui";
 import { useState } from "react";
 
 const meta = {
-  title: "Example/DatePicker",
+  title: "COMPONENTS/DatePicker",
   component: DatePicker,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {},
@@ -16,7 +16,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof DatePicker>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {},
   render: () => {
     const [date, setDate] = useState<Date | null>(null);

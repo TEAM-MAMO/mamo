@@ -6,13 +6,13 @@ type Variant = "primary" | "secondary" | "default";
 const variantOptions: Variant[] = ["primary", "secondary", "default"];
 
 const meta = {
-  title: "Example/Tag",
+  title: "COMPONENTS/Tag",
   component: Tag,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {},
+
   argTypes: {
     variant: {
       options: variantOptions,

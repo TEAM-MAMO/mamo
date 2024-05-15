@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Divider } from "@repo/ui";
 
 const meta = {
-  title: "Example/Divider",
+  title: "COMPONENTS/Divider",
   component: Divider,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Divider>;
@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {
     bolder: false,
   },

@@ -3,7 +3,7 @@ import { Typography } from "@repo/ui";
 const { Foot } = Typography;
 
 const meta = {
-  title: "Example/Typography/Foot",
+  title: "COMPONENTS/Typography/Foot",
   component: Foot,
   parameters: {
     layout: "padded",

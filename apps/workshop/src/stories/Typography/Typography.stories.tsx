@@ -4,10 +4,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 const { Heading, Text, Caption, Foot } = Typography;
 
 const meta = {
-  title: "Example/Typography",
+  title: "COMPONENTS/Typography",
   component: Typography,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {},
@@ -17,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Typography>;
 
-export const Basic: Story = {
+export const BaDefaultsic: Story = {
   args: {
     children: (
       <>

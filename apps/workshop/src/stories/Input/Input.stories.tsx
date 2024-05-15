@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "@repo/ui";
 import { useState } from "react";
-import { DeleteSolid } from "../../../../packages/ui/src/assets/icons";
+import { DeleteSolid } from "../../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: "Example/Input",
+  title: "COMPONENTS/Input",
   component: Input,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {
@@ -56,7 +56,7 @@ const Template: Story = {
   },
 };
 
-export const Basic: Story = {
+export const Default: Story = {
   ...Template,
   args: {
     showCount: true,

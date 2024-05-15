@@ -4,10 +4,10 @@ import { Button } from "@repo/ui";
 import {
   HeartSolid,
   PlusOutlined,
-} from "../../../../packages/ui/src/assets/icons";
+} from "../../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: "Example/Button",
+  title: "COMPONENTS/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -33,7 +33,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {},
 };
 

@@ -4,7 +4,7 @@ import { Typography } from "@repo/ui";
 const { Heading } = Typography;
 
 const meta = {
-  title: "Example/Typography/Heading",
+  title: "COMPONENTS/Typography/Heading",
   component: Heading,
   parameters: {
     layout: "padded",

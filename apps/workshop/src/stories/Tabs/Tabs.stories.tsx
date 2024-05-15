@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Tabs } from "@repo/ui";
 
 const meta: Meta<typeof Tabs> = {
-  title: "Example/Tabs",
+  title: "COMPONENTS/Tabs",
   component: Tabs,
   tags: ["autodocs"],
   parameters: {
@@ -14,7 +14,7 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
-export const Basic: Story = {
+export const Default: Story = {
   render: () => (
     <Tabs defaultValue="menu1" style={{ width: "375px" }}>
       <Tabs.List>

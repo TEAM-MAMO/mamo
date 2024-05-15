@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Progress } from "@repo/ui";
 
 const meta = {
-  title: "Example/Progress",
+  title: "COMPONENTS/Progress",
   component: Progress,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {
@@ -22,7 +22,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {
     percent: 30,
   },

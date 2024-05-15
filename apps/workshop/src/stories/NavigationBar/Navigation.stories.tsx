@@ -8,7 +8,7 @@ import {
 } from "../../../../../packages/ui/src/assets/icons";
 
 const meta: Meta<typeof NavigationBar> = {
-  title: "Example/NavigationBar",
+  title: "COMPONENTS/NavigationBar",
   component: NavigationBar,
   tags: ["autodocs"],
   parameters: {
@@ -19,7 +19,7 @@ const meta: Meta<typeof NavigationBar> = {
 export default meta;
 type Story = StoryObj<typeof NavigationBar>;
 
-export const Basic: Story = {
+export const Default: Story = {
   render: () => (
     <NavigationBar
       style={{ width: "375px" }}

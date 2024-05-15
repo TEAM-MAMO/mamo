@@ -2,7 +2,7 @@ import { List, ListItem } from "@repo/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-  title: "Example/List",
+  title: "COMPONENTS/List",
   component: List,
   parameters: {
     layout: "centered",

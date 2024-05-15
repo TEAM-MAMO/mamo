@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Typography } from "@repo/ui";
-const { Caption } = Typography;
+const { Text } = Typography;
 
 const meta = {
-  title: "Example/Typography/Caption",
-  component: Caption,
+  title: "COMPONENTS/Typography/Text",
+  component: Text,
   parameters: {
     layout: "padded",
   },
@@ -12,19 +12,19 @@ const meta = {
   argTypes: {
     level: {
       description: `
-level 1: Caption 1\n
-level 2: Caption 2\n
-level 3: Caption 3\n
-level 4: Caption 4
+level 1: Body Text 1\n
+level 2: Body Text 2\n
+level 3: Body Text 3\n
+level 4: Body Text 4
       `,
     },
   },
-} satisfies Meta<typeof Caption>;
+} satisfies Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Caption1: Story = {
+export const Text1: Story = {
   args: {
     level: 1,
     inline: false,
@@ -32,7 +32,7 @@ export const Caption1: Story = {
   },
 };
 
-export const Caption2: Story = {
+export const Text2: Story = {
   args: {
     level: 2,
     inline: false,
@@ -40,17 +40,9 @@ export const Caption2: Story = {
   },
 };
 
-export const Caption3: Story = {
+export const Text3: Story = {
   args: {
     level: 3,
-    inline: false,
-    children: "마모가 여러분의 마음을 소중하게 전달하고 있어요",
-  },
-};
-
-export const Caption4: Story = {
-  args: {
-    level: 4,
     inline: false,
     children: "마모가 여러분의 마음을 소중하게 전달하고 있어요",
   },

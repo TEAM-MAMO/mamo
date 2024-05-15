@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button, Select } from "@repo/ui";
-import { CloseOutlined } from "../../../../packages/ui/src/assets/icons";
+import { CloseOutlined } from "../../../../../packages/ui/src/assets/icons";
 import { useState } from "react";
 
 const meta = {
-  title: "Example/Select",
+  title: "COMPONENTS/Select",
   component: Select,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {},
@@ -17,7 +17,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-export const Basic: Story = {
+export const Default: Story = {
   render: () => {
     const [selected, setSelected] = useState("");
 

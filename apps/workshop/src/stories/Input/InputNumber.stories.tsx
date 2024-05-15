@@ -3,10 +3,10 @@ import { InputNumber } from "@repo/ui";
 import { useState } from "react";
 
 const meta = {
-  title: "Example/InputNumber",
+  title: "COMPONENTS/InputNumber",
   component: InputNumber,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {
@@ -50,7 +50,7 @@ const Template: Story = {
   },
 };
 
-export const Basic: Story = {
+export const Default: Story = {
   ...Template,
 };
 

@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Fab } from "@repo/ui";
-import { PlusOutlined } from "../../../../packages/ui/src/assets/icons";
+import { PlusOutlined } from "../../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: "Example/Fab",
+  title: "COMPONENTS/Fab",
   component: Fab,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
-  tags: ["autodocs"],
+  tags: ["centered"],
   args: {
     shape: "circle",
     label: "펀딩 개설",
@@ -36,7 +36,7 @@ const FabTemplate: Story = {
   },
 };
 
-export const Basic: Story = {
+export const Default: Story = {
   ...FabTemplate,
 };
 

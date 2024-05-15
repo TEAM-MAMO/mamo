@@ -14,7 +14,7 @@ type Close = boolean;
 const closeOptions: Close[] = [true, false];
 
 const meta: Meta<typeof Tooltip> = {
-  title: "Example/Tooltip",
+  title: "COMPONENTS/Tooltip",
   component: Tooltip,
   tags: ["autodocs"],
   parameters: {
@@ -45,7 +45,7 @@ type Story = StoryObj<typeof Tooltip>;
 
 const Template = (args: TooltipProps & { label: string }) => (
   <Tooltip {...args}>
-    <Button label={args.label} size="small" />
+    <Button size="small">Tooltip 버튼</Button>
   </Tooltip>
 );
 

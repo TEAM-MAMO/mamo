@@ -3,10 +3,10 @@ import { Textarea } from "@repo/ui";
 import { useState } from "react";
 
 const meta = {
-  title: "Example/Textarea",
+  title: "COMPONENTS/Textarea",
   component: Textarea,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {},
@@ -30,7 +30,7 @@ const Template: Story = {
   },
 };
 
-export const Basic: Story = {
+export const Default: Story = {
   ...Template,
   args: {
     label: "라벨",

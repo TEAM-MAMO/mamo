@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Accordion } from "@repo/ui";
 
 const meta: Meta<typeof Accordion> = {
-  title: "Example/Accordion",
+  title: "COMPONENTS/Accordion",
   component: Accordion,
   tags: ["autodocs"],
   parameters: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof Accordion> = {
 export default meta;
 type Story = StoryObj<typeof Accordion>;
 
-export const Basic: Story = {
+export const Default: Story = {
   render: (args) => (
     <Accordion style={{ width: "375px" }} {...args}>
       <Accordion.Item>
