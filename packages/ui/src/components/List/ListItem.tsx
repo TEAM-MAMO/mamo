@@ -18,7 +18,7 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
   ({ prefix, suffix, children, className, ...props }, ref?) => {
     return (
       <li
-        className={clsx(sprinkles({ display: "flex", gapX: "1x" }), className)}
+        className={clsx(sprinkles({ display: "flex", gapX: "4px" }), className)}
         ref={ref}
         {...props}
       >

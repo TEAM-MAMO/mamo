@@ -58,7 +58,7 @@ export const Simply: Story = {
   ...CardTemplate,
   args: {
     children: (
-      <Card.Content size="small" extra={<ArrowRightOutlined />}>
+      <Card.Content size="small" right={<ArrowRightOutlined />}>
         <Card.ImageBox size="small">
           <img src="http://via.placeholder.com/375x375" alt="" />
         </Card.ImageBox>

@@ -5,7 +5,7 @@ const meta = {
   title: "COMPONENTS/Divider",
   component: Divider,
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Divider>;

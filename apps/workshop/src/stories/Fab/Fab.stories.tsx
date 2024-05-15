@@ -6,7 +6,7 @@ const meta = {
   title: "COMPONENTS/Fab",
   component: Fab,
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
   tags: ["centered"],
   args: {

@@ -6,7 +6,7 @@ const meta = {
   title: "COMPONENTS/Progress",
   component: Progress,
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
   tags: ["autodocs"],
   args: {
