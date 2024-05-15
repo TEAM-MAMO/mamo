@@ -1,102 +1,68 @@
-import React, { useState } from "react";
-import clsx from "clsx";
-import {
-  inputBoxStyle,
-  inputContainerStyle,
-  inputStyle,
-  toolsStyle,
-  clearStyle,
-  countStyle,
-  helperStyle,
-  labelStyle,
-} from "./input.css";
-import { Typography } from "../Typography/Typography";
-import { DeleteSolid } from "../../assets/icons";
+import { ChangeEvent, InputHTMLAttributes, ReactNode, forwardRef, useState } from 'react';
+import clsx from 'clsx';
+import * as S from './input.css';
+import { Typography } from '../Typography/Typography';
+import { DeleteSolid } from '../../assets/icons';
+import { Divider } from '../Divider/Divider';
 
 const { Caption } = Typography;
 
-export type InputStateType = "valid" | "error";
+export type InputStateType = 'valid' | 'error';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
   state?: InputStateType;
   showCount?: boolean;
   helperText?: string;
-  allowClear: boolean;
+  suffix?: ReactNode;
 }
 
-export type InputValue = string | number | ReadonlyArray<string>;
-export type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
-
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       label,
-      value = "",
-      state = "valid",
+      value = '',
+      state = 'valid',
       showCount = false,
+      suffix,
       helperText,
       maxLength = 50,
-      allowClear = false,
       className,
       onChange,
       ...props
     },
-    ref,
+    ref
   ) => {
-    const [inputValue, setInputValue] = useState<InputValue>(value);
-
-    const changeHandler = (ev: InputChangeEvent) => {
-      const val = ev.target.value;
-      if (val.length <= maxLength) {
-        setInputValue(ev.target.value);
-        onChange?.(ev);
-      }
-    };
-
-    const onClear = () => setInputValue("");
-
     return (
-      <div className={clsx(inputContainerStyle, className)}>
-        <Caption className={labelStyle}>{label}</Caption>
-        <div className={inputBoxStyle}>
+      <div className={clsx(S.inputContainer, className)}>
+        {label && <Caption className={S.label}>{label}</Caption>}
+        <div className={S.inputBox}>
           <input
             ref={ref}
-            value={inputValue}
-            className={inputStyle({
-              state,
-              hasCount: showCount,
-              hasClear: allowClear,
-            })}
-            onChange={changeHandler}
+            value={value}
+            data-state={state}
+            className={S.input}
+            onChange={onChange}
             {...props}
           />
-          {(showCount || allowClear) && (
-            <div className={toolsStyle}>
+          <Divider className={S.divider} />
+          {(showCount || suffix) && (
+            <div className={S.extra}>
               {showCount && (
-                <div className={countStyle}>{`${
-                  inputValue.toString().length || 0
+                <div className={S.count}>{`${
+                  value.toString().length || 0
                 }/${maxLength}`}</div>
               )}
-              {allowClear && (
-                <button
-                  aria-label="clear"
-                  className={clearStyle}
-                  onClick={onClear}
-                >
-                  <DeleteSolid />
-                </button>
-              )}
+              {suffix && <div className={S.suffix}>{suffix}</div>}
             </div>
           )}
         </div>
         {helperText && (
-          <Caption className={helperStyle({ state })} level={3}>
+          <Caption className={S.helper({ state })} level={3}>
             {helperText}
           </Caption>
         )}
       </div>
     );
-  },
+  }
 );
