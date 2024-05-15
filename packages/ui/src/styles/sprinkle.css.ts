@@ -33,7 +33,15 @@ const fontProperties = defineProperties({
 const responsiveProperties = defineProperties({
   properties: {
     position: ["absolute", "relative", "fixed"],
-    display: ["none", "block", "inline", "inline-block", "flex", "inline-flex"],
+    display: [
+      "none",
+      "block",
+      "inline",
+      "inline-block",
+      "flex",
+      "inline-flex",
+      "grid",
+    ],
     alignItems: ["stretch", "flex-start", "center", "flex-end", "baseline"],
     justifyContent: ["flex-start", "center", "flex-end", "space-between"],
     flexDirection: ["row", "row-reverse", "column", "column-reverse"],

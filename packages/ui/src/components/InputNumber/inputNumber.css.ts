@@ -1,39 +1,36 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 import { sprinkles, vars } from "../../styles";
 
-export const labelStyle = style([
+export const label = style([
   sprinkles({
     color: "gray700",
   }),
 ]);
 
-export const inputBoxStyle = style([
+export const inputBox = style([
   sprinkles({
     position: "relative",
+    display: "flex",
+    alignItems: "center",
   }),
 ]);
 
-export const inputStyle = recipe({
+export const input = recipe({
   base: [
     sprinkles({
       color: "gray700",
       width: "full",
       height: "48px",
       paddingLeft: "3x",
+      paddingRight: "3x",
       fontSize: "20px",
     }),
     {
-      paddingRight: 37,
+      border: 0,
       outline: 0,
-      borderTop: 0,
-      borderLeft: 0,
-      borderRight: 0,
-      borderBottomWidth: "1px",
-      borderBottomStyle: "solid",
       caretColor: vars.pallette.primary500,
       MozAppearance: "none",
-      textAlign: "left",
 
       "::-webkit-inner-spin-button": {
         WebkitAppearance: "none",
@@ -44,59 +41,49 @@ export const inputStyle = recipe({
       "::placeholder": {
         color: vars.pallette.gray400,
       },
-      ":focus": {
-        borderColor: vars.pallette.gray900,
-      },
-      selectors: {
-        '&:not([value=""])': {
-          textAlign: "right",
-        },
-      },
     },
   ],
   variants: {
-    state: {
-      valid: sprinkles({
-        borderColor: "gray300",
+    hasValue: {
+      true: sprinkles({
+        textAlign: "right",
       }),
-      error: [
-        sprinkles({
-          borderColor: "primary500",
-        }),
-        {
-          ":focus": {
-            borderColor: vars.pallette.primary500,
-          },
-        },
-      ],
+      false: sprinkles({
+        textAlign: "left",
+      }),
     },
   },
 });
 
-export const unitStyle = style([
+/**
+ * Divider
+ */
+export const divider = style([
   sprinkles({
-    color: "gray500",
     position: "absolute",
+    borderColor: "gray300",
   }),
   {
-    top: "50%",
-    right: vars.space["6x"],
-    transform: "translateY(-50%)",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderBottomWidth: "1px",
+    borderBottomStyle: "solid",
   },
 ]);
-
-export const helperStyle = recipe({
-  base: sprinkles({
-    paddingTop: "5x",
-  }),
-  variants: {
-    state: {
-      valid: sprinkles({
-        color: "gray500",
-      }),
-      error: sprinkles({
-        color: "primary600",
-      }),
-    },
-  },
+globalStyle(`${input}:focus + ${divider}`, {
+  borderColor: vars.pallette.gray900,
 });
+globalStyle(`${input}[data-state="error"] + ${divider}`, {
+  borderColor: vars.pallette.primary500,
+});
+
+/**
+ * Suffix
+ */
+export const suffix = style([
+  sprinkles({
+    color: "gray500",
+    paddingRight: "6x",
+  }),
+]);

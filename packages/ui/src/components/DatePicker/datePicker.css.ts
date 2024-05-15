@@ -1,9 +1,30 @@
-import { globalStyle, style } from "@vanilla-extract/css";
-import { vars } from "../../styles";
+import { globalStyle } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles, vars } from "../../styles";
 
-export const datePicker = style({});
+export const panel = recipe({
+  base: [
+    sprinkles({
+      position: "absolute",
+    }),
+    {
+      top: "100%",
+      left: 0,
+    },
+  ],
+  variants: {
+    isOpen: {
+      true: sprinkles({
+        display: "block",
+      }),
+      false: sprinkles({
+        display: "none",
+      }),
+    },
+  },
+});
 
-globalStyle(`${datePicker} *`, {
+globalStyle(`${panel} *`, {
   fontFamily: "pretendard",
 });
 
