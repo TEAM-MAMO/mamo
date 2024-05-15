@@ -11,7 +11,7 @@ import {
   useState,
 } from "react";
 import clsx from "clsx";
-import * as s from "./bottomSheet.css";
+import * as s from "./BottomSheet.css";
 
 import { Typography } from "../Typography/Typography";
 

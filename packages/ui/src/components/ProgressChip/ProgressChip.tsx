@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import * as s from "./progressChip.css";
+import * as s from "./ProgressChip.css";
+
 import { Typography } from "../Typography/Typography";
 
 const { Foot } = Typography;

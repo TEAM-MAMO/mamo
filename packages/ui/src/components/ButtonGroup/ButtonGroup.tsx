@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from "react";
+
 import clsx from "clsx";
-import * as S from "./buttonGroup.css";
+import * as S from "./ButtonGroup.css";
 
 export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   layout?: "horizontal" | "vertical";

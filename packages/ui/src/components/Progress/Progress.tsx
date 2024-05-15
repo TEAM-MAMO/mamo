@@ -1,6 +1,7 @@
-import clsx from "clsx";
 import { HTMLAttributes, forwardRef } from "react";
-import * as S from "./progress.css";
+
+import clsx from "clsx";
+import * as S from "./Progress.css";
 
 export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
   primary?: boolean;

@@ -5,8 +5,9 @@ import {
   PropsWithChildren,
   forwardRef,
 } from "react";
+
 import clsx from "clsx";
-import * as S from "./typography.css";
+import * as S from "./Typography.css";
 
 /**
  * Typography Article

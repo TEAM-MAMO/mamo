@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Typography } from "../Typography/Typography";
 import {
+  countStyle,
+  helperStyle,
   labelStyle,
   textBoxStyle,
   textareaStyle,
-  countStyle,
-  helperStyle,
-} from "./textarea.css";
+} from "./Textarea.css";
+
+import { Typography } from "../Typography/Typography";
 
 const { Caption } = Typography;
 

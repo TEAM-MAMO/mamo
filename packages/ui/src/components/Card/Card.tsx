@@ -5,9 +5,10 @@ import {
   forwardRef,
 } from "react";
 import clsx from "clsx";
-import * as S from "./card.css";
-import { sprinkles } from "../../styles";
+import * as S from "./Card.css";
+
 import { Divider } from "../Divider/Divider";
+import { sprinkles } from "../../styles";
 
 /**
  * Card Root
@@ -71,11 +72,11 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
 export interface ContentProps
   extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   size?: "small" | "default" | "large";
-  extra?: ReactNode;
+  right?: ReactNode;
 }
 
 export const Content = forwardRef<HTMLDivElement, ContentProps>(
-  ({ className, size = "default", extra, children, ...props }, ref) => {
+  ({ className, size = "default", right, children, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -83,8 +84,7 @@ export const Content = forwardRef<HTMLDivElement, ContentProps>(
         className={clsx(S.content({ size }), className)}
       >
         {children}
-
-        {extra && <span className={S.extra}>{extra}</span>}
+        {right && <span className={S.extra}>{right}</span>}
       </div>
     );
   },

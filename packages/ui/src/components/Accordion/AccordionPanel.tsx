@@ -17,7 +17,7 @@ export const AccordionPanel = forwardRef<HTMLDivElement, AccordionPanelProps>(
       <div ref={panelRef}>
         {title && (
           <Typography.Caption
-            className={clsx(sprinkles({ marginBottom: "6x" }))}
+            className={clsx(sprinkles({ marginBottom: "16px" }))}
           >
             {title}
           </Typography.Caption>

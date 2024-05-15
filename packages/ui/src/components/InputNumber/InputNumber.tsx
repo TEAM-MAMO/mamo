@@ -1,9 +1,10 @@
 import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
-import { Typography } from "../Typography/Typography";
-import * as S from "./inputNumber.css";
-import { InputStateType } from "../Input/Input";
+import * as S from "./InputNumber.css";
+
 import { Divider } from "../Divider/Divider";
-import { helper } from "../Input/input.css";
+import { InputStateType } from "../Input/Input";
+import { Typography } from "../Typography/Typography";
+import { helper } from "../Input/Input.css";
 
 const { Caption } = Typography;
 

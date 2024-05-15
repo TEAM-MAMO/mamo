@@ -6,7 +6,7 @@ import {
 } from "react";
 
 import clsx from "clsx";
-import { navbarStyle } from "./NavigationBar.css";
+import * as S from "./NavigationBar.css";
 
 interface Props extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
   left?: ReactNode;
@@ -16,7 +16,7 @@ interface Props extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
 export const NavigationBar = forwardRef<HTMLElement, Props>(
   ({ className, left, right, children, ...props }, ref?) => {
     return (
-      <nav className={clsx(navbarStyle, className)} ref={ref} {...props}>
+      <nav className={clsx(S.navbar, className)} ref={ref} {...props}>
         {left && left}
         {children}
         {right && right}

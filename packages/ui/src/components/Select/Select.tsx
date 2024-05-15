@@ -13,7 +13,7 @@ import {
   useState,
 } from "react";
 import clsx from "clsx";
-import * as S from "./select.css";
+import * as S from "./Select.css";
 
 import { BottomSheet, useBottomSheetContext } from "../BottomSheet/BottomSheet";
 

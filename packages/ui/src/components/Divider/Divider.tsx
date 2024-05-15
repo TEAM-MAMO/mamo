@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { divider } from "./divider.css";
+import { divider } from "./Divider.css";
 
 export interface DividerProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   bolder?: boolean;

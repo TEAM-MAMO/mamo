@@ -3,7 +3,7 @@ import { sprinkles } from "../../styles";
 
 export const badge = recipe({
   base: sprinkles({
-    paddingX: "2x",
+    paddingX: "6px",
     borderRadius: "small",
   }),
   variants: {

@@ -13,7 +13,7 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
         ref={ref}
         {...props}
         className={clsx(
-          sprinkles({ display: "flex", flexDirection: "column", gapY: "7x" }),
+          sprinkles({ display: "flex", flexDirection: "column", gapY: "20px" }),
           className,
         )}
       >

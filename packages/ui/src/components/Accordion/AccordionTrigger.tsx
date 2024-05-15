@@ -36,7 +36,7 @@ export const AccordionTrigger = forwardRef<
         className={sprinkles({
           display: "flex",
           flexDirection: "column",
-          gapY: "7x",
+          gapY: "20px",
         })}
       >
         {top && top}

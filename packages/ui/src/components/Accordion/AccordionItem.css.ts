@@ -5,8 +5,8 @@ export const item = style([
   sprinkles({
     display: "flex",
     flexDirection: "column",
-    paddingY: "8x",
-    paddingX: "6x",
+    paddingY: "24px",
+    paddingX: "16px",
   }),
   {
     borderBottom: "1px solid #EFEFEF",

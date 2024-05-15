@@ -1,8 +1,8 @@
-import clsx from "clsx";
 import React from "react";
-import { chip } from "./chip.css";
-import { Typography } from "../Typography/Typography";
+import clsx from "clsx";
 import { Button } from "../Button/Button";
+import { Typography } from "../Typography/Typography";
+import { chip } from "./Chip.css";
 
 const { Caption } = Typography;
 

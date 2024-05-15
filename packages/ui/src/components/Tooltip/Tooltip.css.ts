@@ -13,7 +13,7 @@ export const tooltip = recipe({
       display: "flex",
 
       alignItems: "center",
-      gapX: "1x",
+      gapX: "4px",
       position: "absolute",
       color: "white",
       borderRadius: "small",

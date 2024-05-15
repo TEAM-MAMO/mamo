@@ -6,6 +6,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
+
   rules: {
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'jsx-a11y/interactive-supports-focus': 0,

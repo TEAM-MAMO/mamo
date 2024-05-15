@@ -1,15 +1,9 @@
-import {
-  ChangeEvent,
-  InputHTMLAttributes,
-  ReactNode,
-  forwardRef,
-  useState,
-} from "react";
+import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 import clsx from "clsx";
-import * as S from "./input.css";
-import { Typography } from "../Typography/Typography";
-import { DeleteSolid } from "../../assets/icons";
+import * as S from "./Input.css";
+
 import { Divider } from "../Divider/Divider";
+import { Typography } from "../Typography/Typography";
 
 const { Caption } = Typography;
 

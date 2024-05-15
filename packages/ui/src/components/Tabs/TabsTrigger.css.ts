@@ -5,7 +5,7 @@ import { sprinkles } from "../../styles";
 export const trigger = recipe({
   base: style([
     sprinkles({
-      padding: "1x",
+      padding: "4px",
 
       width: "full",
       cursor: "pointer",
@@ -25,7 +25,7 @@ export const trigger = recipe({
 
 export const tab = recipe({
   base: sprinkles({
-    marginBottom: "1x",
+    marginBottom: "4px",
     marginX: "auto",
     fontWeight: "600",
   }),

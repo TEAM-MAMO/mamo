@@ -9,7 +9,7 @@ export const content = style([
   sprinkles({
     display: "flex",
     flexDirection: "column",
-    gapY: "6x",
+    gapY: "16px",
 
     overflow: "hidden",
   }),
@@ -26,7 +26,7 @@ export const contentChild = style([
   sprinkles({
     display: "flex",
     flexDirection: "column",
-    gapY: "6x",
+    gapY: "16px",
   }),
 ]);
 

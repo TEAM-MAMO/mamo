@@ -18,6 +18,21 @@ module.exports = {
     next: {
       rootDir: ['apps/*/', 'packages/*/'],
     },
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'index',
+          'sibling',
+          'parent',
+          'internal',
+          'external',
+          'builtin',
+          'object',
+          'type',
+        ],
+      },
+    ],
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },

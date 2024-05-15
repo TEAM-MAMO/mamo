@@ -3,7 +3,6 @@ import {
   PropsWithChildren,
   forwardRef,
   useMemo,
-  useState,
 } from "react";
 import * as S from "./AccordionItem.css";
 

@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, PropsWithChildren } from "react";
+
 import clsx from "clsx";
-import * as S from "./button.css";
+import * as S from "./Button.css";
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "prefix"> {

@@ -1,3 +1,6 @@
+import "react-calendar/dist/Calendar.css";
+
+import Calendar, { OnClickFunc } from "react-calendar";
 import {
   HTMLAttributes,
   PropsWithChildren,
@@ -8,12 +11,11 @@ import {
   useMemo,
   useState,
 } from "react";
+
 import clsx from "clsx";
 import dayjs from "dayjs";
-import Calendar, { OnClickFunc } from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-import * as s from "./datePicker.css";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "../../assets/icons";
+import * as s from "./DatePicker.css";
 import { sprinkles } from "../../styles";
 
 /**
