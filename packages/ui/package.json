@@ -6,7 +6,8 @@
     ".": [
       "./src/components/index.ts"
     ],
-    "./styles": "./src/styles/index.ts"
+    "./styles": "./src/styles/index.ts",
+    "./icons": "./src/assets/icons/index.ts"
   },
   "scripts": {
     "lint": "eslint --fix",

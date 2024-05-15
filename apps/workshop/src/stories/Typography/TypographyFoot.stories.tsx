@@ -6,7 +6,7 @@ const meta = {
   title: "COMPONENTS/Typography/Foot",
   component: Foot,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {

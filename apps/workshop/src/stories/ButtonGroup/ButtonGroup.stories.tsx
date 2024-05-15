@@ -5,7 +5,7 @@ const meta = {
   title: "COMPONENTS/ButtonGroup",
   component: ButtonGroup,
   parameters: {
-    layout: "center",
+    layout: "centered",
   },
   tags: ["autodocs"],
   args: {

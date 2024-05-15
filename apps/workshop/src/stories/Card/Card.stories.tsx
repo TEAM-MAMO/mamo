@@ -3,7 +3,7 @@ import { Button, Card, Typography } from "@repo/ui";
 import { ArrowRightOutlined } from "../../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: "Default/Card",
+  title: "COMPONENTS/Card",
   component: Card,
   parameters: {
     layout: "centered",

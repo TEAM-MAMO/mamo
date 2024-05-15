@@ -7,7 +7,7 @@ const meta = {
   title: "COMPONENTS/Typography/Heading",
   component: Heading,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {

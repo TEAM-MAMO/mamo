@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Chip } from "@repo/ui";
-import { PlusOutlined } from "../../../../packages/ui/src/assets/icons";
+import { PlusOutlined } from "@repo/ui/icons";
 
 const meta = {
   title: "COMPONENTS/Chip",

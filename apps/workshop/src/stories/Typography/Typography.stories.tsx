@@ -17,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Typography>;
 
-export const BaDefaultsic: Story = {
+export const Default: Story = {
   args: {
     children: (
       <>
