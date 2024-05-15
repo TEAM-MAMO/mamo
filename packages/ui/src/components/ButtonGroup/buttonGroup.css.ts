@@ -1,32 +1,32 @@
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles } from '../../styles';
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles } from "../../styles";
 
 export const group = recipe({
   base: sprinkles({
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
   }),
   variants: {
     layout: {
       horizontal: sprinkles({
-        flexDirection: 'row',
+        flexDirection: "row",
       }),
       vertical: sprinkles({
-        flexDirection: 'column',
+        flexDirection: "column",
       }),
     },
     gap: {
       default: sprinkles({
-        gap: '4x',
+        gap: "4x",
       }),
       large: sprinkles({
-        gap: '5x',
+        gap: "5x",
       }),
       xsmall: sprinkles({
-        gap: '1x',
+        gap: "1x",
       }),
       small: sprinkles({
-        gap: '2x',
+        gap: "2x",
       }),
     },
   },

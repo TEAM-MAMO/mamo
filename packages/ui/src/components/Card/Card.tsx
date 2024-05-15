@@ -1,13 +1,19 @@
-import { HTMLAttributes, PropsWithChildren, ReactNode, forwardRef } from 'react';
-import clsx from 'clsx';
-import * as S from './card.css';
-import { sprinkles } from '../../styles';
-import { Divider } from '../Divider/Divider';
+import {
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+  forwardRef,
+} from "react";
+import clsx from "clsx";
+import * as S from "./card.css";
+import { sprinkles } from "../../styles";
+import { Divider } from "../Divider/Divider";
 
 /**
  * Card Root
  */
-export interface CardRootProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+export interface CardRootProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   divider?: boolean;
   borderless?: boolean;
   rounded?: boolean;
@@ -23,7 +29,7 @@ export const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div
@@ -35,13 +41,14 @@ export const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Header
  */
-export interface HeaderProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+export interface HeaderProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   extra?: ReactNode;
 }
 
@@ -55,33 +62,39 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 /**
  * Content
  */
-export interface ContentProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
-  size?: 'small' | 'default' | 'large';
+export interface ContentProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+  size?: "small" | "default" | "large";
   extra?: ReactNode;
 }
 
 export const Content = forwardRef<HTMLDivElement, ContentProps>(
-  ({ className, size = 'default', extra, children, ...props }, ref) => {
+  ({ className, size = "default", extra, children, ...props }, ref) => {
     return (
-      <div ref={ref} {...props} className={clsx(S.content({ size }), className)}>
+      <div
+        ref={ref}
+        {...props}
+        className={clsx(S.content({ size }), className)}
+      >
         {children}
 
         {extra && <span className={S.extra}>{extra}</span>}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Grid
  */
-export interface GridProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+export interface GridProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   column?: number;
 }
 
@@ -92,30 +105,40 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Image
  */
-export interface ImageProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
-  size?: 'small' | 'default' | 'full';
+export interface ImageProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+  size?: "small" | "default" | "full";
   rounded?: boolean;
 }
 
 export const ImageBox = forwardRef<HTMLDivElement, ImageProps>(
-  ({ size = 'default', rounded = true, className, children, ...props }, ref) => {
+  (
+    { size = "default", rounded = true, className, children, ...props },
+    ref,
+  ) => {
     return (
-      <div ref={ref} {...props} className={clsx(S.image({ size, rounded }), className)}>
+      <div
+        ref={ref}
+        {...props}
+        className={clsx(S.image({ size, rounded }), className)}
+      >
         {children}
       </div>
     );
-  }
+  },
 );
 /**
  * Information
  */
-export type InformationProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
+export type InformationProps = PropsWithChildren<
+  HTMLAttributes<HTMLDivElement>
+>;
 
 export const Information = forwardRef<HTMLDivElement, InformationProps>(
   ({ className, children, ...props }, ref) => {
@@ -124,7 +147,7 @@ export const Information = forwardRef<HTMLDivElement, InformationProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
@@ -140,7 +163,7 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 const Compound = Object.assign(CardRoot, {

@@ -1,18 +1,18 @@
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles } from '../../styles';
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles } from "../../styles";
 
 export const track = recipe({
   base: [
     sprinkles({
-      background: 'gray300',
-      width: 'full',
+      background: "gray300",
+      width: "full",
     }),
   ],
   variants: {
     primary: {
       true: [
         sprinkles({
-          borderRadius: 'round',
+          borderRadius: "round",
         }),
         {
           height: 4,
@@ -20,7 +20,7 @@ export const track = recipe({
       ],
       false: [
         sprinkles({
-          background: 'gray300',
+          background: "gray300",
         }),
         {
           height: 2,
@@ -33,25 +33,25 @@ export const track = recipe({
 export const thumb = recipe({
   base: [
     sprinkles({
-      height: 'full',
+      height: "full",
     }),
     {
-      maxWidth: '100%',
+      maxWidth: "100%",
     },
   ],
   variants: {
     primary: {
       true: [
         sprinkles({
-          background: 'primary500',
-          borderRadius: 'round',
+          background: "primary500",
+          borderRadius: "round",
         }),
         {
           minWidth: 4,
         },
       ],
       false: sprinkles({
-        background: 'black',
+        background: "black",
       }),
     },
   },

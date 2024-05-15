@@ -1,25 +1,25 @@
-import { keyframes, style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles } from '../../styles';
+import { keyframes, style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles } from "../../styles";
 
 const fadeIn = keyframes({
-  '0%': { opacity: 0 },
-  '100%': { opacity: 0.6 },
+  "0%": { opacity: 0 },
+  "100%": { opacity: 0.6 },
 });
 
 const fadeOut = keyframes({
-  '0%': { opacity: 0.6 },
-  '100%': { opacity: 0 },
+  "0%": { opacity: 0.6 },
+  "100%": { opacity: 0 },
 });
 
 const slideIn = keyframes({
-  '0%': { transform: 'translateY(100%)' },
-  '100%': { transform: 'translateY(0)' },
+  "0%": { transform: "translateY(100%)" },
+  "100%": { transform: "translateY(0)" },
 });
 
 const slideOut = keyframes({
-  '0%': { transform: 'translateY(0)' },
-  '100%': { transform: 'translateY(100%)' },
+  "0%": { transform: "translateY(0)" },
+  "100%": { transform: "translateY(100%)" },
 });
 
 /**
@@ -27,12 +27,12 @@ const slideOut = keyframes({
  */
 export const content = style([
   sprinkles({
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    overflow: 'hidden',
+    overflow: "hidden",
   }),
   {},
 ]);
@@ -40,9 +40,9 @@ export const content = style([
 export const overlay = recipe({
   base: [
     sprinkles({
-      width: 'full',
-      height: 'full',
-      background: 'black',
+      width: "full",
+      height: "full",
+      background: "black",
     }),
   ],
   variants: {
@@ -50,20 +50,20 @@ export const overlay = recipe({
       true: {
         opacity: 0,
         animationName: fadeIn,
-        animationDelay: '100ms',
-        animationDuration: '200ms',
-        animationTimingFunction: 'cubic-bezier(0.37, 0, 0.63, 1)',
-        animationFillMode: 'forwards',
+        animationDelay: "100ms",
+        animationDuration: "200ms",
+        animationTimingFunction: "cubic-bezier(0.37, 0, 0.63, 1)",
+        animationFillMode: "forwards",
       },
     },
     close: {
       true: {
         opacity: 0.6,
         animationName: fadeOut,
-        animationDelay: '100ms',
-        animationDuration: '200ms',
-        animationTimingFunction: 'cubic-bezier(0.37, 0, 0.63, 1)',
-        animationFillMode: 'forwards',
+        animationDelay: "100ms",
+        animationDuration: "200ms",
+        animationTimingFunction: "cubic-bezier(0.37, 0, 0.63, 1)",
+        animationFillMode: "forwards",
       },
     },
   },
@@ -72,40 +72,40 @@ export const overlay = recipe({
 export const sheet = recipe({
   base: [
     sprinkles({
-      position: 'absolute',
+      position: "absolute",
       left: 0,
       right: 0,
       bottom: 0,
-      background: 'white',
-      borderRadius: 'large',
-      overflow: 'hidden',
+      background: "white",
+      borderRadius: "large",
+      overflow: "hidden",
     }),
     {
       maxHeight: 650,
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
-      paddingBottom: '34px',
+      paddingBottom: "34px",
     },
   ],
   variants: {
     open: {
       true: {
-        transform: 'translateY(100%)',
+        transform: "translateY(100%)",
         animationName: slideIn,
-        animationDelay: '100ms',
-        animationDuration: '400ms',
-        animationTimingFunction: 'cubic-bezier(0.24, 0.9, 0.5, 1)',
-        animationFillMode: 'forwards',
+        animationDelay: "100ms",
+        animationDuration: "400ms",
+        animationTimingFunction: "cubic-bezier(0.24, 0.9, 0.5, 1)",
+        animationFillMode: "forwards",
       },
     },
     close: {
       true: {
-        transform: 'translateY(0%)',
+        transform: "translateY(0%)",
         animationName: slideOut,
-        animationDelay: '100ms',
-        animationDuration: '400ms',
-        animationTimingFunction: 'cubic-bezier(0.24, 0.9, 0.5, 1)',
-        animationFillMode: 'forwards',
+        animationDelay: "100ms",
+        animationDuration: "400ms",
+        animationTimingFunction: "cubic-bezier(0.24, 0.9, 0.5, 1)",
+        animationFillMode: "forwards",
       },
     },
   },
@@ -116,23 +116,23 @@ export const sheet = recipe({
  */
 export const confirm = style([
   sprinkles({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    width: 'full',
-    paddingX: '7x',
-    paddingTop: '10x',
-    paddingBottom: '8x',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    width: "full",
+    paddingX: "7x",
+    paddingTop: "10x",
+    paddingBottom: "8x",
   }),
   {},
 ]);
 
 export const description = style([
   sprinkles({
-    display: 'block',
-    marginTop: '7x',
-    color: 'gray600',
+    display: "block",
+    marginTop: "7x",
+    color: "gray600",
   }),
 ]);
 
@@ -142,23 +142,23 @@ export const description = style([
 export const header = recipe({
   base: [
     sprinkles({
-      position: 'relative',
-      display: 'flex',
-      alignItems: 'center',
-      paddingX: '7x',
-      width: 'full',
+      position: "relative",
+      display: "flex",
+      alignItems: "center",
+      paddingX: "7x",
+      width: "full",
     }),
     {
-      paddingRight: '56px',
+      paddingRight: "56px",
     },
   ],
   variants: {
     thin: {
       true: sprinkles({
-        height: '56px',
+        height: "56px",
       }),
       false: sprinkles({
-        height: '60px',
+        height: "60px",
       }),
     },
   },
@@ -169,14 +169,14 @@ export const header = recipe({
  */
 export const body = style([
   sprinkles({
-    width: 'full',
-    height: 'full',
-    paddingX: '7x',
+    width: "full",
+    height: "full",
+    paddingX: "7x",
   }),
   {
-    overflow: 'auto',
+    overflow: "auto",
     maxHeight: 560,
-    overscrollBehavior: 'contain',
+    overscrollBehavior: "contain",
   },
 ]);
 
@@ -185,24 +185,24 @@ export const body = style([
  */
 export const footer = style([
   sprinkles({
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2x',
-    padding: '6x',
+    display: "flex",
+    flexDirection: "column",
+    gap: "2x",
+    padding: "6x",
   }),
 ]);
 
 export const close = style([
   sprinkles({
-    position: 'absolute',
-    fontSize: '24px',
+    position: "absolute",
+    fontSize: "24px",
   }),
   {
-    top: '50%',
-    right: '16px',
+    top: "50%",
+    right: "16px",
     border: 0,
-    background: 'transparent',
-    transform: 'translateY(-50%)',
+    background: "transparent",
+    transform: "translateY(-50%)",
   },
 ]);
 
@@ -211,19 +211,19 @@ export const close = style([
  */
 export const menu = style([
   sprinkles({
-    paddingBottom: '6x',
+    paddingBottom: "6x",
   }),
 ]);
 
 export const item = style([
   sprinkles({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 'full',
-    height: '50px',
-    color: 'gray800',
-    background: 'white',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "full",
+    height: "50px",
+    color: "gray800",
+    background: "white",
   }),
   {
     border: 0,

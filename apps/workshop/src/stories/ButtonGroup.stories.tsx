@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button, ButtonGroup } from '@repo/ui';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button, ButtonGroup } from "@repo/ui";
 
 const meta = {
-  title: 'Example/ButtonGroup',
+  title: "Example/ButtonGroup",
   component: ButtonGroup,
   parameters: {
-    layout: 'center',
+    layout: "center",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
-    layout: 'horizontal',
-    gap: 'default',
+    layout: "horizontal",
+    gap: "default",
     children: (
       <>
         <Button>버튼</Button>
@@ -20,13 +20,13 @@ const meta = {
   },
   argTypes: {
     layout: {
-      control: 'select',
-      options: ['horizontal', 'vertical'],
+      control: "select",
+      options: ["horizontal", "vertical"],
     },
     gap: {
-      control: 'select',
-      options: ['xlarge', 'small', 'default', 'large'],
-      description: '간격의 사이즈를 설정합니다.',
+      control: "select",
+      options: ["xlarge", "small", "default", "large"],
+      description: "간격의 사이즈를 설정합니다.",
     },
   },
 } satisfies Meta<typeof ButtonGroup>;
@@ -40,6 +40,6 @@ export const Horizontal: Story = {
 
 export const Vertical: Story = {
   args: {
-    layout: 'vertical',
+    layout: "vertical",
   },
 };

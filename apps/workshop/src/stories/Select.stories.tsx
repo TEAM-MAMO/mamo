@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Select } from '@repo/ui';
-import { CloseOutlined } from '../../../../packages/ui/src/assets/icons';
-import { useState } from 'react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button, Select } from "@repo/ui";
+import { CloseOutlined } from "../../../../packages/ui/src/assets/icons";
+import { useState } from "react";
 
 const meta = {
-  title: 'Example/Select',
+  title: "Example/Select",
   component: Select,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof Select>;
@@ -19,15 +19,15 @@ type Story = StoryObj<typeof Select>;
 
 export const Basic: Story = {
   render: () => {
-    const [selected, setSelected] = useState('');
+    const [selected, setSelected] = useState("");
 
     return (
       <div
         style={{
-          transform: 'translate(0)',
-          height: '600px',
-          width: '375px',
-          background: '#F6F9FC',
+          transform: "translate(0)",
+          height: "600px",
+          width: "375px",
+          background: "#F6F9FC",
         }}
       >
         <Select>

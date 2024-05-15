@@ -7,14 +7,14 @@ import {
   useContext,
   useMemo,
   useState,
-} from 'react';
-import clsx from 'clsx';
-import dayjs from 'dayjs';
-import Calendar, { OnClickFunc } from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import * as s from './datePicker.css';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '../../assets/icons';
-import { sprinkles } from '../../styles';
+} from "react";
+import clsx from "clsx";
+import dayjs from "dayjs";
+import Calendar, { OnClickFunc } from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import * as s from "./datePicker.css";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "../../assets/icons";
+import { sprinkles } from "../../styles";
 
 /**
  * Context
@@ -55,12 +55,16 @@ export const DatePickerRoot = forwardRef<HTMLDivElement, DatePickerProps>(
 
     return (
       <DatePickerContext.Provider value={value}>
-        <div ref={ref} {...props} className={clsx(sprinkles({ position: 'relative' }))}>
+        <div
+          ref={ref}
+          {...props}
+          className={clsx(sprinkles({ position: "relative" }))}
+        >
           {children}
         </div>
       </DatePickerContext.Provider>
     );
-  }
+  },
 );
 
 /**
@@ -74,14 +78,14 @@ export const Trigger = forwardRef<HTMLDivElement, TriggerProps>(
       <div
         ref={ref}
         {...props}
-        className={clsx(sprinkles({ display: 'inline-block' }))}
+        className={clsx(sprinkles({ display: "inline-block" }))}
         onClick={toggle}
         role="presentation"
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
@@ -100,11 +104,15 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(
     };
 
     return (
-      <div ref={ref} className={clsx(s.panel({ isOpen }), className)} {...props}>
+      <div
+        ref={ref}
+        className={clsx(s.panel({ isOpen }), className)}
+        {...props}
+      >
         <Calendar
           view="month"
           calendarType="gregory"
-          formatDay={(locale, date) => dayjs(date).format('D')}
+          formatDay={(locale, date) => dayjs(date).format("D")}
           prevLabel={<ArrowLeftOutlined />}
           nextLabel={<ArrowRightOutlined />}
           prev2Label={null}
@@ -114,7 +122,7 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 const CompoundDatePicker = Object.assign(DatePickerRoot, {

@@ -4,9 +4,9 @@ import {
   ParamHTMLAttributes,
   PropsWithChildren,
   forwardRef,
-} from 'react';
-import clsx from 'clsx';
-import * as S from './typography.css';
+} from "react";
+import clsx from "clsx";
+import * as S from "./typography.css";
 
 /**
  * Typography Article
@@ -20,7 +20,7 @@ export const TypographyRoot = forwardRef<HTMLElement, TypographyProps>(
         {children}
       </article>
     );
-  }
+  },
 );
 
 /**
@@ -50,7 +50,7 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
         {children}
       </HeadingLevel>
     );
-  }
+  },
 );
 
 /**
@@ -69,11 +69,15 @@ export interface TextProps
 const Text = forwardRef<HTMLParagraphElement, TextProps>(
   ({ level = 1, inline = false, className, children, ...props }, ref) => {
     return (
-      <p ref={ref} className={clsx(S.Text({ level, inline }), className)} {...props}>
+      <p
+        ref={ref}
+        className={clsx(S.Text({ level, inline }), className)}
+        {...props}
+      >
         {children}
       </p>
     );
-  }
+  },
 );
 
 /**
@@ -93,11 +97,15 @@ export interface CaptionProps
 const Caption = forwardRef<HTMLParagraphElement, CaptionProps>(
   ({ level = 1, inline = false, className, children, ...props }, ref) => {
     return (
-      <p ref={ref} className={clsx(S.Caption({ level, inline }), className)} {...props}>
+      <p
+        ref={ref}
+        className={clsx(S.Caption({ level, inline }), className)}
+        {...props}
+      >
         {children}
       </p>
     );
-  }
+  },
 );
 
 /**
@@ -120,7 +128,7 @@ const Foot = forwardRef<HTMLParagraphElement, FootProps>(
         {children}
       </p>
     );
-  }
+  },
 );
 
 const Compound = Object.assign(TypographyRoot, {

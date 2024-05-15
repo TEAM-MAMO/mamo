@@ -1,18 +1,19 @@
 import {
+  HTMLAttributes,
+  LiHTMLAttributes,
+  PropsWithChildren,
   ReactNode,
+  createContext,
   forwardRef,
-  useState,
   useCallback,
   useContext,
   useMemo,
-  HTMLAttributes,
-  PropsWithChildren,
-  LiHTMLAttributes,
-  createContext,
-} from 'react';
-import clsx from 'clsx';
-import * as s from './bottomSheet.css';
-import { Typography } from '../Typography/Typography';
+  useState,
+} from "react";
+import clsx from "clsx";
+import * as s from "./bottomSheet.css";
+
+import { Typography } from "../Typography/Typography";
 
 const { Text, Heading, Caption } = Typography;
 
@@ -36,7 +37,8 @@ export const useBottomSheetContext = () => {
 /**
  * BottomSheet
  */
-interface BottomSheetProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+interface BottomSheetProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 export const BottomSheetRoot = forwardRef<HTMLDivElement, BottomSheetProps>(
   ({ children, ...props }, ref) => {
     const [open, setOpen] = useState<boolean>(false);
@@ -56,7 +58,7 @@ export const BottomSheetRoot = forwardRef<HTMLDivElement, BottomSheetProps>(
 
     const value = useMemo(
       () => ({ open, toggle, isTransition }),
-      [isTransition, open, toggle]
+      [isTransition, open, toggle],
     );
 
     return (
@@ -66,13 +68,14 @@ export const BottomSheetRoot = forwardRef<HTMLDivElement, BottomSheetProps>(
         </div>
       </BottomSheetContext.Provider>
     );
-  }
+  },
 );
 
 /**
  * Trigger
  */
-interface TriggerProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+interface TriggerProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 
 export const Trigger = forwardRef<HTMLDivElement, TriggerProps>(
   ({ children, ...props }, ref) => {
@@ -83,13 +86,14 @@ export const Trigger = forwardRef<HTMLDivElement, TriggerProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Content
  */
-interface ContentProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+interface ContentProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 
 export const Content = forwardRef<HTMLDivElement, ContentProps>(
   ({ className, children, ...props }, ref) => {
@@ -102,17 +106,20 @@ export const Content = forwardRef<HTMLDivElement, ContentProps>(
             onClick={toggle}
             aria-hidden="true"
           />
-          <div className={s.sheet({ open, close: isTransition })}>{children}</div>
+          <div className={s.sheet({ open, close: isTransition })}>
+            {children}
+          </div>
         </div>
       )
     );
-  }
+  },
 );
 
 /**
  * Confirm
  */
-interface ConfirmProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+interface ConfirmProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   title: string;
   description?: string;
 }
@@ -131,13 +138,14 @@ const Confirm = forwardRef<HTMLDivElement, ConfirmProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Header
  */
-interface HeaderProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+interface HeaderProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   title?: string;
   closeIcon?: ReactNode;
 }
@@ -146,16 +154,25 @@ const Header = forwardRef<HTMLDivElement, HeaderProps>(
     const { toggle } = useBottomSheetContext();
 
     return (
-      <div ref={ref} className={clsx(s.header({ thin: !!title }), className)} {...props}>
+      <div
+        ref={ref}
+        className={clsx(s.header({ thin: !!title }), className)}
+        {...props}
+      >
         <Heading level={3}>{title}</Heading>
         {closeIcon && (
-          <button className={s.close} type="button" aria-label="close" onClick={toggle}>
+          <button
+            className={s.close}
+            type="button"
+            aria-label="close"
+            onClick={toggle}
+          >
             {closeIcon}
           </button>
         )}
       </div>
     );
-  }
+  },
 );
 
 /**
@@ -170,13 +187,14 @@ const Body = forwardRef<HTMLDivElement, BodyProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Footer
  */
-interface FooterProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+interface FooterProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 
 const Footer = forwardRef<HTMLDivElement, FooterProps>(
   ({ children, className, ...props }, ref) => {
@@ -185,13 +203,14 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
  * Menu
  */
-interface MenuProps extends PropsWithChildren<HTMLAttributes<HTMLUListElement>> {}
+interface MenuProps
+  extends PropsWithChildren<HTMLAttributes<HTMLUListElement>> {}
 
 const Menu = forwardRef<HTMLUListElement, MenuProps>(
   ({ children, className, ...props }, ref) => {
@@ -200,23 +219,26 @@ const Menu = forwardRef<HTMLUListElement, MenuProps>(
         {children}
       </ul>
     );
-  }
+  },
 );
 
 /**
  * Menu Item
  */
-interface ItemProps extends PropsWithChildren<LiHTMLAttributes<HTMLLIElement>> {}
+interface ItemProps
+  extends PropsWithChildren<LiHTMLAttributes<HTMLLIElement>> {}
 
-const Item = forwardRef<HTMLLIElement, ItemProps>(({ children, ...props }, ref) => {
-  return (
-    <li ref={ref} {...props}>
-      <button className={s.item}>
-        <Text>{children}</Text>
-      </button>
-    </li>
-  );
-});
+const Item = forwardRef<HTMLLIElement, ItemProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <li ref={ref} {...props}>
+        <button className={s.item}>
+          <Text>{children}</Text>
+        </button>
+      </li>
+    );
+  },
+);
 
 const CompoundBottomSheet = Object.assign(BottomSheetRoot, {
   Trigger,

@@ -52,7 +52,11 @@ globalStyle("input, button, textarea, select", {
 });
 
 globalStyle("button", {
+  padding: "0",
+  background: "transparent",
+  border: "none",
   cursor: "pointer",
+  margin: "0",
 });
 
 globalStyle("a:not([class])", {

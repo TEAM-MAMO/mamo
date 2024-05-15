@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles } from '../../styles';
+import { style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles } from "../../styles";
 
 /**
  * Typography Heading
@@ -8,35 +8,35 @@ import { sprinkles } from '../../styles';
 export const heading = recipe({
   base: [
     sprinkles({
-      letterSpacing: '-2%',
+      letterSpacing: "-2%",
     }),
   ],
   variants: {
     level: {
       1: sprinkles({
-        fontSize: '24px',
-        lineHeight: '32px',
+        fontSize: "24px",
+        lineHeight: "32px",
       }),
       2: sprinkles({
-        fontSize: '20px',
-        lineHeight: '28px',
+        fontSize: "20px",
+        lineHeight: "28px",
       }),
       3: sprinkles({
-        fontSize: '18px',
-        lineHeight: '26px',
+        fontSize: "18px",
+        lineHeight: "26px",
       }),
       4: sprinkles({
-        fontSize: '16px',
-        letterSpacing: '-1%',
-        lineHeight: '24px',
+        fontSize: "16px",
+        letterSpacing: "-1%",
+        lineHeight: "24px",
       }),
     },
     strong: {
       true: sprinkles({
-        fontWeight: '700',
+        fontWeight: "700",
       }),
       false: sprinkles({
-        fontWeight: '500',
+        fontWeight: "500",
       }),
     },
   },
@@ -47,7 +47,7 @@ export const heading = recipe({
         strong: false,
       },
       style: sprinkles({
-        fontWeight: '600',
+        fontWeight: "600",
       }),
     },
   ],
@@ -59,28 +59,28 @@ export const heading = recipe({
 export const Text = recipe({
   base: style([
     sprinkles({
-      fontSize: '16px',
-      letterSpacing: '-1%',
+      fontSize: "16px",
+      letterSpacing: "-1%",
     }),
   ]),
   variants: {
     level: {
       1: sprinkles({
-        fontWeight: '600',
-        lineHeight: '26px',
+        fontWeight: "600",
+        lineHeight: "26px",
       }),
       2: sprinkles({
-        lineHeight: '26px',
-        fontWeight: '500',
+        lineHeight: "26px",
+        fontWeight: "500",
       }),
       3: sprinkles({
-        fontWeight: '500',
-        lineHeight: '28px',
+        fontWeight: "500",
+        lineHeight: "28px",
       }),
     },
     inline: {
       true: sprinkles({
-        display: 'inline-block',
+        display: "inline-block",
       }),
     },
   },
@@ -92,30 +92,30 @@ export const Text = recipe({
 export const Caption = recipe({
   base: style([
     sprinkles({
-      fontSize: '14px',
-      lineHeight: '20px',
-      letterSpacing: '-1%',
+      fontSize: "14px",
+      lineHeight: "20px",
+      letterSpacing: "-1%",
     }),
   ]),
   variants: {
     level: {
       1: sprinkles({
-        fontWeight: '600',
+        fontWeight: "600",
       }),
       2: sprinkles({
-        fontWeight: '500',
+        fontWeight: "500",
       }),
       3: sprinkles({
-        fontWeight: '400',
+        fontWeight: "400",
       }),
       4: sprinkles({
-        fontWeight: '500',
-        letterSpacing: '-4%',
+        fontWeight: "500",
+        letterSpacing: "-4%",
       }),
     },
     inline: {
       true: sprinkles({
-        display: 'inline-block',
+        display: "inline-block",
       }),
     },
   },
@@ -127,24 +127,24 @@ export const Caption = recipe({
 export const Foot = recipe({
   base: style([
     sprinkles({
-      fontSize: '12px',
-      lineHeight: '20px',
-      letterSpacing: '-1%',
+      fontSize: "12px",
+      lineHeight: "20px",
+      letterSpacing: "-1%",
     }),
   ]),
   variants: {
     level: {
       1: sprinkles({
-        fontWeight: '600',
+        fontWeight: "600",
       }),
       2: sprinkles({
-        fontWeight: '500',
+        fontWeight: "500",
       }),
       3: sprinkles({
-        fontSize: '10px',
-        fontWeight: '500',
-        lineHeight: '16px',
-        letterSpacing: '-2%',
+        fontSize: "10px",
+        fontWeight: "500",
+        lineHeight: "16px",
+        letterSpacing: "-2%",
       }),
     },
   },

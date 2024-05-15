@@ -1,20 +1,21 @@
 import {
+  ButtonHTMLAttributes,
   Children,
+  HTMLAttributes,
+  PropsWithChildren,
   ReactNode,
   createContext,
-  PropsWithChildren,
-  ButtonHTMLAttributes,
-  HTMLAttributes,
-  useState,
-  useEffect,
   forwardRef,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
-} from 'react';
-import clsx from 'clsx';
-import * as S from './select.css';
-import { BottomSheet, useBottomSheetContext } from '../BottomSheet/BottomSheet';
+  useState,
+} from "react";
+import clsx from "clsx";
+import * as S from "./select.css";
+
+import { BottomSheet, useBottomSheetContext } from "../BottomSheet/BottomSheet";
 
 /**
  * Context
@@ -43,12 +44,16 @@ export const useSelectContext = () => {
 /**
  * Select
  */
-export interface SelectProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+export interface SelectProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 export const SelectRoot = forwardRef<HTMLDivElement, SelectProps>(
   ({ children, ...props }, ref) => {
-    const [selected, setSelected] = useState<string>('');
+    const [selected, setSelected] = useState<string>("");
 
-    const value = useMemo(() => ({ selected, setSelected }), [selected, setSelected]);
+    const value = useMemo(
+      () => ({ selected, setSelected }),
+      [selected, setSelected],
+    );
 
     return (
       <SelectContext.Provider value={value}>
@@ -57,13 +62,14 @@ export const SelectRoot = forwardRef<HTMLDivElement, SelectProps>(
         </BottomSheet>
       </SelectContext.Provider>
     );
-  }
+  },
 );
 
 /**
  * Trigger
  */
-export interface TriggerProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
+export interface TriggerProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {}
 export const Trigger = forwardRef<HTMLDivElement, TriggerProps>(
   ({ children, ...props }, ref) => {
     return (
@@ -71,7 +77,7 @@ export const Trigger = forwardRef<HTMLDivElement, TriggerProps>(
         {children}
       </BottomSheet.Trigger>
     );
-  }
+  },
 );
 
 /**
@@ -103,7 +109,7 @@ export const OptionList = forwardRef<HTMLDivElement, OptionListProps>(
         </BottomSheet.Body>
       </BottomSheet.Content>
     );
-  }
+  },
 );
 
 /**
@@ -133,7 +139,7 @@ export const Option = forwardRef<HTMLButtonElement, OptionProps>(
         {children}
       </button>
     );
-  }
+  },
 );
 
 const CompoundSelect = Object.assign(SelectRoot, {

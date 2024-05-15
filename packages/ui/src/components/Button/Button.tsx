@@ -1,11 +1,11 @@
-import React, { ButtonHTMLAttributes, PropsWithChildren } from 'react';
-import clsx from 'clsx';
-import * as S from './button.css';
+import React, { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import clsx from "clsx";
+import * as S from "./button.css";
 
 export interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
-  size?: 'xsmall' | 'small' | 'default' | 'large';
-  align?: 'horizontal' | 'vertical';
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "prefix"> {
+  size?: "xsmall" | "small" | "default" | "large";
+  align?: "horizontal" | "vertical";
   block?: boolean;
   primary?: boolean;
   disabled?: boolean;
@@ -14,22 +14,25 @@ export interface ButtonProps
   suffix?: React.ReactNode;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
+export const Button = React.forwardRef<
+  HTMLButtonElement,
+  PropsWithChildren<ButtonProps>
+>(
   (
     {
       children,
-      size = 'default',
+      size = "default",
       block = false,
       primary = false,
       disabled = false,
       borderless = false,
-      align = 'horizontal',
+      align = "horizontal",
       className,
       prefix,
       suffix,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <button
@@ -37,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Butt
         disabled={disabled}
         className={clsx(
           S.button({ size, align, block, primary, disabled, borderless }),
-          className
+          className,
         )}
         {...props}
       >
@@ -46,5 +49,5 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Butt
         {suffix && <span>{suffix}</span>}
       </button>
     );
-  }
+  },
 );

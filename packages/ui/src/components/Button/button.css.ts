@@ -1,99 +1,99 @@
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles } from '../../styles';
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles } from "../../styles";
 
 const textSM = sprinkles({
-  fontSize: 'small',
-  fontWeight: '600',
-  lineHeight: '20px',
+  fontSize: "small",
+  fontWeight: "600",
+  lineHeight: "20px",
 });
 
 export const button = recipe({
   base: [
     sprinkles({
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: 'round',
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "round",
     }),
     {
-      borderWidth: '1px',
-      borderStyle: 'solid',
+      borderWidth: "1px",
+      borderStyle: "solid",
     },
   ],
   variants: {
     primary: {
       true: [
         sprinkles({
-          color: 'white',
-          background: 'black',
-          borderColor: 'black',
+          color: "white",
+          background: "black",
+          borderColor: "black",
         }),
       ],
       false: [
         sprinkles({
-          color: 'gray600',
-          background: 'white',
-          borderColor: 'gray300',
+          color: "gray600",
+          background: "white",
+          borderColor: "gray300",
         }),
       ],
     },
     size: {
       large: sprinkles({
-        gap: '3x',
-        height: '50px',
-        paddingX: '7x',
+        gap: "3x",
+        height: "50px",
+        paddingX: "7x",
 
-        fontSize: 'medium',
-        fontWeight: '700',
-        lineHeight: '24px',
+        fontSize: "medium",
+        fontWeight: "700",
+        lineHeight: "24px",
       }),
       default: [
         textSM,
         sprinkles({
-          gap: '1x',
-          height: '44px',
-          paddingX: '5x',
+          gap: "1x",
+          height: "44px",
+          paddingX: "5x",
         }),
       ],
       small: [
         textSM,
         sprinkles({
-          gap: '1x',
-          height: '32px',
-          paddingX: '5x',
+          gap: "1x",
+          height: "32px",
+          paddingX: "5x",
         }),
       ],
       xsmall: [
         textSM,
         sprinkles({
-          gap: '1x',
-          height: '30px',
-          paddingX: '5x',
+          gap: "1x",
+          height: "30px",
+          paddingX: "5x",
         }),
       ],
     },
     align: {
       horizontal: sprinkles({
-        flexDirection: 'row',
+        flexDirection: "row",
       }),
       vertical: sprinkles({
-        flexDirection: 'column',
+        flexDirection: "column",
       }),
     },
     block: {
-      true: sprinkles({ width: 'full' }),
+      true: sprinkles({ width: "full" }),
     },
     disabled: {
       true: sprinkles({
-        color: 'gray400',
-        background: 'gray100',
-        borderColor: 'gray100',
-        cursor: 'not-allowed',
+        color: "gray400",
+        background: "gray100",
+        borderColor: "gray100",
+        cursor: "not-allowed",
       }),
     },
     borderless: {
       true: {
-        border: 'transparent',
+        border: "transparent",
       },
     },
   },

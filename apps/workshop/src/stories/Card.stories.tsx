@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Card, Typography } from '@repo/ui';
-import { ArrowRightOutlined } from '../../../../packages/ui/src/assets/icons';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button, Card, Typography } from "@repo/ui";
+import { ArrowRightOutlined } from "../../../../packages/ui/src/assets/icons";
 
 const meta = {
-  title: 'Example/Card',
+  title: "Example/Card",
   component: Card,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
     divider: false,
     borderless: true,
@@ -106,9 +106,10 @@ export const Custom: Story = {
           <img src="http://via.placeholder.com/375x375" />
         </Card.ImageBox>
         <Card.Content size="large">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi dolore fugiat
-          obcaecati libero non dolorem commodi temporibus incidunt sequi sint neque
-          dolores at sit quisquam deserunt, magnam, atque aperiam aut.!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi dolore
+          fugiat obcaecati libero non dolorem commodi temporibus incidunt sequi
+          sint neque dolores at sit quisquam deserunt, magnam, atque aperiam
+          aut.!
         </Card.Content>
       </>
     ),

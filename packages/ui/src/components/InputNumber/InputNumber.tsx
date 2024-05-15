@@ -1,13 +1,14 @@
-import { InputHTMLAttributes, ReactNode, forwardRef } from 'react';
-import { Typography } from '../Typography/Typography';
-import * as S from './inputNumber.css';
-import { InputStateType } from '../Input/Input';
-import { Divider } from '../Divider/Divider';
-import { helper } from '../Input/input.css';
+import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
+import { Typography } from "../Typography/Typography";
+import * as S from "./inputNumber.css";
+import { InputStateType } from "../Input/Input";
+import { Divider } from "../Divider/Divider";
+import { helper } from "../Input/input.css";
 
 const { Caption } = Typography;
 
-export interface InputNumberProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputNumberProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   state?: InputStateType;
   helperText?: string;
@@ -19,7 +20,7 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
     {
       label,
       value,
-      state = 'valid',
+      state = "valid",
       suffix,
       helperText,
       className,
@@ -27,7 +28,7 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
       onFocus,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={className}>
@@ -56,5 +57,5 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
         )}
       </div>
     );
-  }
+  },
 );

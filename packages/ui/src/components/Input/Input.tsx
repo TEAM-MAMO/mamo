@@ -1,13 +1,19 @@
-import { ChangeEvent, InputHTMLAttributes, ReactNode, forwardRef, useState } from 'react';
-import clsx from 'clsx';
-import * as S from './input.css';
-import { Typography } from '../Typography/Typography';
-import { DeleteSolid } from '../../assets/icons';
-import { Divider } from '../Divider/Divider';
+import {
+  ChangeEvent,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useState,
+} from "react";
+import clsx from "clsx";
+import * as S from "./input.css";
+import { Typography } from "../Typography/Typography";
+import { DeleteSolid } from "../../assets/icons";
+import { Divider } from "../Divider/Divider";
 
 const { Caption } = Typography;
 
-export type InputStateType = 'valid' | 'error';
+export type InputStateType = "valid" | "error";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -21,8 +27,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       label,
-      value = '',
-      state = 'valid',
+      value = "",
+      state = "valid",
       showCount = false,
       suffix,
       helperText,
@@ -31,7 +37,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       onChange,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={clsx(S.inputContainer, className)}>
@@ -64,5 +70,5 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  }
+  },
 );

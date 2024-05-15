@@ -1,14 +1,14 @@
-import { globalStyle, style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles, vars } from '../../styles';
+import { globalStyle, style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles, vars } from "../../styles";
 
 export const card = recipe({
   base: sprinkles({
-    position: 'relative',
-    width: 'full',
-    display: 'flex',
-    flexWrap: 'wrap',
-    overflow: 'hidden',
+    position: "relative",
+    width: "full",
+    display: "flex",
+    flexWrap: "wrap",
+    overflow: "hidden",
   }),
   variants: {
     divider: {
@@ -19,17 +19,17 @@ export const card = recipe({
     borderless: {
       false: [
         sprinkles({
-          borderColor: 'gray400',
+          borderColor: "gray400",
         }),
         {
-          borderStyle: 'solid',
+          borderStyle: "solid",
           borderWidth: 1,
         },
       ],
     },
     rounded: {
       true: sprinkles({
-        borderRadius: 'large',
+        borderRadius: "large",
       }),
     },
   },
@@ -37,7 +37,7 @@ export const card = recipe({
 
 export const divider = style([
   sprinkles({
-    position: 'absolute',
+    position: "absolute",
   }),
   {
     top: 0,
@@ -47,8 +47,8 @@ export const divider = style([
 ]);
 
 export const extra = sprinkles({
-  fontSize: '18px',
-  color: 'gray400',
+  fontSize: "18px",
+  color: "gray400",
   flexShrink: 0,
 });
 
@@ -57,9 +57,9 @@ export const extra = sprinkles({
  */
 export const grid = recipe({
   base: sprinkles({
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '5x',
+    display: "flex",
+    flexDirection: "column",
+    gap: "5x",
   }),
 });
 
@@ -69,27 +69,27 @@ export const grid = recipe({
 export const content = recipe({
   base: [
     sprinkles({
-      width: 'full',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '6x',
-      paddingX: '6x',
-      wordBreak: 'break-all',
+      width: "full",
+      display: "flex",
+      alignItems: "center",
+      gap: "6x",
+      paddingX: "6x",
+      wordBreak: "break-all",
     }),
   ],
   variants: {
     size: {
       small: sprinkles({
-        paddingY: '6x',
+        paddingY: "6x",
       }),
       default: {
-        paddingTop: '18px',
-        paddingBottom: '18px',
+        paddingTop: "18px",
+        paddingBottom: "18px",
       },
       large: sprinkles({
-        paddingX: '7x',
-        paddingTop: '6x',
-        paddingBottom: '8x',
+        paddingX: "7x",
+        paddingTop: "6x",
+        paddingBottom: "8x",
       }),
     },
   },
@@ -100,23 +100,23 @@ export const content = recipe({
  */
 export const header = style([
   sprinkles({
-    width: 'full',
-    height: '44px',
-    paddingX: '6x',
+    width: "full",
+    height: "44px",
+    paddingX: "6x",
   }),
 ]);
 export const headerInner = style([
   sprinkles({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: 'full',
-    borderColor: 'gray200',
-    paddingY: '5x',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "full",
+    borderColor: "gray200",
+    paddingY: "5x",
   }),
   {
     borderBottomWidth: 1,
-    borderBottomStyle: 'solid',
+    borderBottomStyle: "solid",
   },
 ]);
 
@@ -126,20 +126,20 @@ export const headerInner = style([
 export const image = recipe({
   base: [
     sprinkles({
-      overflow: 'hidden',
+      overflow: "hidden",
       flexShrink: 0,
     }),
   ],
   variants: {
     size: {
       small: sprinkles({
-        width: '60px',
+        width: "60px",
       }),
       default: sprinkles({
-        width: '80px',
+        width: "80px",
       }),
       full: sprinkles({
-        width: 'full',
+        width: "full",
       }),
     },
     rounded: {
@@ -147,15 +147,15 @@ export const image = recipe({
         borderRadius: 0,
       },
       true: sprinkles({
-        borderRadius: 'medium',
+        borderRadius: "medium",
       }),
     },
   },
 });
 globalStyle(`${image} > img`, {
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
 });
 
 /**
@@ -163,9 +163,9 @@ globalStyle(`${image} > img`, {
  */
 export const information = style([
   sprinkles({
-    display: 'flex',
-    flexDirection: 'column',
-    width: 'full',
+    display: "flex",
+    flexDirection: "column",
+    width: "full",
   }),
 ]);
 
@@ -174,8 +174,8 @@ export const information = style([
  */
 export const footer = style([
   sprinkles({
-    width: 'full',
-    paddingX: '6x',
-    paddingBottom: '8x',
+    width: "full",
+    paddingX: "6x",
+    paddingBottom: "8x",
   }),
 ]);

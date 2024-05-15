@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button, DatePicker } from '@repo/ui';
-import { useState } from 'react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button, DatePicker } from "@repo/ui";
+import { useState } from "react";
 
 const meta = {
-  title: 'Example/DatePicker',
+  title: "Example/DatePicker",
   component: DatePicker,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof DatePicker>;
@@ -21,7 +21,7 @@ export const Basic: Story = {
   render: () => {
     const [date, setDate] = useState<Date | null>(null);
     return (
-      <div style={{ height: '350px' }}>
+      <div style={{ height: "350px" }}>
         <DatePicker>
           <DatePicker.Trigger>
             <Button>DatePicker Open</Button>

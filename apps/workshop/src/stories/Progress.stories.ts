@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Progress } from '@repo/ui';
+import { Progress } from "@repo/ui";
 
 const meta = {
-  title: 'Example/Progress',
+  title: "Example/Progress",
   component: Progress,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
     primary: false,
   },
   argTypes: {
     percent: {
-      description: '진행률(퍼센트)를 설정합니다.',
+      description: "진행률(퍼센트)를 설정합니다.",
     },
   },
 } satisfies Meta<typeof Progress>;

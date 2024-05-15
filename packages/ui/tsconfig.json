@@ -1,8 +1,10 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": false,
+    "declarationMap": false
   },
-  "include": ["src", "src/**.*"],
+  "include": ["src", "src/**.*", "src/components/Tooltip/.tsx"],
   "exclude": ["node_modules", "dist"]
 }
