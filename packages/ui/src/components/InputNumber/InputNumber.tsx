@@ -18,7 +18,6 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
   (
     {
       label,
-      type,
       value,
       state = 'valid',
       suffix,
@@ -36,7 +35,7 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
         <div className={S.inputBox}>
           <input
             ref={ref}
-            type={type || 'number'}
+            type="number"
             data-state={state}
             className={S.input({ hasValue: !!value })}
             value={value}
