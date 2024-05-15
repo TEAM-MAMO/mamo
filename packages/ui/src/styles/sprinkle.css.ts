@@ -52,6 +52,7 @@ const responsiveProperties = defineProperties({
     pointerEvents: ["none", "auto"],
     overflow: ["hidden"],
     textAlign: ["left", "center", "right"],
+    wordBreak: ["break-word", "break-all", "keep-all"],
     minWidth: vars.contentWidth,
     maxWidth: vars.contentWidth,
     transition: {
@@ -85,7 +86,7 @@ const unconditionalProperties = defineProperties({
     height: vars.contentWidth,
     borderRadius: vars.radius,
     boxShadow: vars.shadow,
-    cursor: ["pointer"],
+    cursor: ["pointer", "not-allowed"],
     pointerEvents: ["auto", "none", "visible"],
     textDecoration: ["none", "underline", "line-through"],
     textTransform: ["uppercase", "lowercase", "capitalize"],

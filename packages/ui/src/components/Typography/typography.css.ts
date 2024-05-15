@@ -5,7 +5,7 @@ import { sprinkles } from "../../styles";
 /**
  * Typography Heading
  */
-export const headingStyles = recipe({
+export const heading = recipe({
   base: [
     sprinkles({
       letterSpacing: "-2%",
@@ -56,7 +56,7 @@ export const headingStyles = recipe({
 /**
  * Typography Text
  */
-export const TextStyles = recipe({
+export const Text = recipe({
   base: style([
     sprinkles({
       fontSize: "16px",
@@ -89,7 +89,7 @@ export const TextStyles = recipe({
 /**
  * Typography Caption
  */
-export const CaptionStyles = recipe({
+export const Caption = recipe({
   base: style([
     sprinkles({
       fontSize: "14px",
@@ -124,7 +124,7 @@ export const CaptionStyles = recipe({
 /**
  * Typography Foot
  */
-export const FootStyles = recipe({
+export const Foot = recipe({
   base: style([
     sprinkles({
       fontSize: "12px",

@@ -25,18 +25,19 @@ const slideOut = keyframes({
 /**
  * BottomSheet Content
  */
-export const contentStyle = style([
+export const content = style([
   sprinkles({
     position: "fixed",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
+    overflow: "hidden",
   }),
   {},
 ]);
 
-export const overlayStyle = recipe({
+export const overlay = recipe({
   base: [
     sprinkles({
       width: "full",
@@ -68,7 +69,7 @@ export const overlayStyle = recipe({
   },
 });
 
-export const sheetStyle = recipe({
+export const sheet = recipe({
   base: [
     sprinkles({
       position: "absolute",
@@ -113,7 +114,7 @@ export const sheetStyle = recipe({
 /**
  * BottomSheet Confirm
  */
-export const confirmStyle = style([
+export const confirm = style([
   sprinkles({
     display: "flex",
     alignItems: "center",
@@ -127,7 +128,7 @@ export const confirmStyle = style([
   {},
 ]);
 
-export const descriptionStyle = style([
+export const description = style([
   sprinkles({
     display: "block",
     marginTop: "7x",
@@ -138,7 +139,7 @@ export const descriptionStyle = style([
 /**
  * Header
  */
-export const headerStyle = recipe({
+export const header = recipe({
   base: [
     sprinkles({
       position: "relative",
@@ -166,7 +167,7 @@ export const headerStyle = recipe({
 /**
  * Body
  */
-export const bodyStyle = style([
+export const body = style([
   sprinkles({
     width: "full",
     height: "full",
@@ -182,7 +183,7 @@ export const bodyStyle = style([
 /**
  * Footer
  */
-export const footerStyle = style([
+export const footer = style([
   sprinkles({
     display: "flex",
     flexDirection: "column",
@@ -191,7 +192,7 @@ export const footerStyle = style([
   }),
 ]);
 
-export const closeStyle = style([
+export const close = style([
   sprinkles({
     position: "absolute",
     fontSize: "24px",
@@ -208,13 +209,13 @@ export const closeStyle = style([
 /**
  * Menu & Item
  */
-export const menuStyle = style([
+export const menu = style([
   sprinkles({
     paddingBottom: "6x",
   }),
 ]);
 
-export const itemStyle = style([
+export const item = style([
   sprinkles({
     display: "flex",
     alignItems: "center",

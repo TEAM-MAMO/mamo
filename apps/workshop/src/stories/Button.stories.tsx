@@ -10,73 +10,59 @@ const meta = {
   title: "Example/Button",
   component: Button,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
-  args: {},
-  argTypes: {},
-} satisfies Meta<typeof Button>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Basic: Story = {
   args: {
-    label: "Button",
     size: "default",
     block: false,
     primary: false,
     disabled: false,
     borderless: false,
+    children: "Button",
   },
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["xxsmall", "xsmall", "small", "default"],
+      description: "버튼의 크기를 설정합니다.",
+    },
+  },
+} satisfies Meta<typeof Button>;
+
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+export const Basic: Story = {
+  args: {},
 };
 
-export const Normal: Story = {
+export const Primary: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    block: false,
     primary: true,
-    disabled: false,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    block: false,
-    primary: false,
     disabled: true,
   },
 };
 
 export const Block: Story = {
   args: {
-    label: "Button",
-    size: "default",
     block: true,
-    primary: false,
-    disabled: false,
   },
 };
 
-export const PrefixIcon: Story = {
+export const Prefix: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    primary: false,
-    disabled: false,
-    prefixIcon: <PlusOutlined />,
+    prefix: <PlusOutlined />,
   },
 };
 
-export const SuffixIcon: Story = {
+export const Suffix: Story = {
   args: {
-    label: "Button",
-    size: "default",
-    primary: false,
-    disabled: false,
-    suffixIcon: <HeartSolid />,
+    suffix: <HeartSolid />,
   },
 };

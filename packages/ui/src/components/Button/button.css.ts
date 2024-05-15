@@ -1,23 +1,25 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { style } from "@vanilla-extract/css";
 import { sprinkles } from "../../styles";
 
-const base = style([
-  sprinkles({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: "round",
-  }),
-  {
-    minWidth: "253px",
-    borderWidth: "1px",
-    borderStyle: "solid",
-  },
-]);
+const textSM = sprinkles({
+  fontSize: "small",
+  fontWeight: "600",
+  lineHeight: "20px",
+});
 
-export const buttonStyle = recipe({
-  base,
+export const button = recipe({
+  base: [
+    sprinkles({
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "round",
+    }),
+    {
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+  ],
   variants: {
     primary: {
       true: [
@@ -36,11 +38,46 @@ export const buttonStyle = recipe({
       ],
     },
     size: {
-      small: sprinkles({
-        height: "44px",
-      }),
-      default: sprinkles({
+      large: sprinkles({
+        gap: "3x",
         height: "50px",
+        paddingX: "7x",
+
+        fontSize: "medium",
+        fontWeight: "700",
+        lineHeight: "24px",
+      }),
+      default: [
+        textSM,
+        sprinkles({
+          gap: "1x",
+          height: "44px",
+          paddingX: "5x",
+        }),
+      ],
+      small: [
+        textSM,
+        sprinkles({
+          gap: "1x",
+          height: "32px",
+          paddingX: "5x",
+        }),
+      ],
+      xsmall: [
+        textSM,
+        sprinkles({
+          gap: "1x",
+          height: "30px",
+          paddingX: "5x",
+        }),
+      ],
+    },
+    align: {
+      horizontal: sprinkles({
+        flexDirection: "row",
+      }),
+      vertical: sprinkles({
+        flexDirection: "column",
       }),
     },
     block: {
@@ -51,53 +88,13 @@ export const buttonStyle = recipe({
         color: "gray400",
         background: "gray100",
         borderColor: "gray100",
+        cursor: "not-allowed",
       }),
     },
     borderless: {
-      true: { border: "transparent" },
-    },
-  },
-});
-
-export const textStyle = recipe({
-  variants: {
-    size: {
-      small: sprinkles({
-        fontSize: "small",
-        fontWeight: "600",
-        lineHeight: "20px",
-      }),
-      default: sprinkles({
-        fontSize: "medium",
-        fontWeight: "700",
-        lineHeight: "24px",
-      }),
-    },
-  },
-});
-
-export const prefixStyle = recipe({
-  variants: {
-    size: {
-      default: sprinkles({
-        marginRight: "3x",
-      }),
-      small: sprinkles({
-        marginRight: "1x",
-      }),
-    },
-  },
-});
-
-export const suffixStyle = recipe({
-  variants: {
-    size: {
-      default: sprinkles({
-        marginLeft: "3x",
-      }),
-      small: sprinkles({
-        marginLeft: "1x",
-      }),
+      true: {
+        border: "transparent",
+      },
     },
   },
 });
