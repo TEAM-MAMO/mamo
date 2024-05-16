@@ -26,10 +26,12 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
+    "@svgr/rollup": "^8.1.0",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
+    "@vanilla-extract/vite-plugin": "latest",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -37,7 +39,6 @@
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^7.6.17",
     "typescript": "^5.2.2",
-    "vite": "^4.5.1",
-    "@vanilla-extract/vite-plugin": "latest"
+    "vite": "^4.5.1"
   }
 }

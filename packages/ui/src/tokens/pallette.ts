@@ -29,4 +29,6 @@ export const pallette = {
   secondary200: "#F5F2EC",
   secondary100: "#F9F7F3",
   secondary50: "#FDFBF8",
+
+  transparent: "transparent",
 };
