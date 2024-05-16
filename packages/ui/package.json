@@ -14,6 +14,7 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@mamo/shared": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^1.11.3",

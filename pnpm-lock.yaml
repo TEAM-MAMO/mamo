@@ -143,6 +143,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@mamo/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@storybook/addon-essentials':
         specifier: ^7.6.17
         version: 7.6.17(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)
@@ -255,6 +258,34 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  packages/shared:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/eslint':
+        specifier: ^8.56.1
+        version: 8.56.1
+      '@types/node':
+        specifier: ^20.10.6
+        version: 20.10.6
+      '@types/react':
+        specifier: ^18.2.46
+        version: 18.2.61
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.2.19
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
   packages/typescript-config: {}
 
   packages/ui:
@@ -275,6 +306,9 @@ importers:
         specifier: 6.8.4
         version: 6.8.4
     devDependencies:
+      '@mamo/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
