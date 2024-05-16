@@ -1,11 +1,10 @@
 import { Children, PropsWithChildren, forwardRef, useRef } from "react";
+import { useBeforeMatch, useContentHeight } from "@mamo/shared/hooks";
 
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import clsx from "clsx";
 import * as S from "./AccordionContent.css";
 import { useAccordionContext } from "./AccordionContext";
-import { useBeforeMatch } from "./hooks/useBeforeMatch";
-import { useContentHeight } from "./hooks/useContentHeight";
 
 interface HTMLDivElementWithHidden
   extends React.HTMLAttributes<HTMLDivElement> {

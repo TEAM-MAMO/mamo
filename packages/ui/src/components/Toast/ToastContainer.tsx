@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom";
+import { usePortal } from "@mamo/shared/hooks";
 import * as S from "./ToastContainer.css";
 
 import { Toast } from "./Toast";
-import usePortal from "./hooks/usePortal";
 import { useToastContext } from "./ToastContext";
 
 export const ToastContainer = () => {

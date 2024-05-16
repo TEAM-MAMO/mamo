@@ -1,7 +1,5 @@
 import { RefObject, useEffect, useState } from "react";
 
-// FIXME: shared workspace로 이동
-
 export const useContentHeight = <T extends HTMLElement>(
   ref: RefObject<T>,
   isExpanded: boolean,

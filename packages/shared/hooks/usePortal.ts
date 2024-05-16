@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const usePortal = (id: string) => {
+export const usePortal = (id: string) => {
   const rootElementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -25,5 +25,3 @@ const usePortal = (id: string) => {
 
   return rootElementRef.current;
 };
-
-export default usePortal;
