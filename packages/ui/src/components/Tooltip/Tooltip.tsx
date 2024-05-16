@@ -8,6 +8,7 @@ import {
   useState,
 } from "react";
 import clsx from "clsx";
+import { useViewportSize } from "@mamo/shared/hooks";
 import * as S from "./Tooltip.css";
 
 import { CloseOutlined, PollygonDown, PollygonUp } from "../../assets/icons";
@@ -15,7 +16,6 @@ import { CloseOutlined, PollygonDown, PollygonUp } from "../../assets/icons";
 import { Typography } from "../Typography/Typography";
 import { useTooltip } from "./hooks/useTooltip";
 import { useTooltipPosition } from "./hooks/useTooltipPostion";
-import { useViewportSize } from "./hooks/useViewportSize";
 
 export interface TooltipProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "content"> {

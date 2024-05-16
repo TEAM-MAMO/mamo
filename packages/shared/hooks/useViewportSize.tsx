@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-// TODO: 공통 훅으로 변경
-
 export const useViewportSize = () => {
   const [viewportSize, setViewportSize] = useState({
     width: document.documentElement.clientWidth,
