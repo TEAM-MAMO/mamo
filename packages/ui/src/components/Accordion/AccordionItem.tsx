@@ -4,10 +4,10 @@ import {
   forwardRef,
   useMemo,
 } from "react";
+import { useToggle } from "@mamo/shared/hooks";
 import * as S from "./AccordionItem.css";
 
 import { AccoridonContext } from "./AccordionContext";
-import { useToggle } from "./hooks/useToggle";
 
 export interface AccordionItemProps
   extends PropsWithChildren<HtmlHTMLAttributes<HTMLDivElement>> {}
