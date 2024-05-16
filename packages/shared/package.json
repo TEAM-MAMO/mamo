@@ -1,0 +1,25 @@
+{
+  "name": "@mamo/shared",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": [
+      "./index.ts"
+    ],
+    "./hooks": "./hooks/index.ts",
+    "./types": "./types/index.ts",
+    "./utils": "./utils/index.ts"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.10.6",
+    "@types/eslint": "^8.56.1"
+  }
+}
