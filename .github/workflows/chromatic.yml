@@ -3,12 +3,12 @@ run-name: ${{ github.actor }}'s storybook deploy
 on:
   pull_request:
     branches: [main, develop]
-    paths: apps/workshop/src/**
+    paths: apps/workshop/**
   push:
     branches:
       - develop
     paths:
-      - 'apps/workshop/src/**'
+      - 'apps/workshop/**'
 
 jobs:
   storybook:
