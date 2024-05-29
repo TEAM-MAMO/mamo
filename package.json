@@ -6,7 +6,9 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build-storybook": "turbo run build-storybook --filter=workshop",
+    "chromatic": "turbo run chromatic --filter=workshop"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

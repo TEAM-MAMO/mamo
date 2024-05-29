@@ -12,6 +12,12 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "build-storybook": {
+      "dependsOn": ["^build-storybook"]
+    },
+    "chromatic": {
+      "dependsOn": ["^chromatic"]
     }
   }
 }
