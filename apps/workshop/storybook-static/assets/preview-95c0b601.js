@@ -1,0 +1,1 @@
+import"./global.css.ts.vanilla-799eb6f1.js";import"./index-1b03fe98.js";import"./jsx-runtime-9c4ae004.js";import"./index-6fd5a17b.js";import"./index-70495b6e.js";const i={parameters:{actions:{argTypesRegex:"^on[A-Z].*"},controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}}}};export{i as default};
