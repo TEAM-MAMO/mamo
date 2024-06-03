@@ -87,35 +87,7 @@ export const Custom: Story = {
           quisquam harum. Lorem ipsum, dolor sit amet consectetur adipisicing
           elit. Sunt iusto beatae ipsa veritatis sed, aut libero repellat
           aperiam voluptas porro ex voluptatum? Fuga ipsum quidem, mollitia ut
-          doloremque quisquam harum. Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Sunt iusto beatae ipsa veritatis sed, aut libero
-          repellat aperiam voluptas porro ex voluptatum? Fuga ipsum quidem,
-          mollitia ut doloremque quisquam harum. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Sunt iusto beatae ipsa veritatis sed,
-          aut libero repellat aperiam voluptas porro ex voluptatum? Fuga ipsum
-          quidem, mollitia ut doloremque quisquam harum. Lorem ipsum, dolor sit
-          amet consectetur adipisicing elit. Sunt iusto beatae ipsa veritatis
-          sed, aut libero repellat aperiam voluptas porro ex voluptatum? Fuga
-          ipsum quidem, mollitia ut doloremque quisquam harum. Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Sunt iusto beatae ipsa
-          veritatis sed, aut libero repellat aperiam voluptas porro ex
-          voluptatum? Fuga ipsum quidem, mollitia ut doloremque quisquam harum.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt iusto
-          beatae ipsa veritatis sed, aut libero repellat aperiam voluptas porro
-          ex voluptatum? Fuga ipsum quidem, mollitia ut doloremque quisquam
-          harum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
-          iusto beatae ipsa veritatis sed, aut libero repellat aperiam voluptas
-          porro ex voluptatum? Fuga ipsum quidem, mollitia ut doloremque
-          quisquam harum. Lorem ipsum, dolor sit amet consectetur adipisicing
-          elit. Sunt iusto beatae ipsa veritatis sed, aut libero repellat
-          aperiam voluptas porro ex voluptatum? Fuga ipsum quidem, mollitia ut
-          doloremque quisquam harum. Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Sunt iusto beatae ipsa veritatis sed, aut libero
-          repellat aperiam voluptas porro ex voluptatum? Fuga ipsum quidem,
-          mollitia ut doloremque quisquam harum. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Sunt iusto beatae ipsa veritatis sed,
-          aut libero repellat aperiam voluptas porro ex voluptatum? Fuga ipsum
-          quidem, mollitia ut doloremque quisquam harum.
+          doloremque quisquam harum.
         </BottomSheet.Body>
       </>
     ),
