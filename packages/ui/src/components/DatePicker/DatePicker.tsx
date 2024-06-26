@@ -1,3 +1,5 @@
+"use client";
+
 import "react-calendar/dist/Calendar.css";
 
 import Calendar, { OnClickFunc } from "react-calendar";

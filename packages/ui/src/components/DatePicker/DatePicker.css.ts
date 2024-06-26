@@ -1,17 +1,21 @@
-import { globalStyle } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
+
 import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles, vars } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
+import { vars } from "../../styles/theme.css";
+
+const panelBase = style([
+  sprinkles({
+    position: "absolute",
+  }),
+  {
+    top: "100%",
+    left: 0,
+  },
+]);
 
 export const panel = recipe({
-  base: [
-    sprinkles({
-      position: "absolute",
-    }),
-    {
-      top: "100%",
-      left: 0,
-    },
-  ],
+  base: panelBase,
   variants: {
     isOpen: {
       true: sprinkles({
@@ -24,7 +28,7 @@ export const panel = recipe({
   },
 });
 
-globalStyle(`${panel} *`, {
+globalStyle(`${panelBase} *`, {
   fontFamily: "pretendard",
 });
 

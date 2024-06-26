@@ -1,3 +1,5 @@
+"use client";
+
 import { Dispatch, SetStateAction, createContext, useContext } from "react";
 
 // TODO: 나중에 context 폴더로 옮기기

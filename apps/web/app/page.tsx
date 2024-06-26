@@ -3,7 +3,7 @@ import { Button } from "@repo/ui";
 export default function Page() {
   return (
     <main>
-      <Button />
+      <Button>hihi</Button>
     </main>
   );
 }

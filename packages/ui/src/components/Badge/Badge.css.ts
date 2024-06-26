@@ -1,5 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
 
 export const badge = recipe({
   base: sprinkles({

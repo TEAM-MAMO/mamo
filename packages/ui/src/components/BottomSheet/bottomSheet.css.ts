@@ -1,7 +1,7 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
 import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
 
 const fadeIn = keyframes({
   "0%": { opacity: 0 },

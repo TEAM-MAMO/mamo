@@ -8,7 +8,6 @@ import clsx from "clsx";
 import * as S from "./Card.css";
 
 import { Divider } from "../Divider/Divider";
-import { sprinkles } from "../../styles";
 
 /**
  * Card Root

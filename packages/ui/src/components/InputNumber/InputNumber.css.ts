@@ -1,6 +1,8 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+
 import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles, vars } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
+import { vars } from "../../styles/theme.css";
 
 export const label = style([
   sprinkles({
@@ -16,33 +18,34 @@ export const inputBox = style([
   }),
 ]);
 
-export const input = recipe({
-  base: [
-    sprinkles({
-      color: "gray700",
-      width: "full",
-      height: "48px",
-      paddingLeft: "8px",
-      paddingRight: "8px",
-      fontSize: "20px",
-    }),
-    {
-      border: 0,
-      outline: 0,
-      caretColor: vars.pallette.primary500,
-      MozAppearance: "none",
-
-      "::-webkit-inner-spin-button": {
-        WebkitAppearance: "none",
-      },
-      "::-webkit-outer-spin-button": {
-        WebkitAppearance: "none",
-      },
-      "::placeholder": {
-        color: vars.pallette.gray400,
-      },
+export const inputBase = style([
+  sprinkles({
+    color: "gray700",
+    width: "full",
+    height: "48px",
+    paddingLeft: "8px",
+    paddingRight: "8px",
+    fontSize: "20px",
+  }),
+  {
+    border: 0,
+    outline: 0,
+    caretColor: vars.pallette.primary500,
+    MozAppearance: "none",
+    "::-webkit-inner-spin-button": {
+      WebkitAppearance: "none",
     },
-  ],
+    "::-webkit-outer-spin-button": {
+      WebkitAppearance: "none",
+    },
+    "::placeholder": {
+      color: vars.pallette.gray400,
+    },
+  },
+]);
+
+export const input = recipe({
+  base: inputBase,
   variants: {
     hasValue: {
       true: sprinkles({
@@ -71,10 +74,11 @@ export const divider = style([
     borderBottomStyle: "solid",
   },
 ]);
-globalStyle(`${input}:focus + ${divider}`, {
+
+globalStyle(`${inputBase}:focus + ${divider}`, {
   borderColor: vars.pallette.gray900,
 });
-globalStyle(`${input}[data-state="error"] + ${divider}`, {
+globalStyle(`${inputBase}[data-state="error"] + ${divider}`, {
   borderColor: vars.pallette.primary500,
 });
 
