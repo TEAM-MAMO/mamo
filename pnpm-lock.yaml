@@ -133,6 +133,9 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.4.5
+      url-loader:
+        specifier: ^4.1.1
+        version: 4.1.1(webpack@5.92.0)
 
   apps/workshop:
     dependencies:
@@ -176,9 +179,6 @@ importers:
       '@storybook/test':
         specifier: ^7.6.17
         version: 7.6.19
-      '@svgr/rollup':
-        specifier: ^8.1.0
-        version: 8.1.0(rollup@4.18.0)(typescript@5.4.5)
       '@types/react':
         specifier: ^18.2.56
         version: 18.3.3
@@ -221,6 +221,9 @@ importers:
       vite:
         specifier: ^4.5.1
         version: 4.5.3
+      vite-plugin-svgr:
+        specifier: ^4.2.0
+        version: 4.2.0(typescript@5.4.5)(vite@4.5.3)
 
   packages/eslint-config:
     devDependencies:
@@ -12813,6 +12816,22 @@ packages:
       punycode: 2.3.1
     dev: true
 
+  /url-loader@4.1.1(webpack@5.92.0):
+    resolution: {integrity: sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      file-loader: '*'
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
+    dependencies:
+      loader-utils: 2.0.4
+      mime-types: 2.1.35
+      schema-utils: 3.3.0
+      webpack: 5.92.0
+    dev: true
+
   /use-callback-ref@1.3.2(@types/react@18.3.3)(react@18.3.1):
     resolution: {integrity: sha512-elOQwe6Q8gqZgDA8mrh44qRTQqpIHDcZ3hXTLjBe1i4ph8XpNJnO+aQf3NaG+lriLopI4HMx9VjQLfPQ6vhnoA==}
     engines: {node: '>=10'}
@@ -12927,6 +12946,21 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-svgr@4.2.0(typescript@5.4.5)(vite@4.5.3):
+    resolution: {integrity: sha512-SC7+FfVtNQk7So0XMjrrtLAbEC8qjFPifyD7+fs/E6aaNdVde6umlVVh0QuwDLdOMu7vp5RiGFsB70nj5yo0XA==}
+    peerDependencies:
+      vite: ^2.6.0 || 3 || 4 || 5
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
+      '@svgr/core': 8.1.0(typescript@5.4.5)
+      '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0)
+      vite: 4.5.3
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+      - typescript
     dev: true
 
   /vite@4.5.3:

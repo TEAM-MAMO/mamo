@@ -1,15 +1,14 @@
+import { ArrowDownOutlined, ArrowUpOutlined } from "@repo/ui/icons";
 import {
   HtmlHTMLAttributes,
   PropsWithChildren,
   ReactNode,
   forwardRef,
 } from "react";
+
 import clsx from "clsx";
-import * as S from "./AccordionTrigger.css";
-
-import { ArrowDownOutlined, ArrowUpOutlined } from "../../assets/icons";
-
 import { Typography } from "../Typography/Typography";
+import * as S from "./AccordionTrigger.css";
 import { sprinkles } from "../../styles";
 import { useAccordionContext } from "./AccordionContext";
 

@@ -1,11 +1,10 @@
-import svgr from '@svgr/rollup';
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
+import json from '@rollup/plugin-json';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import resolve from '@rollup/plugin-node-resolve';
 import svgr from '@svgr/rollup';
 import { terser } from 'rollup-plugin-terser';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import json from '@rollup/plugin-json';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
   input: [

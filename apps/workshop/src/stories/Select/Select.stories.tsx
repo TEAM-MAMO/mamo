@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button, Select } from "@repo/ui";
-import { CloseOutlined } from "../../../../../packages/ui/src/assets/icons";
+import { CloseOutlined } from "@repo/ui/icons";
 import { useState } from "react";
 
 const meta = {

@@ -1,19 +1,5 @@
-// const path = require('path');
-// const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
-
-// const withVanillaExtract = createVanillaExtractPlugin();
-
-// module.exports = withVanillaExtract({
-//   aliases: {
-//     '@/*': [path.join(__dirname, '*')],
-//   },
-//   rootDir: __dirname,
-//   transpilePackages: ['@repo/ui'],
-// });
-
 const path = require('path');
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
-const svgr = require('@svgr/webpack');
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -38,7 +24,7 @@ module.exports = withVanillaExtract({
         resourceQuery: {
           not: [...(fileLoaderRule.resourceQuery?.not || []), /url/],
         }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
+        use: ['@svgr/webpack', 'url-loader'],
       },
     );
 
