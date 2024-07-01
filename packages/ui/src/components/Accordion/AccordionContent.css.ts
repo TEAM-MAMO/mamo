@@ -1,7 +1,6 @@
 import { createVar, globalStyle, style } from "@vanilla-extract/css";
 
-import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
 
 export const contentHeightVar = createVar();
 

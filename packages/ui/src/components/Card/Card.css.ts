@@ -1,15 +1,19 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+
 import { recipe } from "@vanilla-extract/recipes";
-import { sprinkles, vars } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
+
+// 기본 card 스타일 정의
+export const cardBase = sprinkles({
+  position: "relative",
+  width: "full",
+  display: "flex",
+  flexWrap: "wrap",
+  overflow: "hidden",
+});
 
 export const card = recipe({
-  base: sprinkles({
-    position: "relative",
-    width: "full",
-    display: "flex",
-    flexWrap: "wrap",
-    overflow: "hidden",
-  }),
+  base: cardBase,
   variants: {
     divider: {
       true: {
@@ -35,6 +39,9 @@ export const card = recipe({
   },
 });
 
+/**
+ * Divider
+ */
 export const divider = style([
   sprinkles({
     position: "absolute",
@@ -55,28 +62,30 @@ export const extra = sprinkles({
 /**
  * Grid
  */
+export const gridBase = sprinkles({
+  display: "flex",
+  flexDirection: "column",
+  gap: "12px",
+});
+
 export const grid = recipe({
-  base: sprinkles({
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-  }),
+  base: gridBase,
 });
 
 /**
  * Content
  */
+export const contentBase = sprinkles({
+  width: "full",
+  display: "flex",
+  alignItems: "center",
+  gap: "16px",
+  paddingX: "16px",
+  wordBreak: "break-all",
+});
+
 export const content = recipe({
-  base: [
-    sprinkles({
-      width: "full",
-      display: "flex",
-      alignItems: "center",
-      gap: "16px",
-      paddingX: "16px",
-      wordBreak: "break-all",
-    }),
-  ],
+  base: contentBase,
   variants: {
     size: {
       small: sprinkles({
@@ -105,6 +114,7 @@ export const header = style([
     paddingX: "16px",
   }),
 ]);
+
 export const headerInner = style([
   sprinkles({
     display: "flex",
@@ -123,13 +133,13 @@ export const headerInner = style([
 /**
  * Image Box
  */
+export const imageBase = sprinkles({
+  overflow: "hidden",
+  flexShrink: 0,
+});
+
 export const image = recipe({
-  base: [
-    sprinkles({
-      overflow: "hidden",
-      flexShrink: 0,
-    }),
-  ],
+  base: imageBase,
   variants: {
     size: {
       small: sprinkles({
@@ -152,7 +162,8 @@ export const image = recipe({
     },
   },
 });
-globalStyle(`${image} > img`, {
+
+globalStyle(`${imageBase} > img`, {
   width: "100%",
   height: "100%",
   objectFit: "cover",

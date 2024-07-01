@@ -1,3 +1,5 @@
+"use client";
+
 import { HTMLAttributes, PropsWithChildren, forwardRef, useRef } from "react";
 
 import clsx from "clsx";

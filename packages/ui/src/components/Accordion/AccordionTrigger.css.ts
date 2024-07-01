@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { sprinkles } from "../../styles";
+import { sprinkles } from "../../styles/sprinkle.css";
 
 export const trigger = sprinkles({
   display: "flex",

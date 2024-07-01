@@ -1,3 +1,5 @@
+"use client";
+
 import { Children, PropsWithChildren, forwardRef, useRef } from "react";
 import { useBeforeMatch, useContentHeight } from "@mamo/shared/hooks";
 

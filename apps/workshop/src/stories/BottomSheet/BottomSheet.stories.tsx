@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { BottomSheet, Button } from "@repo/ui";
-import { CloseOutlined } from "../../../../../packages/ui/src/assets/icons";
+import { CloseOutlined } from "@repo/ui/icons";
 
 const meta = {
   title: "COMPONENTS/BottomSheet",
